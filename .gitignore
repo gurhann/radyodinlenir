@@ -3,6 +3,9 @@
 .project
 .settings/
 
+# Database Connect Properties
+*jdbc.properties
+
 # Intellij
 .idea/
 *.iml
