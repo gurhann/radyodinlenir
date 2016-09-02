@@ -1,0 +1,135 @@
+package com.itaki.radyodinlenir.web.dto;
+
+import com.itaki.radyodinlenir.persistence.model.MusicType;
+import com.itaki.radyodinlenir.persistence.model.RadioStationCity;
+
+public class RadioStationDTO {
+
+	private int id;
+	private String name;
+	private String description;
+	private String logo;
+	private String cleanUrl;
+	private String stream_url;
+	private String emveded_url;
+	private int hitCount;
+	private int priority;
+	private String seoKeywords;
+	private String seoDescription;
+	private MusicType musicType;
+	private RadioStationCity radioCity;
+	private boolean isEnabled;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+
+	public String getCleanUrl() {
+		return cleanUrl;
+	}
+
+	public void setCleanUrl(String cleanUrl) {
+		this.cleanUrl = cleanUrl;
+	}
+
+	public String getStream_url() {
+		return stream_url;
+	}
+
+	public void setStream_url(String stream_url) {
+		this.stream_url = stream_url;
+	}
+
+	public String getEmveded_url() {
+		return emveded_url;
+	}
+
+	public void setEmveded_url(String emveded_url) {
+		this.emveded_url = emveded_url;
+	}
+
+	public int getHitCount() {
+		return hitCount;
+	}
+
+	public void setHitCount(int hitCount) {
+		this.hitCount = hitCount;
+	}
+
+	public int getPriority() {
+		return priority;
+	}
+
+	public void setPriority(int priority) {
+		this.priority = priority;
+	}
+
+	public String getSeoKeywords() {
+		return seoKeywords;
+	}
+
+	public void setSeoKeywords(String seoKeywords) {
+		this.seoKeywords = seoKeywords;
+	}
+
+	public String getSeoDescription() {
+		return seoDescription;
+	}
+
+	public void setSeoDescription(String seoDescription) {
+		this.seoDescription = seoDescription;
+	}
+
+	public MusicType getMusicType() {
+		return musicType;
+	}
+
+	public void setMusicType(MusicType musicType) {
+		this.musicType = musicType;
+	}
+
+	public RadioStationCity getRadioCity() {
+		return radioCity;
+	}
+
+	public void setRadioCity(RadioStationCity radioCity) {
+		this.radioCity = radioCity;
+	}
+
+	public boolean isEnabled() {
+		return isEnabled;
+	}
+
+	public void setEnabled(boolean isEnabled) {
+		this.isEnabled = isEnabled;
+	}
+
+}
