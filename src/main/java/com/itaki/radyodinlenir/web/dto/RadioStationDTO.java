@@ -68,11 +68,11 @@ public class RadioStationDTO {
 		this.streamUrl = streamUrl;
 	}
 
-	public String getEmbedded() {
+	public String getEmbeddedUrl() {
 		return embeddedUrl;
 	}
 
-	public void setEmbedded(String embeddedUrl) {
+	public void setEmbeddedUrl(String embeddedUrl) {
 		this.embeddedUrl = embeddedUrl;
 	}
 

@@ -36,7 +36,7 @@ public class RadioStation {
 	@Column(name = "embedded_url")
 	private String embeddedUrl;
 
-	@Column(name = "hit_coun")
+	@Column(name = "hit_count")
 	private int hitCount;
 
 	@Column(name = "priority")
@@ -107,11 +107,11 @@ public class RadioStation {
 		this.streamUrl = streamUrl;
 	}
 
-	public String getEmbedded() {
+	public String getEmbeddedUrl() {
 		return embeddedUrl;
 	}
 
-	public void setEmbedded(String embeddedUrl) {
+	public void setEmbeddedUrl(String embeddedUrl) {
 		this.embeddedUrl = embeddedUrl;
 	}
 	
