@@ -49,7 +49,7 @@ public class RadioStationMapper {
 		return model;
 	}
 
-	public List<RadioStationDTO> modelToDtoList(List<RadioStation> modelList) {
+	public static List<RadioStationDTO> modelToDtoList(List<RadioStation> modelList) {
 		if (modelList == null) {
 			return null;
 		}
@@ -60,7 +60,7 @@ public class RadioStationMapper {
 		return dtoList;
 	}
 
-	public List<RadioStation> dtoToModelList(List<RadioStationDTO> dtoList) {
+	public static List<RadioStation> dtoToModelList(List<RadioStationDTO> dtoList) {
 		if (dtoList == null) {
 			return null;
 		}

@@ -34,7 +34,7 @@ public class ApplicationConfigMapper {
 		return model;
 	}
 
-	public List<ApplicationConfig> dtoToModelList(List<ApplicationConfigDTO> dtoList) {
+	public static List<ApplicationConfig> dtoToModelList(List<ApplicationConfigDTO> dtoList) {
 		if (dtoList == null) {
 			return null;
 		}
@@ -45,7 +45,7 @@ public class ApplicationConfigMapper {
 		return modelList;
 	}
 
-	public List<ApplicationConfigDTO> modelToDtoList(List<ApplicationConfig> modelList) {
+	public static List<ApplicationConfigDTO> modelToDtoList(List<ApplicationConfig> modelList) {
 		if (modelList == null) {
 			return null;
 		}
