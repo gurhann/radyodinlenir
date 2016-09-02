@@ -10,8 +10,8 @@ public class RadioStationDTO {
 	private String description;
 	private String logo;
 	private String cleanUrl;
-	private String stream_url;
-	private String emveded_url;
+	private String streamUrl;
+	private String embeddedUrl;
 	private int hitCount;
 	private int priority;
 	private String seoKeywords;
@@ -60,20 +60,20 @@ public class RadioStationDTO {
 		this.cleanUrl = cleanUrl;
 	}
 
-	public String getStream_url() {
-		return stream_url;
+	public String getStreamUrl() {
+		return streamUrl;
 	}
 
-	public void setStream_url(String stream_url) {
-		this.stream_url = stream_url;
+	public void setStreamUrl(String streamUrl) {
+		this.streamUrl = streamUrl;
 	}
 
-	public String getEmveded_url() {
-		return emveded_url;
+	public String getEmbedded() {
+		return embeddedUrl;
 	}
 
-	public void setEmveded_url(String emveded_url) {
-		this.emveded_url = emveded_url;
+	public void setEmbedded(String embeddedUrl) {
+		this.embeddedUrl = embeddedUrl;
 	}
 
 	public int getHitCount() {

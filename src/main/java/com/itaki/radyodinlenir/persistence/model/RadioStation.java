@@ -31,10 +31,10 @@ public class RadioStation {
 	private String cleanUrl;
 
 	@Column(name = "stream_url")
-	private String stream_url;
+	private String streamUrl;
 
-	@Column(name = "embeded_url")
-	private String emveded_url;
+	@Column(name = "embedded_url")
+	private String embeddedUrl;
 
 	@Column(name = "hit_coun")
 	private int hitCount;
@@ -99,22 +99,22 @@ public class RadioStation {
 		this.cleanUrl = cleanUrl;
 	}
 
-	public String getStream_url() {
-		return stream_url;
+	public String getStreamUrl() {
+		return streamUrl;
 	}
 
-	public void setStream_url(String stream_url) {
-		this.stream_url = stream_url;
+	public void setStreamUrl(String streamUrl) {
+		this.streamUrl = streamUrl;
 	}
 
-	public String getEmveded_url() {
-		return emveded_url;
+	public String getEmbedded() {
+		return embeddedUrl;
 	}
 
-	public void setEmveded_url(String emveded_url) {
-		this.emveded_url = emveded_url;
+	public void setEmbedded(String embeddedUrl) {
+		this.embeddedUrl = embeddedUrl;
 	}
-
+	
 	public int getHitCount() {
 		return hitCount;
 	}
