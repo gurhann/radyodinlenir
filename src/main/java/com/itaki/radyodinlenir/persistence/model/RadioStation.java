@@ -12,44 +12,50 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "radio_station")
 public class RadioStation {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private int id;
-	
+
 	@Column(name = "name")
 	private String name;
-	
-	@Column(name ="description")
+
+	@Column(name = "description")
 	private String description;
-	
+
 	@Column(name = "logo")
 	private String logo;
-	
+
 	@Column(name = "clean_url")
 	private String cleanUrl;
-	
+
 	@Column(name = "stream_url")
 	private String stream_url;
-	
+
 	@Column(name = "embeded_url")
 	private String emveded_url;
-	
+
 	@Column(name = "hit_coun")
 	private int hitCount;
-	
+
 	@Column(name = "priority")
 	private int priority;
-	
+
+	@Column(name = "seo_keywords")
+	private String seoKeywords;
+
+	@Column(name = "seo_description", length = 2000)
+	private String seoDescription;
+
 	@OneToOne
 	@JoinColumn(name = "music_type_id")
 	private MusicType musicType;
-	
+
 	@OneToOne
 	@JoinColumn(name = "radi_city_id")
 	private RadioStationCity radioCity;
-	
+
 	@Column(name = "is_enabled")
 	private boolean isEnabled;
 
@@ -144,7 +150,21 @@ public class RadioStation {
 	public void setEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
 	}
-	
-	
-	
+
+	public String getSeoKeywords() {
+		return seoKeywords;
+	}
+
+	public void setSeoKeywords(String seoKeywords) {
+		this.seoKeywords = seoKeywords;
+	}
+
+	public String getSeoDescription() {
+		return seoDescription;
+	}
+
+	public void setSeoDescription(String seoDescription) {
+		this.seoDescription = seoDescription;
+	}
+
 }
