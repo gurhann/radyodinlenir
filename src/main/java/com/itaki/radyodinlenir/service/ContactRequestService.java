@@ -6,9 +6,9 @@ import com.itaki.radyodinlenir.persistence.model.ContactRequest;
 
 public interface ContactRequestService {
 
-    public ContactRequest addContactRequest(ContactRequest radioStation);
+    public void addContactRequest(ContactRequest contactRequest);
 	
-	public void updateContactRequest(ContactRequest radioStation);
+	public void updateContactRequest(ContactRequest contactRequest);
 	
 	public void  deleteContactRequest(int id);
 	

@@ -19,13 +19,12 @@ public class ApplicationConfigServiceImpl implements ApplicationConfigService {
 
 
 	@Override
-	public ApplicationConfigDTO updateApplicationConfig(ApplicationConfigDTO configDTO) throws ApplicationConfigNotFoundException {
+	public void updateApplicationConfig(ApplicationConfigDTO configDTO) throws ApplicationConfigNotFoundException {
 		ApplicationConfig config = configDAO.findOne(configDTO.getId());
 		if (config == null) {
 			throw new ApplicationConfigNotFoundException(configDTO.getId());
 		}
-		ApplicationConfig updatedModel = configDAO.update(ApplicationConfigMapper.dtoToModel(configDTO));
-		return ApplicationConfigMapper.modelToDto(updatedModel);
+		configDAO.update(ApplicationConfigMapper.dtoToModel(configDTO));
 	}
 
 
