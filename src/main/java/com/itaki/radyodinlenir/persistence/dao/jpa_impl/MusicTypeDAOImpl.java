@@ -26,7 +26,7 @@ public class MusicTypeDAOImpl extends GenericDAOImpl<MusicType> implements Music
 
 	@Override
 	public MusicType getMusicTypeByName(String name) throws NoResultException {
-		Query query = em.createNamedQuery(MusicType.FIND_MUSIC_TYPE_BY_NAME);
+		Query query = em.createNamedQuery(MusicType.FIND_MUSIC_TYPE_BY_NAME).setParameter("name", name);
 		return (MusicType) query.getSingleResult();
 	}
 }
