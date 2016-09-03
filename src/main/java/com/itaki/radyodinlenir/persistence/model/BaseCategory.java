@@ -12,13 +12,13 @@ public class BaseCategory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
-	private int id;
+	protected int id;
 
 	@Column(name = "name")
-	private String name;
+	protected String name;
 
 	@Column(name = "priority")
-	private short priority;
+	protected short priority;
 
 	public int getId() {
 		return id;

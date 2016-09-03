@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 @Entity
 @Table(name = "radio_station")
 public class RadioStation {
@@ -62,7 +65,7 @@ public class RadioStation {
 	public int getId() {
 		return id;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -114,7 +117,7 @@ public class RadioStation {
 	public void setEmbeddedUrl(String embeddedUrl) {
 		this.embeddedUrl = embeddedUrl;
 	}
-	
+
 	public int getHitCount() {
 		return hitCount;
 	}
@@ -169,6 +172,30 @@ public class RadioStation {
 
 	public void setSeoDescription(String seoDescription) {
 		this.seoDescription = seoDescription;
+	}
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(11, 13).append(id).append(name).append(description).append(cleanUrl).append(streamUrl).append(embeddedUrl).append(hitCount).append(priority).append(seoKeywords)
+				.append(seoDescription).append(musicType).append(radioCity).append(isEnabled()).toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (obj == this) {
+			return true;
+		}
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		RadioStation other = (RadioStation) obj;
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(description, other.getDescription()).append(cleanUrl, other.getCleanUrl())
+				.append(streamUrl, other.getStreamUrl()).append(embeddedUrl, other.getEmbeddedUrl()).append(hitCount, other.getHitCount()).append(priority, other.getPriority())
+				.append(seoKeywords, other.getSeoKeywords()).append(seoDescription, other.getSeoDescription()).append(musicType, other.getMusicType()).append(radioCity, other.getRadioCity())
+				.append(isEnabled, other.isEnabled).append(priority, other.getPriority()).isEquals();
 	}
 
 }

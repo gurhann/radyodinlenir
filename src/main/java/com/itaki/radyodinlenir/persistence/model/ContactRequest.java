@@ -11,6 +11,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 @Entity
 @Table(name = "contact_request")
 public class ContactRequest {
@@ -38,7 +41,7 @@ public class ContactRequest {
 	public Long getId() {
 		return id;
 	}
-	
+
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -81,6 +84,28 @@ public class ContactRequest {
 
 	public void setSendDate(Date sendDate) {
 		this.sendDate = sendDate;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return new HashCodeBuilder(5, 7).append(id).append(subject).append(message).append(email).append(wasAnswered).append(sendDate).toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (obj == this) {
+			return true;
+		}
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		ContactRequest other = (ContactRequest) obj;
+		return new EqualsBuilder().append(id, other.getId()).append(subject, other.getSubject()).append(message, other.getMessage()).append(wasAnswered, other.isWasAnswered())
+				.append(sendDate, other.getSendDate()).isEquals();
 	}
 
 }
