@@ -2,6 +2,7 @@ package com.itaki.radyodinlenir.persistence.dao.jpa_impl;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
@@ -21,5 +22,11 @@ public class MusicTypeDAOImpl extends GenericDAOImpl<MusicType> implements Music
 	public List<MusicType> getAllMusicTypes() {
 		Query query = em.createNamedQuery(MusicType.GET_ALL_MUSIC_TYPES);
 		return (List<MusicType>) query.getResultList();
+	}
+
+	@Override
+	public MusicType getMusicTypeByName(String name) throws NoResultException {
+		Query query = em.createNamedQuery(MusicType.FIND_MUSIC_TYPE_BY_NAME);
+		return (MusicType) query.getSingleResult();
 	}
 }

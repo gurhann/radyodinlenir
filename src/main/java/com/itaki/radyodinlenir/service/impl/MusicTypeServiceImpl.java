@@ -2,6 +2,8 @@ package com.itaki.radyodinlenir.service.impl;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +23,10 @@ public class MusicTypeServiceImpl implements MusicTypeService {
 
 	@Override
 	public void addMusicType(MusicTypeDTO musicTypeDTO) throws MusicTypeIsExistException {
-		MusicType musicType = musicTypeDAO.findOne(musicTypeDTO.getId());
-		if (musicType != null) {
+		try {
+			musicTypeDAO.getMusicTypeByName(musicTypeDTO.getName());
 			throw new MusicTypeIsExistException(musicTypeDTO.getName());
+		} catch (NoResultException e) {
 		}
 		musicTypeDAO.create(MusicTypeMapper.dtoToModel(musicTypeDTO));
 	}
