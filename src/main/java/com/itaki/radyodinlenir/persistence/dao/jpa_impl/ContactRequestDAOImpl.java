@@ -20,10 +20,4 @@ public class ContactRequestDAOImpl extends GenericDAOImpl<ContactRequest> implem
 		return (List<ContactRequest>) query.getResultList();
 	}
 
-	@Override
-	public int getContactRequestCount() {
-		Query query = em.createNamedQuery(ContactRequest.ALL_CONTACT_REQUEST_COUNT);
-		return ((Long) query.getSingleResult()).intValue();
-	}
-
 }

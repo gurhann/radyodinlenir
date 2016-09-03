@@ -18,12 +18,10 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "contact_request")
-@NamedQueries({ @NamedQuery(name = ContactRequest.ALL_CONTACT_REQUESTS, query = "select c from ContactRequest c"),
-		@NamedQuery(name = ContactRequest.ALL_CONTACT_REQUEST_COUNT, query = "select count(c.id) from ContactRequest c") })
+@NamedQueries({ @NamedQuery(name = ContactRequest.ALL_CONTACT_REQUESTS, query = "select c from ContactRequest c")})
 public class ContactRequest {
 
 	public static final String ALL_CONTACT_REQUESTS = "ContactRequest.allRequests";
-	public static final String ALL_CONTACT_REQUEST_COUNT = "ContactRequest.allRequestCount";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

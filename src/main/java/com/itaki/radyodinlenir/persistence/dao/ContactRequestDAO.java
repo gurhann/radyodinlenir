@@ -8,6 +8,4 @@ public interface ContactRequestDAO extends GenericDAO<ContactRequest> {
 
 	public List<ContactRequest> getContactRequestForPager(int page, int itemSize);
 
-	public int getContactRequestCount();
-
 }
