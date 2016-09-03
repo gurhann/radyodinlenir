@@ -10,8 +10,8 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "music_category")
-@NamedQueries({ @NamedQuery(name = MusicType.GET_ALL_MUSIC_TYPES, query = "select m MusicType m order by priority"),
-		@NamedQuery(name = MusicType.FIND_MUSIC_TYPE_BY_NAME, query = "select m MusicType m where m.name=:name") })
+@NamedQueries({ @NamedQuery(name = MusicType.GET_ALL_MUSIC_TYPES, query = "select m from MusicType m order by priority"),
+		@NamedQuery(name = MusicType.FIND_MUSIC_TYPE_BY_NAME, query = "select m from MusicType m where m.name=:name") })
 public class MusicType extends BaseCategory {
 
 	public static final String GET_ALL_MUSIC_TYPES = "MusicType.getAllMusicTypes";
