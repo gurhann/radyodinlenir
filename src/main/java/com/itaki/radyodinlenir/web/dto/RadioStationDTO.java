@@ -108,19 +108,19 @@ public class RadioStationDTO {
 		this.seoDescription = seoDescription;
 	}
 
-	public MusicType getMusicType() {
+	public MusicTypeDTO getMusicType() {
 		return musicType;
 	}
 
-	public void setMusicType(MusicType musicType) {
+	public void setMusicType(MusicTypeDTO musicType) {
 		this.musicType = musicType;
 	}
 
-	public RadioStationCity getRadioCity() {
+	public RadioStationCityDTO getRadioCity() {
 		return radioCity;
 	}
 
-	public void setRadioCity(RadioStationCity radioCity) {
+	public void setRadioCity(RadioStationCityDTO radioCity) {
 		this.radioCity = radioCity;
 	}
 
