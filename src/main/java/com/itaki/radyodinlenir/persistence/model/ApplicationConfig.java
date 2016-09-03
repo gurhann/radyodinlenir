@@ -12,11 +12,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "application_config")
 @NamedQueries({ @NamedQuery(name = ApplicationConfig.GET_APPLICATION_CONFIG_BY_NAME, query = "select c from ApplicationConfig c where c.name=:name"),
-		@NamedQuery(name = ApplicationConfig.GET_ALL_APPLICATON_CONFIGS, query = "select c from ApplicationConfig") })
+		@NamedQuery(name = ApplicationConfig.GET_ALL_APPLICATON_CONFIGS, query = "select c from ApplicationConfig c") })
 public class ApplicationConfig {
 
 	public final static String GET_APPLICATION_CONFIG_BY_NAME = "ApplicationConfig.getApplicationConfigByName";
-	public final static String GET_ALL_APPLICATON_CONFIGS = "ApllicationConfit.getAllApplicationCOnfigs";
+	public final static String GET_ALL_APPLICATON_CONFIGS = "ApllicationConfig.getAllApplicationConfigs";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
