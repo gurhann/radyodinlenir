@@ -2,19 +2,20 @@ package com.itaki.radyodinlenir.service;
 
 import java.util.List;
 
-import com.itaki.radyodinlenir.persistence.model.ContactRequest;
+import com.itaki.radyodinlenir.exception.ContactRequestNotFound;
+import com.itaki.radyodinlenir.web.dto.ContactRequestDTO;
 
 public interface ContactRequestService {
 
-    public void addContactRequest(ContactRequest contactRequest);
+    public void addContactRequest(ContactRequestDTO contactRequest);
 	
-	public void updateContactRequest(ContactRequest contactRequest);
+	public void updateContactRequest(ContactRequestDTO contactRequest) throws ContactRequestNotFound;
 	
-	public void  deleteContactRequest(int id);
+	public void  deleteContactRequest(Long id) throws ContactRequestNotFound;
 	
-	public ContactRequest getContactRequestWithId(int id);
+	public ContactRequestDTO getContactRequestWithId(Long id) throws ContactRequestNotFound;
 	
-	public List<ContactRequest> getContactRequestForPager(int page, int itemSize);
+	public List<ContactRequestDTO> getContactRequestForPager(int page, int itemSize);
 		
 	public int getContactRequestCount();
 	
