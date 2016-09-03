@@ -9,6 +9,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 @Entity
 @Table(name = "application_config")
 @NamedQueries({ @NamedQuery(name = ApplicationConfig.GET_APPLICATION_CONFIG_BY_NAME, query = "select c from ApplicationConfig c where c.name=:name"),
