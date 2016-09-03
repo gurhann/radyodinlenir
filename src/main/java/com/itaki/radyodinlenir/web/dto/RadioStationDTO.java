@@ -16,8 +16,8 @@ public class RadioStationDTO {
 	private int priority;
 	private String seoKeywords;
 	private String seoDescription;
-	private MusicType musicType;
-	private RadioStationCity radioCity;
+	private MusicTypeDTO musicType;
+	private RadioStationCityDTO radioCity;
 	private boolean isEnabled;
 
 	public int getId() {
@@ -131,5 +131,7 @@ public class RadioStationDTO {
 	public void setEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
 	}
+	
+	
 
 }
