@@ -2,12 +2,8 @@ package com.itaki.radyodinlenir.service.impl;
 
 import java.util.List;
 
-import javax.persistence.NoResultException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.itaki.radyodinlenir.exception.ApplicationConfigIsExistException;
 import com.itaki.radyodinlenir.exception.ApplicationConfigNotFoundException;
 import com.itaki.radyodinlenir.mapper.ApplicationConfigMapper;
 import com.itaki.radyodinlenir.persistence.dao.ApplicationConfigDAO;
@@ -21,21 +17,6 @@ public class ApplicationConfigServiceImpl implements ApplicationConfigService {
 	@Autowired
 	private ApplicationConfigDAO configDAO;
 
-	@Override
-	public ApplicationConfigDTO addApplicationConfig(ApplicationConfigDTO configDTO) throws ApplicationConfigIsExistException {
-
-		try {
-			configDAO.getApplicatonConfigByName(configDTO.getName());
-			throw new ApplicationConfigIsExistException(configDTO.getName());
-		} catch (NoResultException e) {
-		}
-
-		configDAO.create(ApplicationConfigMapper.dtoToModel(configDTO));
-		ApplicationConfig addedConfig = configDAO.getApplicatonConfigByName(configDTO.getName());
-		configDTO.setId(addedConfig.getId());
-		return configDTO;
-
-	}
 
 	@Override
 	public ApplicationConfigDTO updateApplicationConfig(ApplicationConfigDTO configDTO) throws ApplicationConfigNotFoundException {
@@ -47,15 +28,6 @@ public class ApplicationConfigServiceImpl implements ApplicationConfigService {
 		return ApplicationConfigMapper.modelToDto(updatedModel);
 	}
 
-	@Override
-	public ApplicationConfigDTO getApplicationConfigByName(String name) throws ApplicationConfigNotFoundException {
-		try {
-			ApplicationConfig config = configDAO.getApplicatonConfigByName(name);
-			return ApplicationConfigMapper.modelToDto(config);
-		} catch (NoResultException e) {
-			throw new ApplicationConfigNotFoundException(name);
-		}
-	}
 
 	@Override
 	public ApplicationConfigDTO getApplicationConfigById(byte id) throws ApplicationConfigNotFoundException {
@@ -72,8 +44,8 @@ public class ApplicationConfigServiceImpl implements ApplicationConfigService {
 	}
 
 	@Override
-	public List<ApplicationConfigDTO> getApplicationConfigListByPage(int pageNumber, int pageSize) {
-		return ApplicationConfigMapper.modelToDtoList(configDAO.getApplicationConfigListByPage(pageNumber, pageSize));
+	public List<ApplicationConfigDTO> getApplicationConfigListBySize(int firstIndex, int itemsize) {
+		return ApplicationConfigMapper.modelToDtoList(configDAO.getApplicationConfigListByPage(firstIndex, itemsize));
 	}
 
 }
