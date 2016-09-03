@@ -21,4 +21,6 @@ public interface RadioStationService {
 	
 	public int getRadioStationsCountWithMusicTypeId(int musicTypeId);	
 	
+	public List<RadioStation> searchRadioStationWithSearchText(String searchText);
+	
 }
