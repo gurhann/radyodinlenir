@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -14,7 +16,20 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "radio_station")
+@NamedQueries({ @NamedQuery(name = RadioStation.RADIO_STATION_FIND_BY_NAME, query = "select r from RadioStation r where r.name=:name"),
+		@NamedQuery(name = RadioStation.RADIO_STATION_BY_CLEAN_URL, query = "select r from RadioStation r where r.cleanUrl=:cleanUrl"),
+		@NamedQuery(name = RadioStation.GET_ALL_RADIO_STATIONS, query = "select r from RadioStation r order by r.hitCount"),
+		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE, query = "select r from RadioStation r where r.musicType.id=:musicType order by r.hitCount"),
+		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE_COUNT, query = "select count(r.id) from RadioStation r where r.musicType.id=:musicType"),
+		@NamedQuery(name = RadioStation.SEARCH_RADIO_STATION_BY_NAME_AND_DESCRIPTION, query = "select r from RadioStation r where r.name like :name or r.description like :description order by r.hitCount")})
 public class RadioStation {
+
+	public static final String RADIO_STATION_FIND_BY_NAME = "RadioStation.findByName";
+	public static final String RADIO_STATION_BY_CLEAN_URL = "RadioStation.findByCleanUrl";
+	public static final String GET_ALL_RADIO_STATIONS = "RadioStation.getAllStations";
+	public static final String GET_RADIO_STATIONS_BY_MUSIC_TYPE = "RadioStation.getStationsByMusicType";
+	public static final String GET_RADIO_STATIONS_BY_MUSIC_TYPE_COUNT = "RadioStation.getStationByMusicTypeCount";
+	public static final String SEARCH_RADIO_STATION_BY_NAME_AND_DESCRIPTION = "RadioStation.searchStationByNameAndDescription";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
