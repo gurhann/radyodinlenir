@@ -150,7 +150,7 @@ public class RadioStationDTO {
 			return false;
 		}
 		RadioStationDTO other = (RadioStationDTO) obj;
-		return new EqualsBuilder().appendSuper(super.equals(obj)).append(id, other.getId()).append(name, other.getName()).append(description, other.getDescription())
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(description, other.getDescription())
 				.append(cleanUrl, other.getCleanUrl()).append(streamUrl, other.getStreamUrl()).append(embeddedUrl, other.getEmbeddedUrl()).append(hitCount, other.getHitCount())
 				.append(priority, other.getPriority()).append(seoKeywords, other.getSeoKeywords()).append(seoDescription, other.getSeoDescription()).append(musicType, other.getMusicType())
 				.append(radioCity, other.getRadioCity()).append(isEnabled, other.isEnabled).append(priority, other.getPriority()).isEquals();

@@ -50,7 +50,7 @@ public class MusicTypeDTO {
 			return false;
 		}
 		MusicTypeDTO other = (MusicTypeDTO) obj;
-		return new EqualsBuilder().appendSuper(super.equals(obj)).append(id, other.getId()).append(name, other.getName()).append(priority, other.getPriority()).isEquals();
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(priority, other.getPriority()).isEquals();
 	}
 
 }

@@ -50,7 +50,7 @@ public class ApplicationConfigDTO {
 			return false;
 		}
 		ApplicationConfigDTO other = (ApplicationConfigDTO) obj;
-		return new EqualsBuilder().appendSuper(super.equals(obj)).append(id, other.getId()).append(name, other.getName()).append(description, other.getDescription()).isEquals();
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(description, other.getDescription()).isEquals();
 	}
 
 }

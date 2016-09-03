@@ -80,7 +80,7 @@ public class ContactRequestDTO {
 			return false;
 		}
 		ContactRequestDTO other = (ContactRequestDTO) obj;
-		return new EqualsBuilder().appendSuper(super.equals(obj)).append(id, other.getId()).append(subject, other.getSubject()).append(message, other.getMessage())
+		return new EqualsBuilder().append(id, other.getId()).append(subject, other.getSubject()).append(message, other.getMessage())
 				.append(wasAnswered, other.isWasAnswered()).append(sendDate, other.getSendDate()).isEquals();
 	}
 
