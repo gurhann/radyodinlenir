@@ -2,7 +2,6 @@ package com.itaki.radyodinlenir.service.impl;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.mockito.Matchers.eq;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -65,21 +64,6 @@ public class ApplicationConfigServiceImplTest {
 		}
 	}
 
-	@Test
-	public void there_is_item_for_update_must_update_successfully() {
-		ApplicationConfigDTO configDTO = createDummyConfigDTO((byte) 1, "name2", "desc2");
-		ApplicationConfig configOld = createDummyConfig();
-		ApplicationConfig configUpdated = createDummyConfig((byte) 1, "name2", "desc2");
-
-		Mockito.when(configDAO.findOne((byte)1)).thenReturn(configOld);
-		Mockito.when(configDAO.update(eq(configUpdated))).thenReturn(configUpdated);
-		try {
-			ApplicationConfigDTO updatedDTO = configService.updateApplicationConfig(configDTO);
-			assertTrue(configDTO.equals(updatedDTO));
-		} catch (ApplicationConfigNotFoundException e) {
-			fail();
-		}
-	}
 
 	private ApplicationConfig createDummyConfig() {
 		ApplicationConfig config = new ApplicationConfig();
@@ -89,13 +73,13 @@ public class ApplicationConfigServiceImplTest {
 		return config;
 	}
 
-	private ApplicationConfig createDummyConfig(byte id, String name, String description) {
-		ApplicationConfig config = new ApplicationConfig();
-		config.setId(id);
-		config.setName(name);
-		config.setDescription(description);
-		return config;
-	}
+//	private ApplicationConfig createDummyConfig(byte id, String name, String description) {
+//		ApplicationConfig config = new ApplicationConfig();
+//		config.setId(id);
+//		config.setName(name);
+//		config.setDescription(description);
+//		return config;
+//	}
 
 	private ApplicationConfigDTO createDummyConfigDTO() {
 		ApplicationConfigDTO config = new ApplicationConfigDTO();
@@ -105,12 +89,12 @@ public class ApplicationConfigServiceImplTest {
 		return config;
 	}
 
-	private ApplicationConfigDTO createDummyConfigDTO(byte id, String name, String description) {
-		ApplicationConfigDTO config = new ApplicationConfigDTO();
-		config.setId(id);
-		config.setName(name);
-		config.setDescription(description);
-		return config;
-	}
+//	private ApplicationConfigDTO createDummyConfigDTO(byte id, String name, String description) {
+//		ApplicationConfigDTO config = new ApplicationConfigDTO();
+//		config.setId(id);
+//		config.setName(name);
+//		config.setDescription(description);
+//		return config;
+//	}
 
 }
