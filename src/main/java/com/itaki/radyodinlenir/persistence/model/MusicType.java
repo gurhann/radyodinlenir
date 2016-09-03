@@ -1,6 +1,8 @@
 package com.itaki.radyodinlenir.persistence.model;
 
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -8,7 +10,10 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "music_category")
+@NamedQueries({@NamedQuery(name=MusicType.GET_ALL_MUSIC_TYPES, query = "select m MusicType m order by priority")})
 public class MusicType extends BaseCategory {
+	
+	public static final String GET_ALL_MUSIC_TYPES = "MusicType.getAllMusicTypes";
 
 	@Override
 	public int hashCode() {
