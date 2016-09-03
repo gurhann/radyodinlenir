@@ -1,7 +1,7 @@
 package com.itaki.radyodinlenir.web.dto;
 
-import com.itaki.radyodinlenir.persistence.model.MusicType;
-import com.itaki.radyodinlenir.persistence.model.RadioStationCity;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class RadioStationDTO {
 
@@ -131,7 +131,29 @@ public class RadioStationDTO {
 	public void setEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
 	}
-	
-	
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(11, 13).append(id).append(name).append(description).append(cleanUrl).append(streamUrl).append(embeddedUrl).append(hitCount).append(priority).append(seoKeywords)
+				.append(seoDescription).append(musicType).append(radioCity).append(isEnabled()).toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (obj == this) {
+			return true;
+		}
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		RadioStationDTO other = (RadioStationDTO) obj;
+		return new EqualsBuilder().appendSuper(super.equals(obj)).append(id, other.getId()).append(name, other.getName()).append(description, other.getDescription())
+				.append(cleanUrl, other.getCleanUrl()).append(streamUrl, other.getStreamUrl()).append(embeddedUrl, other.getEmbeddedUrl()).append(hitCount, other.getHitCount())
+				.append(priority, other.getPriority()).append(seoKeywords, other.getSeoKeywords()).append(seoDescription, other.getSeoDescription()).append(musicType, other.getMusicType())
+				.append(radioCity, other.getRadioCity()).append(isEnabled, other.isEnabled).append(priority, other.getPriority()).isEquals();
+	}
 
 }

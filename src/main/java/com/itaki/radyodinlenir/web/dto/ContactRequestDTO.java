@@ -2,6 +2,9 @@ package com.itaki.radyodinlenir.web.dto;
 
 import java.util.Date;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 public class ContactRequestDTO {
 
 	private Long id;
@@ -57,6 +60,28 @@ public class ContactRequestDTO {
 
 	public void setSendDate(Date sendDate) {
 		this.sendDate = sendDate;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return new HashCodeBuilder(5, 7).append(id).append(subject).append(message).append(email).append(wasAnswered).append(sendDate).toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (obj == this) {
+			return true;
+		}
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		ContactRequestDTO other = (ContactRequestDTO) obj;
+		return new EqualsBuilder().appendSuper(super.equals(obj)).append(id, other.getId()).append(subject, other.getSubject()).append(message, other.getMessage())
+				.append(wasAnswered, other.isWasAnswered()).append(sendDate, other.getSendDate()).isEquals();
 	}
 
 }

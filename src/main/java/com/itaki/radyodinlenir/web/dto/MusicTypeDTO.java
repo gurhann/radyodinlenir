@@ -1,5 +1,8 @@
 package com.itaki.radyodinlenir.web.dto;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 public class MusicTypeDTO {
 
 	private int id;
@@ -29,5 +32,25 @@ public class MusicTypeDTO {
 	public void setPriority(short priority) {
 		this.priority = priority;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(7, 9).append(id).append(name).append(priority).toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (obj == this) {
+			return true;
+		}
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		MusicTypeDTO other = (MusicTypeDTO) obj;
+		return new EqualsBuilder().appendSuper(super.equals(obj)).append(id, other.getId()).append(name, other.getName()).append(priority, other.getPriority()).isEquals();
+	}
+
 }
