@@ -2,9 +2,9 @@ package com.itaki.radyodinlenir.service;
 
 import java.util.List;
 
-import com.itaki.radyodinlenir.persistence.model.RadioStationCity;
+import com.itaki.radyodinlenir.web.dto.RadioStationCityDTO;
 
 public interface RadioStationCityService {
 
-	public List<RadioStationCity> getAllRadioStationCity();
+	public List<RadioStationCityDTO> getAllRadioStationCity();
 }
