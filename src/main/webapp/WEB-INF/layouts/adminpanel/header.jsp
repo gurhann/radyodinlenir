@@ -35,11 +35,11 @@
 			<div class="col-md-12">
 				<div class="navbar-collapse collapse ">
 					<ul id="menu-top" class="nav navbar-nav navbar-right">
-						<li><a class="${curl == 'admin' ? 'menu-top-active' : '' }" href="/admin">Admin Anasayfa</a></li>
+						<li><a class="${curl == 'dashboard' ? 'menu-top-active' : '' }" href="/admin">Admin Anasayfa</a></li>
 						<li><a class="${curl == 'dosyalar' ? 'menu-top-active' : '' }" href="/admin/dosyalar/1">Radyolar</a></li>
 						<li><a class="${curl == 'katagoriler' ? 'menu-top-active' : '' }" href="/admin/katagoriler">Katagoriler</a></li>
-						<li><a class="${curl == 'katagoriler' ? 'menu-top-active' : '' }" href="/admin/iletisim">İletişim</a></li>
-						<li><a class="${curl == 'ayarlar' ? 'menu-top-active' : '' }" href="/admin/ayarlar">Ayarlar</a></li>
+						<li><a class="${curl == 'contact' ? 'menu-top-active' : '' }" href="/admin/iletisim">İletişim</a></li>
+						<li><a class="${curl == 'configs' ? 'menu-top-active' : '' }" href="/admin/ayarlar">Ayarlar</a></li>
 						<li><a href="/">Anasayfa</a></li>
 						<li><a class="${curl == 'cikis' ? 'menu-top-active' : '' }" href="/admin/cikis">Çıkış</a></li>
 
