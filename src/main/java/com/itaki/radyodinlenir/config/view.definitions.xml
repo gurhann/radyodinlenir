@@ -17,4 +17,22 @@
 		<put-attribute name="title" value="Genel Ayarlar"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
+	<!-- Seo Config -->
+	<definition name="seoconfigs" extends="adminPaneLTemplate">
+		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
+		<put-attribute name="title" value="Seo Ayarlar"></put-attribute>
+		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
+	</definition>
+	<!-- Social Config -->
+	<definition name="socialconfigs" extends="adminPaneLTemplate">
+		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
+		<put-attribute name="title" value="Sosyal Ağ Ayarları"></put-attribute>
+		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
+	</definition>
+	<!-- About Config -->
+	<definition name="aboutconfigs" extends="adminPaneLTemplate">
+		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/aboutconfig.jsp" />
+		<put-attribute name="title" value="Hakkımızda Bilgisi"></put-attribute>
+		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
+	</definition>
 </tiles-definitions>
