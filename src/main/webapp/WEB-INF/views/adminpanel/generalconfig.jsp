@@ -13,7 +13,7 @@
 				<a href="/admin/seoconfigs" class="btn btn-default btn-sm" style="float: right">Seo Ayarlar</a> 
 				<a href="/admin/aboutconfigs" class="btn btn-warning btn-sm"	style="float: right">Hakkımızda</a>
 				<a href="/admin/socialconfigs"	class="btn btn-info btn-sm" style="float: right">Sosyal Ağlar</a> 
-				<a href="/admin/generalconfig" class="btn btn-success btn-sm" style="float: right">Genel Ayarlar</a>
+				<a href="/admin/generalconfigs" class="btn btn-success btn-sm" style="float: right">Genel Ayarlar</a>
 			</div>
 			<div class="panel-body">
 				<c:if test="${not empty msg}">
