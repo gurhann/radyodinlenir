@@ -1,5 +1,9 @@
 package com.itaki.radyodinlenir.web.controller.adminpanel;
 
-public class ApplicationConfigsController {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
+public class ApplicationConfigsController {
+	
 }
