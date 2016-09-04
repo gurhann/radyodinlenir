@@ -24,7 +24,7 @@ public class ApplicationConfig {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
-	private byte id;
+	private int id;
 
 	@Column(name = "name")
 	private String name;
@@ -32,11 +32,11 @@ public class ApplicationConfig {
 	@Column(name = "description")
 	private String description;
 
-	public byte getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(byte id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

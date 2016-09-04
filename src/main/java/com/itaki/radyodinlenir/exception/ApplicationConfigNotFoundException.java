@@ -8,7 +8,7 @@ public class ApplicationConfigNotFoundException extends Exception {
 		super(String.format("Config not found by given name: [%s]", configName));
 	}
 
-	public ApplicationConfigNotFoundException(byte id) {
+	public ApplicationConfigNotFoundException(int id) {
 		super(String.format("Config not found by given id: [%d]", id));
 
 	}

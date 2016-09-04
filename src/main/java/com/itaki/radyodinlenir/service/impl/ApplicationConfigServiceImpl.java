@@ -29,7 +29,7 @@ public class ApplicationConfigServiceImpl implements ApplicationConfigService {
 
 
 	@Override
-	public ApplicationConfigDTO getApplicationConfigById(byte id) throws ApplicationConfigNotFoundException {
+	public ApplicationConfigDTO getApplicationConfigById(int id) throws ApplicationConfigNotFoundException {
 		ApplicationConfig config = configDAO.findOne(id);
 		if (config == null) {
 			throw new ApplicationConfigNotFoundException(id);

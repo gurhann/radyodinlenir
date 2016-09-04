@@ -13,6 +13,6 @@ public interface ApplicationConfigService {
 
 	public List<ApplicationConfigDTO> getApplicationConfigListBySize(int firstIndex, int itemSize);
 
-	public ApplicationConfigDTO getApplicationConfigById(byte id) throws ApplicationConfigNotFoundException;
+	public ApplicationConfigDTO getApplicationConfigById(int id) throws ApplicationConfigNotFoundException;
 
 }
