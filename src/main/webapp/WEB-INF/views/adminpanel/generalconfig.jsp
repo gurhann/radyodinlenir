@@ -9,13 +9,11 @@
 		<!--    Context Classes  -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Genel Ayarlar <a href="#" class="btn btn-default btn-sm"
-					style="float: right">Alternatif 2</a> <a
-					href="/admin/ayarlar/hakkimizda" class="btn btn-warning btn-sm"
-					style="float: right">Hakkımızda</a> <a href="/admin/ayarlar/sosyal"
-					class="btn btn-info btn-sm" style="float: right">Sosyal Ağlar</a> <a
-					href="/admin/generalconfig" class="btn btn-success btn-sm"
-					style="float: right">Genel Ayarlar</a>
+				Genel Ayarlar 
+				<a href="/admin/seoconfigs" class="btn btn-default btn-sm" style="float: right">Seo Ayarlar</a> 
+				<a href="/admin/aboutconfigs" class="btn btn-warning btn-sm"	style="float: right">Hakkımızda</a>
+				<a href="/admin/socialconfigs"	class="btn btn-info btn-sm" style="float: right">Sosyal Ağlar</a> 
+				<a href="/admin/generalconfig" class="btn btn-success btn-sm" style="float: right">Genel Ayarlar</a>
 			</div>
 			<div class="panel-body">
 				<c:if test="${not empty msg}">
@@ -27,7 +25,7 @@
 						<strong>${msg}</strong>
 					</div>
 				</c:if>
-				<form:form method="POST" action="/admin/generalconfig"
+				<form:form method="POST" action="/admin/generalconfigs"
 					modelAttribute="generalConfigsForm">
 					<c:forEach items="${generalConfigsForm.configs}" varStatus="stat"
 						var="form">
