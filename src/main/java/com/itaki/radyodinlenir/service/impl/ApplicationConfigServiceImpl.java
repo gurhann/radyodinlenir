@@ -17,7 +17,6 @@ public class ApplicationConfigServiceImpl implements ApplicationConfigService {
 	@Autowired
 	private ApplicationConfigDAO configDAO;
 
-
 	@Override
 	public void updateApplicationConfig(ApplicationConfigDTO configDTO) throws ApplicationConfigNotFoundException {
 		ApplicationConfig config = configDAO.findOne(configDTO.getId());
@@ -26,7 +25,6 @@ public class ApplicationConfigServiceImpl implements ApplicationConfigService {
 		}
 		configDAO.update(ApplicationConfigMapper.dtoToModel(configDTO));
 	}
-
 
 	@Override
 	public ApplicationConfigDTO getApplicationConfigById(int id) throws ApplicationConfigNotFoundException {
@@ -47,11 +45,14 @@ public class ApplicationConfigServiceImpl implements ApplicationConfigService {
 		return ApplicationConfigMapper.modelToDtoList(configDAO.getApplicationConfigListByPage(firstIndex, itemsize));
 	}
 
-
 	@Override
 	public void updateMultiApplicationConfig(List<ApplicationConfigDTO> applicationConfigs) throws ApplicationConfigNotFoundException {
-		// TODO Auto-generated method stub
-		
+		if (applicationConfigs == null) {
+			return;
+		}
+		for (ApplicationConfigDTO dto : applicationConfigs) {
+			updateApplicationConfig(dto);
+		}
 	}
 
 }
