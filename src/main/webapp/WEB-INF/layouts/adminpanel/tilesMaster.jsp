@@ -14,6 +14,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
 <c:set var="baseURL" value="${pageContext.request.contextPath}"/> 
 <script src="${baseURL}/resources/adminPanelAssets/js/jquery-1.11.1.js"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
 <link href="${baseURL}/resources/adminPanelAssets/css/bootstrap.css"  rel="stylesheet" />
 <link href="${baseURL}/resources/adminPanelAssets/css/font-awesome.css" rel="stylesheet" />
 <link href="${baseURL}/resources/adminPanelAssets/css/style.css" rel="stylesheet" />
