@@ -5,15 +5,15 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class ApplicationConfigDTO {
 
-	private byte id;
+	private int id;
 	private String name;
 	private String description;
 
-	public byte getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(byte id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
