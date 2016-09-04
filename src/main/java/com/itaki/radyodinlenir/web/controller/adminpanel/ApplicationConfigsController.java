@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.itaki.radyodinlenir.service.ApplicationConfigService;
 import com.itaki.radyodinlenir.web.dto.ApplicationConfigDTO;
-import com.itaki.radyodinlenir.web.dto.ApplicationGeneralConfigsDTO;
+import com.itaki.radyodinlenir.web.dto.GeneralConfigsFormDTO;
 import com.itaki.radyodinlenir.web.validation.GeneralConfigFormValidator;
 
 @Controller
@@ -38,11 +38,8 @@ public class ApplicationConfigsController {
 	public String getGeneralConfigs(Model model){
 		try {
 			List<ApplicationConfigDTO> appConfig = appConfigService.getApplicationConfigListBySize(0, 5);
-			ApplicationGeneralConfigsDTO generalConfigsForm = new ApplicationGeneralConfigsDTO();
-			generalConfigsForm.setTitle(appConfig.get(0).getDescription());
-			generalConfigsForm.setDescription(appConfig.get(1).getDescription());
-			generalConfigsForm.setKeywords(appConfig.get(2).getDescription());
-			generalConfigsForm.setCopyright(appConfig.get(3).getDescription());
+			GeneralConfigsFormDTO generalConfigsForm = new GeneralConfigsFormDTO();
+			generalConfigsForm.setConfigs(appConfig);
 			model.addAttribute("generalConfigsForm", generalConfigsForm);
 			return "generalconfigs";
 		} catch (Exception e) {
@@ -52,7 +49,7 @@ public class ApplicationConfigsController {
 	}
 	
 	@RequestMapping(value = "/admin/generalconfig", method = RequestMethod.POST)
-	public String generalConfigSubmit(@ModelAttribute("generalConfigsForm")  @Validated ApplicationGeneralConfigsDTO generalConfigsForm,BindingResult result, Model model,  final RedirectAttributes redirectAttributes) {
+	public String generalConfigSubmit(@ModelAttribute("generalConfigsForm")  @Validated GeneralConfigsFormDTO generalConfigsForm,BindingResult result, Model model,  final RedirectAttributes redirectAttributes) {
 		if (result.hasErrors()) {
 			return "generalconfigs";
 		} else {
