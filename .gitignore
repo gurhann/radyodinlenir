@@ -6,6 +6,9 @@
 # Database Connect Properties
 *jdbc.properties
 
+#h2 db
+*test.mv.db
+
 # Intellij
 .idea/
 *.iml
