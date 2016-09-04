@@ -11,4 +11,9 @@ public class QueryUtil {
 		return query.setFirstResult(pageSize * (pageNumber - 1)).setMaxResults(pageNumber * pageSize);
 
 	}
+	
+	public static Query getIntervalFromQuery(Query query, int firstIndex, int itemSize) {
+		return query.setFirstResult(firstIndex ).setMaxResults(itemSize);
+
+	}
 }

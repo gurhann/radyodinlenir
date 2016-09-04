@@ -27,7 +27,7 @@ public class ApplicationConfigDAOImpl extends GenericDAOImpl<ApplicationConfig> 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<ApplicationConfig> getApplicationConfigListByPage(int pageNumber, int pageSize) {
-		Query query = QueryUtil.getPageFromQuery(em.createNamedQuery(ApplicationConfig.GET_ALL_APPLICATON_CONFIGS), pageNumber, pageSize);
+		Query query = QueryUtil.getIntervalFromQuery(em.createNamedQuery(ApplicationConfig.GET_ALL_APPLICATON_CONFIGS), pageNumber, pageSize);
 		return (List<ApplicationConfig>) query.getResultList();
 	}
 }
