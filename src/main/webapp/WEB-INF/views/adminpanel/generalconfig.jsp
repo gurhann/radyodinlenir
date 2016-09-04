@@ -18,6 +18,15 @@
 					style="float: right">Genel Ayarlar</a>
 			</div>
 			<div class="panel-body">
+				<c:if test="${not empty msg}">
+					<div class="alert alert-${css} alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<strong>${msg}</strong>
+					</div>
+				</c:if>
 				<form:form method="POST" action="/admin/generalconfig"
 					modelAttribute="generalConfigsForm">
 					<c:forEach items="${generalConfigsForm.configs}" varStatus="stat"
