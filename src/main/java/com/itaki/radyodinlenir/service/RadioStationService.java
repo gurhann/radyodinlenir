@@ -1,18 +1,20 @@
 package com.itaki.radyodinlenir.service;
 
 import java.util.List;
-import com.itaki.radyodinlenir.persistence.model.RadioStation;
+
+import com.itaki.radyodinlenir.exception.RadioStationIsExistException;
+import com.itaki.radyodinlenir.exception.RadioStationNotFoundException;
 import com.itaki.radyodinlenir.web.dto.RadioStationDTO;
 
 public interface RadioStationService {
 	
-	public RadioStation addRadioStation(RadioStationDTO radioStation);
+	public void addRadioStation(RadioStationDTO radioStation) throws RadioStationIsExistException;
 	
-	public void updateRadioStation(RadioStationDTO radioStation);
+	public void updateRadioStation(RadioStationDTO radioStation) throws RadioStationNotFoundException;
 	
-	public void  deleteRadioStation(int id);
+	public void  deleteRadioStation(int id) throws RadioStationNotFoundException;
 	
-	public RadioStationDTO getRadioStationWithCleanUrl(String cleanUrl);
+	public RadioStationDTO getRadioStationWithCleanUrl(String cleanUrl) throws RadioStationNotFoundException;
 	
 	public List<RadioStationDTO> getRadioStationForPager(int page, int itemSize);
 	
