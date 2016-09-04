@@ -47,4 +47,11 @@ public class ApplicationConfigServiceImpl implements ApplicationConfigService {
 		return ApplicationConfigMapper.modelToDtoList(configDAO.getApplicationConfigListByPage(firstIndex, itemsize));
 	}
 
+
+	@Override
+	public void updateMultiApplicationConfig(List<ApplicationConfigDTO> applicationConfigs) throws ApplicationConfigNotFoundException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

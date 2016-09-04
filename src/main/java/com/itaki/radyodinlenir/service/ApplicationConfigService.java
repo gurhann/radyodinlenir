@@ -8,6 +8,8 @@ import com.itaki.radyodinlenir.web.dto.ApplicationConfigDTO;
 public interface ApplicationConfigService {
 
 	public void updateApplicationConfig(ApplicationConfigDTO applicationConfig) throws ApplicationConfigNotFoundException;
+	
+	public void updateMultiApplicationConfig(List<ApplicationConfigDTO> applicationConfigs) throws ApplicationConfigNotFoundException;
 
 	public List<ApplicationConfigDTO> getAllApplicationConfigs();
 
