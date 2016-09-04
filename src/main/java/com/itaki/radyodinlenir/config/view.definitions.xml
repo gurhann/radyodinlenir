@@ -5,11 +5,16 @@
 <tiles-definitions>
 
 	<!-- Admin Panel Views -->
+	<!-- DashBoard -->
 	<definition name="dashboard" extends="adminPaneLTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/adminpanel/dashboard.jsp" />
+		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/dashboard.jsp" />
 		<put-attribute name="title" value="Genel Görünüm"></put-attribute>
 		<put-attribute name="curl" value="dashboard" cascade="true"></put-attribute>
 	</definition>
-
-
+	<!-- General Config -->
+	<definition name="generalconfigs" extends="adminPaneLTemplate">
+		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
+		<put-attribute name="title" value="Genel Ayarlar"></put-attribute>
+		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
+	</definition>
 </tiles-definitions>
