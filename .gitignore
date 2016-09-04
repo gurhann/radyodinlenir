@@ -8,6 +8,7 @@
 
 #h2 db
 *test.mv.db
+*test.trace.db
 
 # Intellij
 .idea/
