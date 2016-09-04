@@ -32,6 +32,8 @@
 					<c:forEach items="${generalConfigsForm.configs}" varStatus="stat"
 						var="form">
 						<spring:bind path="configs[${stat.index}].description">
+						<form:hidden path="configs[${stat.index}].id"/>
+						<form:hidden path="configs[${stat.index}].name"/>
 							<div class="form-group  ${status.error ? 'has-error' : ''}">
 								<label>Site ${form.name}</label>
 								<form:input path="configs[${stat.index}].description"

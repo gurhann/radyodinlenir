@@ -24,6 +24,11 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
 	public T findOne(long id) {
 		return em.find(clazz, id);
 	}
+	
+	@Override
+	public T findOne(int id) {
+		return em.find(clazz, id);
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override

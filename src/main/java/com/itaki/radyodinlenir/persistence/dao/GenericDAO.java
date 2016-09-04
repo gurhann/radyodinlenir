@@ -5,6 +5,8 @@ import java.util.List;
 public interface GenericDAO<T> {
 	
 	public T findOne(long id);
+	
+	public T findOne(int id);
 
 	public List<T> findAll();
 
