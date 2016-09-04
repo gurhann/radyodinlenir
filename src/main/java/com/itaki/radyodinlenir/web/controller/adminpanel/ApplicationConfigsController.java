@@ -105,14 +105,14 @@ public class ApplicationConfigsController {
 		if (result.hasErrors()) {
 			model.addAttribute("css", "danger");
 			model.addAttribute("msg", msgsrc.getMessage("Form.Alert", new String[] {}, locale));
-			return "view";
+			return view;
 		}
 		try {
 			appConfigService.updateMultiApplicationConfig(generalConfigsForm.getConfigs());
 		} catch (ApplicationConfigNotFoundException e) {
 			model.addAttribute("css", "danger");
 			model.addAttribute("msg", msgsrc.getMessage("application.config.notfound", new String[] {}, locale));
-			return "view";
+			return view;
 		}
 		redirectAttributes.addFlashAttribute("css", "success");
 		redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Succesfull", new String[] {}, locale));
