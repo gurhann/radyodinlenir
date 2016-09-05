@@ -59,7 +59,6 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
 	@Override
 	public void deleteById(long id) {
 		T entity = em.find(clazz, id);
-		entity = em.merge(entity);
 		em.remove(entity);
 	}
 
