@@ -65,4 +65,13 @@ public class MusicTypeServiceImpl implements MusicTypeService {
 		return MusicTypeMapper.modelToDtoList(musicTypes);
 	}
 
+	@Override
+	public MusicTypeDTO getMusicTypeByCleanUrl(String cleanUrl) throws MusicTypeNotFoundException {
+		MusicType musicType = musicTypeDAO.getMusicTypeByCleanUrl(cleanUrl);
+		if (musicType == null) {
+			throw new MusicTypeNotFoundException(cleanUrl);
+		}
+		return MusicTypeMapper.modelToDto(musicType);
+	}
+
 }

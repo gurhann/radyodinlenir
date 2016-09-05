@@ -17,6 +17,8 @@ public interface MusicTypeService {
 
 	public MusicTypeDTO getMusicTypeById(int id) throws MusicTypeNotFoundException;
 
+	public MusicTypeDTO getMusicTypeByCleanUrl(String cleanUrl) throws MusicTypeNotFoundException;
+
 	public List<MusicTypeDTO> getAllMusicTypes();
 	
 }
