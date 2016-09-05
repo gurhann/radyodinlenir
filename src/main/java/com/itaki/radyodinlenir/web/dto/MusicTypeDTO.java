@@ -8,7 +8,7 @@ public class MusicTypeDTO {
 	private int id;
 	private String name;
 	private short priority;
-
+	private String cleanUrl;
 	public int getId() {
 		return id;
 	}
@@ -32,7 +32,13 @@ public class MusicTypeDTO {
 	public void setPriority(short priority) {
 		this.priority = priority;
 	}
-
+	
+	public String getCleanUrl() {
+		return cleanUrl;
+	}
+	public void setCleanUrl(String cleanUrl) {
+		this.cleanUrl = cleanUrl;
+	}
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder(7, 9).append(id).append(name).append(priority).toHashCode();

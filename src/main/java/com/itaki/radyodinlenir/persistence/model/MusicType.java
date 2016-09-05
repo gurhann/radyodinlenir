@@ -11,12 +11,22 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 @Entity
 @Table(name = "music_category")
 @NamedQueries({ @NamedQuery(name = MusicType.GET_ALL_MUSIC_TYPES, query = "select m from MusicType m order by priority"),
-		@NamedQuery(name = MusicType.FIND_MUSIC_TYPE_BY_NAME, query = "select m from MusicType m where m.name=:name") })
+		@NamedQuery(name = MusicType.FIND_MUSIC_TYPE_BY_CLEANURL, query = "select m from MusicType m where m.cleanUrl=:cleanUrl"),
+		@NamedQuery(name = MusicType.FIND_MUSIC_TYPE_BY_NAME, query = "select m from MusicType m where m.name=:name")})
 public class MusicType extends BaseCategory {
 
 	public static final String GET_ALL_MUSIC_TYPES = "MusicType.getAllMusicTypes";
+	public static final String FIND_MUSIC_TYPE_BY_CLEANURL = "MusicType.findByCleanUrl";
 	public static final String FIND_MUSIC_TYPE_BY_NAME = "MusicType.findByName";
-
+	private String cleanUrl;
+	
+	public String getCleanUrl() {
+		return cleanUrl;
+	}
+	public void setCleanUrl(String cleanUrl) {
+		this.cleanUrl = cleanUrl;
+	}
+	
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder(7, 9).append(id).append(name).append(priority).toHashCode();
