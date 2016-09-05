@@ -52,8 +52,8 @@ public class MusicTypeDAOImplTest {
 	
 	@Test
 	public void get_music_type_by_clean_url() {
-		MusicType musicTypeByCleanUrl = musicTypeDAO.getMusicTypeByCleanUrl("url4");
-		assertEquals(musicType4, musicTypeByCleanUrl);
+		MusicType musicTypeByCleanUrl = musicTypeDAO.getMusicTypeByCleanUrl("url2");
+		assertEquals(musicType2, musicTypeByCleanUrl);
 
 	}
 	
