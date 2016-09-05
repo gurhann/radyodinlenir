@@ -40,8 +40,21 @@ public class MusicTypeDAOImplTest {
 	public void music_types_table_initial_must_have_four_items_and_the_first_item_is_must_be_the_highest_priority() {
 		List<MusicType> musicTypeList = musicTypeDAO.getAllMusicTypes();
 		assertEquals(4, musicTypeList.size());
-		assertEquals(musicType4, musicTypeList.get(0));
-		assertEquals(musicType1, musicTypeList.get(3));
+		assertEquals(musicType1, musicTypeList.get(0));
+		assertEquals(musicType4, musicTypeList.get(3));
+	}
+	
+	@Test
+	public void get_music_type_by_name() {
+		MusicType musicTypeByName = musicTypeDAO.getMusicTypeByName("name3");
+		assertEquals(musicType3, musicTypeByName);
+	}
+	
+	@Test
+	public void get_music_type_by_clean_url() {
+		MusicType musicTypeByCleanUrl = musicTypeDAO.getMusicTypeByCleanUrl("url4");
+		assertEquals(musicType4, musicTypeByCleanUrl);
+
 	}
 	
 	public static MusicType createMusicType(int id, String name, short priority) {

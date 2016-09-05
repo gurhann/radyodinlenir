@@ -1,5 +1,6 @@
 package com.itaki.radyodinlenir.persistence.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -18,6 +19,8 @@ public class MusicType extends BaseCategory {
 	public static final String GET_ALL_MUSIC_TYPES = "MusicType.getAllMusicTypes";
 	public static final String FIND_MUSIC_TYPE_BY_CLEANURL = "MusicType.findByCleanUrl";
 	public static final String FIND_MUSIC_TYPE_BY_NAME = "MusicType.findByName";
+	
+	@Column(name = "clean_url")
 	private String cleanUrl;
 	
 	public String getCleanUrl() {
