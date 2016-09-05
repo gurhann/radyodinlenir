@@ -2,7 +2,6 @@ package com.itaki.radyodinlenir.web.validation;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.itaki.radyodinlenir.web.dto.ApplicationConfigDTO;
@@ -23,10 +22,10 @@ public class GeneralConfigFormValidator implements Validator {
 	            ApplicationConfigDTO conf = generalConfigs.getConfigs().get(i);
 
 	            if(conf.getDescription().length() > 255) {
-	                errors.rejectValue("configs[" + i + "].description", "GeneralConfigsForm.MaxLength.255");
+	                errors.rejectValue("configs[" + i + "].description", "MaxLength.255");
 	            }
 	            if(conf.getDescription().length() == 0 || conf.getDescription() == null) {
-	                errors.rejectValue("configs[" + i + "].description", "GeneralConfigsForm.NotEmpty");
+	                errors.rejectValue("configs[" + i + "].description", "NotEmpty");
 	            }
 	        }
 		

@@ -5,7 +5,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div class="row">
 	<div class="col-md-12">
-
 		<!--    Context Classes  -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -41,8 +40,6 @@
 							</div>
 						</spring:bind>
 					</c:forEach>
-
-
 					<div class="form-group" style="float: right">
 						<button type="submit" class="btn btn-success">Kaydet</button>
 					</div>

@@ -37,7 +37,7 @@
 					<ul id="menu-top" class="nav navbar-nav navbar-right">
 						<li><a class="${curl == 'dashboard' ? 'menu-top-active' : '' }" href="/admin">Admin Anasayfa</a></li>
 						<li><a class="${curl == 'dosyalar' ? 'menu-top-active' : '' }" href="/admin/dosyalar/1">Radyolar</a></li>
-						<li><a class="${curl == 'katagoriler' ? 'menu-top-active' : '' }" href="/admin/katagoriler">Katagoriler</a></li>
+						<li><a class="${curl == 'musictype' ? 'menu-top-active' : '' }" href="/admin/musictypelist">Müzik Tipleri</a></li>
 						<li><a class="${curl == 'contact' ? 'menu-top-active' : '' }" href="/admin/iletisim">İletişim</a></li>
 						<li><a class="${curl == 'configs' ? 'menu-top-active' : '' }" href="/admin/generalconfigs">Ayarlar</a></li>
 						<li><a href="/">Anasayfa</a></li>
