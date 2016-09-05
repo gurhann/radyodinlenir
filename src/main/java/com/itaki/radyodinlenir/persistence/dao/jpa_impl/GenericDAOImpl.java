@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.itaki.radyodinlenir.persistence.dao.GenericDAO;
 
 public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
-	
+
 	private Class<T> clazz;
 
 	@PersistenceContext
@@ -24,7 +24,7 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
 	public T findOne(long id) {
 		return em.find(clazz, id);
 	}
-	
+
 	@Override
 	public T findOne(int id) {
 		return em.find(clazz, id);
@@ -51,6 +51,7 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
 	@Transactional
 	@Override
 	public void delete(T entity) {
+		entity = em.merge(entity);
 		em.remove(entity);
 	}
 
@@ -58,12 +59,13 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
 	@Override
 	public void deleteById(long id) {
 		T entity = em.find(clazz, id);
+		entity = em.merge(entity);
 		em.remove(entity);
 	}
-	
+
 	@Override
 	public int getRowCount() {
-		return ((Long)em.createQuery("select count(d.id) from " + clazz.getName() + " d").getSingleResult()).intValue();
+		return ((Long) em.createQuery("select count(d.id) from " + clazz.getName() + " d").getSingleResult()).intValue();
 	}
 
 }
