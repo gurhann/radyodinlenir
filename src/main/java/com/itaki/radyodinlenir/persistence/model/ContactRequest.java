@@ -18,7 +18,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "contact_request")
-@NamedQueries({ @NamedQuery(name = ContactRequest.ALL_CONTACT_REQUESTS, query = "select c from ContactRequest c")})
+@NamedQueries({ @NamedQuery(name = ContactRequest.ALL_CONTACT_REQUESTS, query = "select c from ContactRequest c order by c.wasAnswered asc,c.sendDate desc") })
 public class ContactRequest {
 
 	public static final String ALL_CONTACT_REQUESTS = "ContactRequest.allRequests";
@@ -41,6 +41,7 @@ public class ContactRequest {
 	private boolean wasAnswered;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "send_date")
 	private Date sendDate;
 
 	public Long getId() {
@@ -54,11 +55,11 @@ public class ContactRequest {
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getMessage() {
 		return message;
 	}
@@ -109,8 +110,8 @@ public class ContactRequest {
 			return false;
 		}
 		ContactRequest other = (ContactRequest) obj;
-		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(message, other.getMessage()).append(wasAnswered, other.isWasAnswered())
-				.append(sendDate, other.getSendDate()).isEquals();
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(message, other.getMessage()).append(wasAnswered, other.isWasAnswered()).isEquals()
+				&& sendDate.getTime() == other.getSendDate().getTime();
 	}
 
 }
