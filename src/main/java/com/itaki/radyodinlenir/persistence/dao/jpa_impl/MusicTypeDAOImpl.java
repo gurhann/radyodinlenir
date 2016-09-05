@@ -29,4 +29,9 @@ public class MusicTypeDAOImpl extends GenericDAOImpl<MusicType> implements Music
 		Query query = em.createNamedQuery(MusicType.FIND_MUSIC_TYPE_BY_NAME).setParameter("name", name);
 		return (MusicType) query.getSingleResult();
 	}
+	@Override
+	public MusicType getMusicTypeByCleanUrl(String cleanUrl) throws NoResultException {
+		Query query = em.createNamedQuery(MusicType.FIND_MUSIC_TYPE_BY_CLEANURL).setParameter("cleanUrl", cleanUrl);
+		return (MusicType) query.getSingleResult();
+	}
 }

@@ -11,4 +11,6 @@ public interface MusicTypeDAO extends GenericDAO<MusicType> {
 	public List<MusicType> getAllMusicTypes();
 
 	public MusicType getMusicTypeByName(String name) throws NoResultException;
+	
+	public MusicType getMusicTypeByCleanUrl(String cleanUrl) throws NoResultException;
 }
