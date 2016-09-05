@@ -18,7 +18,7 @@ public class ContactRequestMapper {
 		}
 		ContactRequestDTO dto = new ContactRequestDTO();
 		dto.setId(model.getId());
-		dto.setSubject(model.getSubject());
+		dto.setName(model.getName());
 		dto.setMessage(model.getMessage());
 		dto.setEmail(model.getEmail());
 		dto.setWasAnswered(model.isWasAnswered());
@@ -32,7 +32,7 @@ public class ContactRequestMapper {
 		}
 		ContactRequest model = new ContactRequest();
 		model.setId(dto.getId());
-		model.setSubject(dto.getSubject());
+		model.setName(dto.getName());
 		model.setMessage(dto.getMessage());
 		model.setEmail(dto.getEmail());
 		model.setWasAnswered(dto.isWasAnswered());

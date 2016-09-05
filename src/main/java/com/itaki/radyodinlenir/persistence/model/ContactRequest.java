@@ -28,8 +28,8 @@ public class ContactRequest {
 	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "subject")
-	private String subject;
+	@Column(name = "name")
+	private String name;
 
 	@Column(name = "message")
 	private String message;
@@ -51,14 +51,14 @@ public class ContactRequest {
 		this.id = id;
 	}
 
-	public String getSubject() {
-		return subject;
+	public String getName() {
+		return name;
 	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
+	
+	public void setName(String name) {
+		this.name = name;
 	}
-
+	
 	public String getMessage() {
 		return message;
 	}
@@ -94,7 +94,7 @@ public class ContactRequest {
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
-		return new HashCodeBuilder(5, 7).append(id).append(subject).append(message).append(email).append(wasAnswered).append(sendDate).toHashCode();
+		return new HashCodeBuilder(5, 7).append(id).append(name).append(message).append(email).append(wasAnswered).append(sendDate).toHashCode();
 	}
 
 	@Override
@@ -109,7 +109,7 @@ public class ContactRequest {
 			return false;
 		}
 		ContactRequest other = (ContactRequest) obj;
-		return new EqualsBuilder().append(id, other.getId()).append(subject, other.getSubject()).append(message, other.getMessage()).append(wasAnswered, other.isWasAnswered())
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(message, other.getMessage()).append(wasAnswered, other.isWasAnswered())
 				.append(sendDate, other.getSendDate()).isEquals();
 	}
 

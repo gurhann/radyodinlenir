@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 public class ContactRequestDTO {
 
 	private Long id;
-	private String subject;
+	private String name;
 	private String message;
 	private String email;
 	private boolean wasAnswered;
@@ -22,12 +22,11 @@ public class ContactRequestDTO {
 		this.id = id;
 	}
 
-	public String getSubject() {
-		return subject;
+	public String getName() {
+		return name;
 	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getMessage() {
@@ -65,7 +64,7 @@ public class ContactRequestDTO {
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
-		return new HashCodeBuilder(5, 7).append(id).append(subject).append(message).append(email).append(wasAnswered).append(sendDate).toHashCode();
+		return new HashCodeBuilder(5, 7).append(id).append(name).append(message).append(email).append(wasAnswered).append(sendDate).toHashCode();
 	}
 
 	@Override
@@ -80,7 +79,7 @@ public class ContactRequestDTO {
 			return false;
 		}
 		ContactRequestDTO other = (ContactRequestDTO) obj;
-		return new EqualsBuilder().append(id, other.getId()).append(subject, other.getSubject()).append(message, other.getMessage())
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(message, other.getMessage())
 				.append(wasAnswered, other.isWasAnswered()).append(sendDate, other.getSendDate()).isEquals();
 	}
 
