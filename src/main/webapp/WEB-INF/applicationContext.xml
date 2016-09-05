@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 	<!-- Scan Controllers -->
-	<context:component-scan base-package="com.itaki.radyodinlenir.web.controller, com.itaki.radyodinlenir.web.validation" />
+	<context:component-scan base-package="com.itaki.radyodinlenir.web.controller, com.itaki.radyodinlenir.web.validation,com.itaki.radyodinlenir.web.tools" />
 
 	<!-- CreateBean For Messages -->
 	<bean id="messageSource"

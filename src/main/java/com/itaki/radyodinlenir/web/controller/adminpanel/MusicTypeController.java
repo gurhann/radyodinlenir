@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.itaki.radyodinlenir.exception.MusicTypeIsExistException;
 import com.itaki.radyodinlenir.service.impl.MusicTypeServiceImpl;
 import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
+import com.itaki.radyodinlenir.web.tools.CleanUrlCreater;
 import com.itaki.radyodinlenir.web.validation.MusicTypeFormValidation;
 
 @Controller
@@ -32,7 +33,9 @@ public class MusicTypeController {
 
 	@Autowired
 	MusicTypeFormValidation formValidator;
-
+	
+	@Autowired
+	CleanUrlCreater urlCreater;
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
 		binder.setValidator(formValidator);
@@ -51,13 +54,14 @@ public class MusicTypeController {
 	}
 
 	@RequestMapping(value = "/admin/musictypelist", method = RequestMethod.POST)
-	public String categoriSubmit(@ModelAttribute("musicType") @Validated MusicTypeDTO musicType, BindingResult result, Model model, final RedirectAttributes redirectAttributes, Locale locale) {
+	public String musicTypeFormSubmit(@ModelAttribute("musicType") @Validated MusicTypeDTO musicType, BindingResult result, Model model, final RedirectAttributes redirectAttributes, Locale locale) {
 		if (result.hasErrors()) {
 			model.addAttribute("css", "danger");
 			model.addAttribute("msg", msgsrc.getMessage("Form.Alert", new String[] {}, locale));
 			return "musictypelist";
 		}
 		try {
+			musicType.setCleanUrl(urlCreater.convert(musicType.getName()));
 			musicTypeService.addMusicType(musicType);
 		} catch (MusicTypeIsExistException e) {
 			model.addAttribute("css", "danger");
@@ -69,11 +73,28 @@ public class MusicTypeController {
 		return "redirect:/admin/musictypelist";
 	}
 
-	@RequestMapping(value = "admin/musictypelist/add", method = RequestMethod.GET)
-	public String getAddMusicTypeForm(Model model) {
-		try {
-			model.addAttribute("musicType", new MusicTypeDTO());
-			return "musictypeadd";
+	@RequestMapping(value = "admin/musictypelist/{editType}/edit", method = RequestMethod.GET)
+	public String getEditMusicTypeForm(@PathVariable(value = "editType")Integer id,Model model) {
+		try {			
+			model.addAttribute("musicType", musicTypeService.getMusicTypeById(id));
+			return "musictypedit";
+		} catch (Exception e) {
+			return "error403";
+		}
+	}
+	@RequestMapping(value = "admin/musictypelist/{editType}/edit", method = RequestMethod.POST)
+	public String postEditMusicTypeForm(@ModelAttribute("musicType") @Validated MusicTypeDTO musicType,BindingResult result,@PathVariable(value = "editType")Integer id,Model model,Locale locale,final RedirectAttributes redirectAttributes) {
+		if (result.hasErrors()) {
+			model.addAttribute("css", "danger");
+			model.addAttribute("msg", msgsrc.getMessage("Form.Alert", new String[] {}, locale));
+			return "musictypedit";
+		}
+		try {			
+			musicType.setCleanUrl(musicType.getName());
+			musicTypeService.updateMusicType(musicType);
+			redirectAttributes.addFlashAttribute("css", "success");
+			redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Succesfull", new String[] {}, locale));
+			return "redirect:/admin/musictypelist/" + id+"/edit";
 		} catch (Exception e) {
 			return "error403";
 		}

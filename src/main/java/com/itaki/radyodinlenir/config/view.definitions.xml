@@ -48,7 +48,7 @@
 	</definition>
 	
 	<!-- MusicTypes Edit -->
-	<definition name="musictypeadd" extends="adminPaneLTemplate">
+	<definition name="musictypedit" extends="adminPaneLTemplate">
 		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/musictypedit.jsp" />
 		<put-attribute name="title" value="Müzik Tipi Düzenle"></put-attribute>
 		<put-attribute name="curl" value="musictype" cascade="true"></put-attribute>

@@ -1,32 +1,42 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div class="row">
 	<div class="col-md-12">
-		<form:form method="POST" modelAttribute="categoriForm"
-			action="/admin/katagoriler/${categoriForm.id}/duzenle">
-			<div class="form-group has-success">
-				<label class="control-label" for="success">Katagori Adı</label>
-				<form:input path="name" type="text" class="form-control"
-					id="success" placeholder="Adı" />
+		<c:if test="${not empty msg}">
+			<div class="alert alert-${css} alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert"
+					aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+				<strong>${msg}</strong>
 			</div>
-			<div class="form-group has-success">
+		</c:if>
+		<form:form method="POST" modelAttribute="musicType"
+			action="/admin/musictypelist/${musicType.id}/edit">
+			<form:hidden path="id" />
+			<form:hidden path="cleanUrl" />
+			<spring:bind path="name">
+				<div class="form-group ${status.error ? 'has-error' : ''}">
+					<label class="control-label" for="success"> Adı</label>
+					<form:input path="name" type="text" class="form-control"
+						id="success" placeholder="Adı" />
+					<form:errors path="name" class="control-label" />
+				</div>
+			</spring:bind>
+			<div class="form-group ${status.error ? 'has-error' : ''}">
 				<label class="control-label" for="queue">Sırası:</label>
-				<form:select path="queue" class="form-control" id="queue">
-					<option ${categoriForm.queue == 1 ? "selected": "" }>1</option>
-					<option ${categoriForm.queue == 2 ? "selected": "" }>2</option>
-					<option ${categoriForm.queue == 3 ? "selected": "" }>3</option>
-					<option ${categoriForm.queue == 4 ? "selected": "" }>4</option>
-					<option ${categoriForm.queue == 5 ? "selected": "" }>5</option>
-					<option ${categoriForm.queue == 6 ? "selected": "" }>6</option>
-					<option ${categoriForm.queue == 7 ? "selected": "" }>7</option>
-					<option ${categoriForm.queue == 8 ? "selected": "" }>8</option>
-					<option ${categoriForm.queue == 9 ? "selected": "" }>9</option>
-					<option ${categoriForm.queue == 10 ? "selected": "" }>10</option>
-					<option ${categoriForm.queue == 11 ? "selected": "" }>11</option>
+				<form:select path="priority" class="form-control" id="queue">
+					<c:forEach var="i" begin="1" end="15">
+						<option ${musicType.priority == i ? "selected": "" }>${i}</option>
+					</c:forEach>
 				</form:select>
+				<form:errors path="priority" class="control-label" />
 			</div>
 			<div class="form-group" style="float: right">
+			<a href="/admin/musictypelist" class="btn btn-info ">Müzik tipleri</a>
 				<button type="submit" class="btn btn-success">Kaydet</button>
 			</div>
 		</form:form>
