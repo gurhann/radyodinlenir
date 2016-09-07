@@ -7,51 +7,61 @@
 	<!-- Admin Panel Views -->
 	<!-- DashBoard -->
 	<definition name="dashboard" extends="adminPaneLTemplate">
-		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/dashboard.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/adminpanel/dashboard.jsp" />
 		<put-attribute name="title" value="Genel Görünüm"></put-attribute>
 		<put-attribute name="curl" value="dashboard" cascade="true"></put-attribute>
 	</definition>
-	
+
 	<!-- General Config -->
 	<definition name="generalconfigs" extends="adminPaneLTemplate">
-		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
 		<put-attribute name="title" value="Genel Ayarlar"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
-	
+
 	<!-- Seo Config -->
 	<definition name="seoconfigs" extends="adminPaneLTemplate">
-		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
 		<put-attribute name="title" value="Seo Ayarlar"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
-	
+
 	<!-- Social Config -->
 	<definition name="socialconfigs" extends="adminPaneLTemplate">
-		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
 		<put-attribute name="title" value="Sosyal Ağ Ayarları"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
-	
+
 	<!-- About Config -->
 	<definition name="aboutconfigs" extends="adminPaneLTemplate">
-		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/aboutconfig.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/aboutconfig.jsp" />
 		<put-attribute name="title" value="Hakkımızda Bilgisi"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
-	
+
 	<!-- MusicType List -->
 	<definition name="musictypelist" extends="adminPaneLTemplate">
-		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/musictypelist.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/musictypelist.jsp" />
 		<put-attribute name="title" value="Müzik Tipleri"></put-attribute>
 		<put-attribute name="curl" value="musictype" cascade="true"></put-attribute>
 	</definition>
-	
+
 	<!-- MusicTypes Edit -->
 	<definition name="musictypedit" extends="adminPaneLTemplate">
-		<put-attribute name="body"	value="/WEB-INF/views/adminpanel/musictypedit.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/musictypedit.jsp" />
 		<put-attribute name="title" value="Müzik Tipi Düzenle"></put-attribute>
 		<put-attribute name="curl" value="musictype" cascade="true"></put-attribute>
 	</definition>
-	
+
+	<!-- Contact List -->
+	<definition name="contactlist" extends="adminPaneLTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/contactlist.jsp" />
+		<put-attribute name="title" value="İletişim"></put-attribute>
+		<put-attribute name="curl" value="contactlist" cascade="true"></put-attribute>
+	</definition>
+
 </tiles-definitions>
