@@ -20,15 +20,25 @@ public class ContactRequestController {
 
 	@Autowired
 	ContactRequestServiceImpl contactRequestService;
-	
+
 	@Autowired
 	MessageSource msgsrc;
 
-
-	@RequestMapping(value = "/admin/contactlist", method = RequestMethod.GET)
-	public String getContactRequestList(Model model) {
+	@RequestMapping(value = "/admin/contactlist/{amount}", method = RequestMethod.GET)
+	public String getContactRequestList(Locale locale, Model model, @PathVariable(value = "amount") Integer amount) {
 		try {
-			List<ContactRequestDTO> contactlist = contactRequestService.getContactRequestForPager(1, 20);
+			int count = contactRequestService.getContactRequestCount();
+			List<ContactRequestDTO> contactlist = null;
+			int pager = (int) Math.ceil((double) count / 10);
+			if (amount == null || amount < 1 || amount > pager) {
+				amount = 1;
+				contactlist = contactRequestService.getContactRequestForPager(1, 10);
+			} else if (amount <= pager) {
+				contactlist = contactRequestService.getContactRequestForPager(amount, 10);
+
+			}
+			model.addAttribute("maxamount", pager);
+			model.addAttribute("amount", amount);
 			model.addAttribute("contactlist", contactlist);
 			return "contactlist";
 		} catch (Exception e) {
@@ -38,7 +48,7 @@ public class ContactRequestController {
 
 	@RequestMapping(value = "/admin/contactlist/{deleteid}/delete", method = RequestMethod.GET)
 	public String deleteContactRequestWithId(@PathVariable(value = "deleteid") Long id, Model model, final RedirectAttributes redirectAttributes, Locale locale) {
-		try {			
+		try {
 			contactRequestService.deleteContactRequest(id);
 			redirectAttributes.addFlashAttribute("css", "success");
 			redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Succesfull", new String[] {}, locale));
@@ -49,7 +59,17 @@ public class ContactRequestController {
 			redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Alert", new String[] {}, locale));
 			return "redirect:/admin/contactlist";
 		}
+	}
+	
+	@RequestMapping(value = "/admin/contactlist/{detailid}/details", method = RequestMethod.GET)
+	public String detailsContactRequestWithId(@PathVariable(value = "detailid") Long id, Model model, Locale locale) {
+		try {
+			model.addAttribute("contactdetails", contactRequestService.getContactRequestWithId(id));
+			return "contactdetails";
 
+		} catch (Exception e) {
+			return "error403";
+		}
 	}
 
 }
