@@ -8,7 +8,7 @@ public class QueryUtil {
 	}
 
 	public static Query getPageFromQuery(Query query, int pageNumber, int pageSize) {
-		return query.setFirstResult(pageSize * (pageNumber - 1)).setMaxResults(pageNumber * pageSize);
+		return query.setFirstResult(pageSize * (pageNumber - 1)).setMaxResults( pageSize);
 
 	}
 	
