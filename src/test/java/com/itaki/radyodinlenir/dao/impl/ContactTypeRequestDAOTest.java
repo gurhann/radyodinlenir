@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -49,7 +48,7 @@ public class ContactTypeRequestDAOTest {
 		
 	}
 
-	private static ContactRequest createDummyContactRequest(Long id, String name, String message, String email, boolean wasAnswered, Date date) {
+	public static ContactRequest createDummyContactRequest(Long id, String name, String message, String email, boolean wasAnswered, Date date) {
 		ContactRequest contactRequest = new ContactRequest();
 		contactRequest.setId(id);
 		contactRequest.setName(name);
