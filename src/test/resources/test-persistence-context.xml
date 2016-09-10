@@ -40,7 +40,7 @@
 
 	<jdbc:initialize-database data-source="dataSource"
 		ignore-failures="DROPS">
-		<jdbc:script location="classpath:com/itaki/radyodinlenir/config/data.sql" />
+		<jdbc:script location="classpath:data.sql" />
 	</jdbc:initialize-database>
 
 	<tx:annotation-driven />

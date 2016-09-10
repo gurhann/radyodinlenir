@@ -18,7 +18,7 @@ import com.itaki.radyodinlenir.persistence.dao.ContactRequestDAO;
 import com.itaki.radyodinlenir.persistence.model.ContactRequest;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath:com/itaki/radyodinlenir/config/test-persistence-context.xml", "classpath:com/itaki/radyodinlenir/config/dao-context.xml" })
+@ContextConfiguration({ "classpath:test-persistence-context.xml", "classpath:config/dao-context.xml" })
 @Transactional
 public class ContactTypeRequestDAOTest {
 
