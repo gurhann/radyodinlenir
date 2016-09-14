@@ -16,7 +16,7 @@ import com.itaki.radyodinlenir.persistence.dao.ApplicationConfigDAO;
 import com.itaki.radyodinlenir.persistence.model.ApplicationConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath:com/itaki/radyodinlenir/config/test-persistence-context.xml", "classpath:com/itaki/radyodinlenir/config/dao-context.xml" })
+@ContextConfiguration({ "classpath:test-persistence-context.xml", "classpath:config/dao-context.xml" })
 @Transactional
 public class ApplicationConfigDAOTest {
 
@@ -50,11 +50,11 @@ public class ApplicationConfigDAOTest {
 	public void get_config_by_page() {
 		List<ApplicationConfig> applicationConfigListByPage = configDAO.getApplicationConfigListByPage(1, 2);
 		assertEquals(2, applicationConfigListByPage.size());
-		assertEquals(config1, applicationConfigListByPage.get(0));
-		assertEquals(config2, applicationConfigListByPage.get(1));
-		applicationConfigListByPage = configDAO.getApplicationConfigListByPage(2, 2);
+		assertEquals(config2, applicationConfigListByPage.get(0));
+		assertEquals(config3, applicationConfigListByPage.get(1));
+		applicationConfigListByPage = configDAO.getApplicationConfigListByPage(0, 1);
 		assertEquals(1, applicationConfigListByPage.size());
-		assertEquals(config3, applicationConfigListByPage.get(0));
+		assertEquals(config1, applicationConfigListByPage.get(0));
 
 	}
 

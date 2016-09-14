@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -19,7 +18,7 @@ import com.itaki.radyodinlenir.persistence.dao.ContactRequestDAO;
 import com.itaki.radyodinlenir.persistence.model.ContactRequest;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath:com/itaki/radyodinlenir/config/test-persistence-context.xml", "classpath:com/itaki/radyodinlenir/config/dao-context.xml" })
+@ContextConfiguration({ "classpath:test-persistence-context.xml", "classpath:config/dao-context.xml" })
 @Transactional
 public class ContactTypeRequestDAOTest {
 
@@ -49,7 +48,7 @@ public class ContactTypeRequestDAOTest {
 		
 	}
 
-	private static ContactRequest createDummyContactRequest(Long id, String name, String message, String email, boolean wasAnswered, Date date) {
+	public static ContactRequest createDummyContactRequest(Long id, String name, String message, String email, boolean wasAnswered, Date date) {
 		ContactRequest contactRequest = new ContactRequest();
 		contactRequest.setId(id);
 		contactRequest.setName(name);

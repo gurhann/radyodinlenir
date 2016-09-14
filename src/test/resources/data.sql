@@ -16,3 +16,12 @@ insert into contact_request(id,name,message,email,was_answered,send_date) values
 insert into contact_request(id,name,message,email,was_answered,send_date) values(4, 'name4', 'message4', 'mail4',1,PARSEDATETIME('12/12/2016 12:12','dd/MM/yyyy HH:mm'));
 insert into contact_request(id,name,message,email,was_answered,send_date) values(5, 'name5', 'message5', 'mail5',1,PARSEDATETIME('12/12/2016 12:11','dd/MM/yyyy HH:mm'));
 insert into contact_request(id,name,message,email,was_answered,send_date) values(6, 'name6', 'message6', 'mail6',1,PARSEDATETIME('12/12/2016 12:03','dd/MM/yyyy HH:mm'));
+
+
+-- Radio Station
+insert into radio_station(id,name,description,logo,clean_url,stream_url,embedded_url,hit_count,priority,seo_keywords,seo_description,music_type_id,is_enabled)
+	values (1,'name1','description1','logo1','cleanUrl1','streamUrl1','embeddedUrl1',1,1,'seoKeywords1','seoDescription1',1,1);
+insert into radio_station(id,name,description,logo,clean_url,stream_url,embedded_url,hit_count,priority,seo_keywords,seo_description,music_type_id,is_enabled)
+	values (2,'name2','description2','logo2','cleanUrl2','streamUrl2','embeddedUrl2',2,2,'seoKeywords2','seoDescription2',2,1);
+insert into radio_station(id,name,description,logo,clean_url,stream_url,embedded_url,hit_count,priority,seo_keywords,seo_description,music_type_id,is_enabled)
+	values (3,'name3','description3','logo3','cleanUrl3','streamUrl3','embeddedUrl3',3,3,'seoKeywords3','seoDescription3',1,1);

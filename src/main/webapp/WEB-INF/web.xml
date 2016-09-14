@@ -20,10 +20,10 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:com/itaki/radyodinlenir/config/properties-context.xml
-			classpath:com/itaki/radyodinlenir/config/dao-context.xml
-			classpath:com/itaki/radyodinlenir/config/persistence-context.xml
-			classpath:com/itaki/radyodinlenir/config/service-context.xml
+			classpath:config/properties-context.xml
+			classpath:config/dao-context.xml
+			classpath:config/persistence-context.xml
+			classpath:config/service-context.xml
 		</param-value>
 	</context-param>
 	<listener>
