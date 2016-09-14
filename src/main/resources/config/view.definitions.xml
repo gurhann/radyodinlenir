@@ -63,5 +63,11 @@
 		<put-attribute name="title" value="İletişim"></put-attribute>
 		<put-attribute name="curl" value="contactlist" cascade="true"></put-attribute>
 	</definition>
-
+	
+    <!-- Contact Details -->
+	<definition name="contactdetails" extends="adminPaneLTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/contactdetails.jsp" />
+		<put-attribute name="title" expression="İletişim İsteği Detayları"  ></put-attribute>
+		<put-attribute name="curl" value="contactdetails" cascade="true"></put-attribute>
+	</definition>
 </tiles-definitions>
