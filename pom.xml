@@ -22,6 +22,7 @@
 		<junit.version>4.12</junit.version>
 		<apache.common.lang.version>3.4</apache.common.lang.version>
 		<h2.version>1.4.192</h2.version>
+		<mail.version>1.4.7</mail.version>
 	</properties>
 
 	<dependencies>
@@ -178,6 +179,12 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>${h2.version}</version>
+		</dependency>
+		<!-- Java Mail API -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${mail.version}</version>
 		</dependency>
 
 	</dependencies>
