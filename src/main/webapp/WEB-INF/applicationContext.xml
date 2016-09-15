@@ -10,7 +10,8 @@
         http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 	<!-- Scan Controllers -->
-	<context:component-scan base-package="com.itaki.radyodinlenir.web.controller, com.itaki.radyodinlenir.web.validation,com.itaki.radyodinlenir.web.tools" />
+	<context:component-scan
+		base-package="com.itaki.radyodinlenir.web.controller, com.itaki.radyodinlenir.web.validation,com.itaki.radyodinlenir.web.tools" />
 
 	<!-- CreateBean For Messages -->
 	<bean id="messageSource"
@@ -26,8 +27,8 @@
 		<property name="suffix" value=".jsp" />
 		<property name="contentType" value="text/html;charset=UTF-8" />
 	</bean>
-	
-	
+
+
 	<!-- Create Bean for i18n -->
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
@@ -44,4 +45,19 @@
 	<!-- Static Resources -->
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 
+	<!-- Mail Sender -->
+	<context:property-placeholder location="classpath:mail.properties"/>
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host"  value="${mail.smtp.host}" />
+		<property name="port" value="${mail.smtp.port}" />
+		<property name="username" value="${mail.username}" />
+		<property name="password" value="${mail.password}" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+				<prop key="mail.smtp.starttls.enable">${mail.smtp.starttls.enable}</prop>
+				<prop key="mail.smtp.ssl.trust">${mail.smtp.host}</prop>
+			</props>
+		</property>
+	</bean>
 </beans>
