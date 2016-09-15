@@ -5,6 +5,7 @@
 
 # Database Connect Properties
 *jdbc.properties
+*mail.properties
 
 #h2 db
 *test.mv.db
