@@ -2,6 +2,7 @@ package com.itaki.radyodinlenir.web.dto;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.springframework.web.multipart.MultipartFile;
 
 public class RadioStationDTO {
 
@@ -16,9 +17,10 @@ public class RadioStationDTO {
 	private int priority;
 	private String seoKeywords;
 	private String seoDescription;
+	private MultipartFile logoFile;
 	private MusicTypeDTO musicType;
 	private RadioStationCityDTO radioCity;
-	private boolean isEnabled;
+	private boolean enabled;
 
 	public int getId() {
 		return id;
@@ -125,12 +127,21 @@ public class RadioStationDTO {
 	}
 
 	public boolean isEnabled() {
-		return isEnabled;
+		return enabled;
 	}
 
-	public void setEnabled(boolean isEnabled) {
-		this.isEnabled = isEnabled;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
+	
+	public MultipartFile getLogoFile() {
+		return logoFile;
+	}
+	
+	public void setLogoFile(MultipartFile logoFile) {
+		this.logoFile = logoFile;
+	}
+	
 
 	@Override
 	public int hashCode() {
@@ -153,7 +164,7 @@ public class RadioStationDTO {
 		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(description, other.getDescription())
 				.append(cleanUrl, other.getCleanUrl()).append(streamUrl, other.getStreamUrl()).append(embeddedUrl, other.getEmbeddedUrl()).append(hitCount, other.getHitCount())
 				.append(priority, other.getPriority()).append(seoKeywords, other.getSeoKeywords()).append(seoDescription, other.getSeoDescription()).append(musicType, other.getMusicType())
-				.append(radioCity, other.getRadioCity()).append(isEnabled, other.isEnabled).append(priority, other.getPriority()).isEquals();
+				.append(radioCity, other.getRadioCity()).append(enabled, other.enabled).append(priority, other.getPriority()).isEquals();
 	}
 
 }
