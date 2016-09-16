@@ -64,6 +64,7 @@ Place color files here ( right after main.css ) for example
 		</div>
 	</div>
 
+	<tiles:insertAttribute name="radioPlayer"></tiles:insertAttribute>
 	<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 
 	<script src="${baseURL}/resources/userPanelAssets/js/jquery.js"></script>

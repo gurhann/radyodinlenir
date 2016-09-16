@@ -85,6 +85,7 @@
 		<put-attribute name="title" value="Anasayfa"></put-attribute>
 		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
 		<put-attribute name="curl" value="index" cascade="true"></put-attribute>
+		<put-attribute name="radioPlayer" value="/WEB-INF/layouts/userpanel/radioPlayer.jsp"></put-attribute>	
 	</definition>
 
 	<!-- Contact -->
