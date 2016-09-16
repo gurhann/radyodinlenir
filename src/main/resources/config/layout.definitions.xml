@@ -13,6 +13,11 @@
 	</definition>
 
 	<definition name="userTemplate"	template="/WEB-INF/layouts/userpanel/tilesMaster.jsp">
+		<put-attribute name="header" value="/WEB-INF/layouts/userpanel/header.jsp" />
+		<put-attribute name="musicTypeNavigation" value=""></put-attribute>			
+		<put-attribute name="title" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/layouts/userpanel/footer.jsp" />
 	</definition>
 
 </tiles-definitions>
