@@ -9,9 +9,6 @@ import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,21 +38,18 @@ public class ContactRequestController {
 	@Value(value = "${mail.subject}")
 	private String subject;
 
-	@RequestMapping(value = "/admin/contactlist/{amount}", method = RequestMethod.GET)
-	public String getContactRequestList(Locale locale, Model model, @PathVariable(value = "amount") Integer amount) {
+	@RequestMapping(value = "/admin/contactlist/{pageIndex}", method = RequestMethod.GET)
+	public String getContactRequestList(Locale locale, Model model, @PathVariable(value = "pageIndex") Integer pageIndex) {
 		try {
-			int count = contactRequestService.getContactRequestCount();
+			int contactRequestCount = contactRequestService.getContactRequestCount();
 			List<ContactRequestDTO> contactlist = null;
-			int pager = (int) Math.ceil((double) count / 10);
-			if (amount == null || amount < 1 || amount > pager) {
-				amount = 1;
-				contactlist = contactRequestService.getContactRequestForPager(1, 10);
-			} else if (amount <= pager) {
-				contactlist = contactRequestService.getContactRequestForPager(amount, 10);
-
+			int maxPageIndex = (int) Math.ceil((double) contactRequestCount / 10);
+			if (pageIndex == null || pageIndex < 1 || pageIndex > maxPageIndex) {
+				pageIndex = 1;
 			}
-			model.addAttribute("maxamount", pager);
-			model.addAttribute("amount", amount);
+			contactlist = contactRequestService.getContactRequestForPager(pageIndex, 10);
+			model.addAttribute("maxPageIndex", maxPageIndex);
+			model.addAttribute("pageIndex", pageIndex);
 			model.addAttribute("contactlist", contactlist);
 			return "contactlist";
 		} catch (Exception e) {
@@ -91,8 +85,8 @@ public class ContactRequestController {
 	}
 
 	@RequestMapping(value = "/admin/contactlist/{detailid}/details", method = RequestMethod.POST)
-	public String answerContactRequestWithId(@PathVariable(value = "detailid") Long id, @ModelAttribute("contactAnswer") ContactAnswerDTO contactAnswer, BindingResult result,
-			Model model, final RedirectAttributes redirectAttributes,  Locale locale) {
+	public String answerContactRequestWithId(@PathVariable(value = "detailid") Long id, @ModelAttribute("contactAnswer") ContactAnswerDTO contactAnswer, BindingResult result, Model model,
+			final RedirectAttributes redirectAttributes, Locale locale) {
 		try {
 			if (result.hasErrors()) {
 				redirectAttributes.addFlashAttribute("css", "danger");

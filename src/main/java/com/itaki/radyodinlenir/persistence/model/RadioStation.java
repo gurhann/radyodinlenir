@@ -39,7 +39,7 @@ public class RadioStation {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "description")
+	@Column(name = "description",length=5000)
 	private String description;
 
 	@Column(name = "logo")

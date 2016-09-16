@@ -95,4 +95,18 @@
 		<put-attribute name="musicTypeNavigation" value=""></put-attribute>
 		<put-attribute name="curl" value="contact" cascade="true"></put-attribute>
 	</definition>
+	
+	 <!-- RadioStatios List -->
+	<definition name="radiostations" extends="adminPaneLTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/radiostationlist.jsp" />
+		<put-attribute name="title" expression="Radyo İstasyonları"  ></put-attribute>
+		<put-attribute name="curl" value="radiostations" cascade="true"></put-attribute>
+	</definition>
+	
+	 <!-- RadioStatios Add/Edit -->
+	<definition name="radiostationAddEdit" extends="adminPaneLTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/radiostationadd.jsp" />
+		<put-attribute name="title" expression="Radyo İstasyonları"  ></put-attribute>
+		<put-attribute name="curl" value="radiostations" cascade="true"></put-attribute>
+	</definition>
 </tiles-definitions>

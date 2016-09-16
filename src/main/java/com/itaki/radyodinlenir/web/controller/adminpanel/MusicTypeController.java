@@ -19,8 +19,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.itaki.radyodinlenir.exception.MusicTypeIsExistException;
 import com.itaki.radyodinlenir.service.impl.MusicTypeServiceImpl;
+import com.itaki.radyodinlenir.util.CleanUrlCreater;
 import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
-import com.itaki.radyodinlenir.web.tools.CleanUrlCreater;
 import com.itaki.radyodinlenir.web.validation.MusicTypeFormValidation;
 
 @Controller
@@ -34,8 +34,6 @@ public class MusicTypeController {
 	@Autowired
 	MusicTypeFormValidation formValidator;
 	
-	@Autowired
-	CleanUrlCreater urlCreater;
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
 		binder.setValidator(formValidator);
@@ -61,7 +59,7 @@ public class MusicTypeController {
 			return "musictypelist";
 		}
 		try {
-			musicType.setCleanUrl(urlCreater.convert(musicType.getName()));
+			musicType.setCleanUrl(CleanUrlCreater.convert(musicType.getName()));
 			musicTypeService.addMusicType(musicType);
 		} catch (MusicTypeIsExistException e) {
 			model.addAttribute("css", "danger");

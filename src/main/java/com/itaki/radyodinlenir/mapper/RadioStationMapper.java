@@ -27,6 +27,7 @@ public class RadioStationMapper {
 		dto.setPriority(model.getPriority());
 		dto.setSeoKeywords(model.getSeoKeywords());
 		dto.setSeoDescription(model.getSeoDescription());
+		dto.setMusicType(MusicTypeMapper.modelToDto(model.getMusicType()));
 		return dto;
 	}
 
@@ -44,6 +45,7 @@ public class RadioStationMapper {
 		model.setEmbeddedUrl(dto.getEmbeddedUrl());
 		model.setHitCount(dto.getHitCount());
 		model.setPriority(dto.getPriority());
+		model.setMusicType(MusicTypeMapper.dtoToModel(dto.getMusicType()));
 		model.setSeoKeywords(dto.getSeoKeywords());
 		model.setSeoDescription(dto.getSeoDescription());
 		return model;
