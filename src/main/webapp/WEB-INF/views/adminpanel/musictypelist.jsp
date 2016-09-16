@@ -54,7 +54,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
 		<div class="panel-body">
 
 			<div class="table-responsive">
@@ -109,5 +108,6 @@
 
 			</div>
 		</div>
+	</div>
 	</div>
 </div>

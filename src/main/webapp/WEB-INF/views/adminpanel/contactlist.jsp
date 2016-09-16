@@ -58,17 +58,17 @@
 				</table>
 
 				<ul class="pagination">
-					<c:url value="/admin/contactlist/${amount-1}" var="prev">
+					<c:url value="/admin/contactlist/${pageIndex-1}" var="prev">
 					</c:url>
-					<c:if test="${amount > 1}">
+					<c:if test="${pageIndex > 1}">
 						<li><a class="prev page-numbers"
 							href="<c:out value="${prev}" />">←</a></li>
 					</c:if>
-					<c:if test="${amount <= 4}">
-						<c:forEach begin="1"	end="${((amount+4) <= maxamount ? 7 : maxamount)}" step="1"
+					<c:if test="${pageIndex <= 4}">
+						<c:forEach begin="1"	end="${((pageIndex+4) <= maxPageIndex ? 7 : maxPageIndex)}" step="1"
 							varStatus="i">
 							<c:choose>
-								<c:when test="${amount == i.index}">
+								<c:when test="${pageIndex == i.index}">
 									<li  class='active'><span>${i.index}</span></li>
 								</c:when>
 								<c:otherwise>
@@ -80,12 +80,12 @@
 							</c:choose>
 						</c:forEach>
 					</c:if>
-					<c:if test="${amount > 4}">
-						<c:forEach begin="${amount-4}"
-							end="${((amount+4) <= maxamount ? (amount+3) : maxamount)}"
+					<c:if test="${pageIndex > 4}">
+						<c:forEach begin="${pageIndex-4}"
+							end="${((pageIndex+4) <= maxPageIndex ? (pageIndex+3) : maxPageIndex)}"
 							step="1" varStatus="i">
 							<c:choose>
-								<c:when test="${amount == i.index}">
+								<c:when test="${pageIndex == i.index}">
 									<li class='active'><span >${i.index}</span></li>
 								</c:when>
 								<c:otherwise>
@@ -98,9 +98,9 @@
 						</c:forEach>
 					</c:if>
 
-					<c:url value="/admin/contactlist/${amount+1}" var="next">
+					<c:url value="/admin/contactlist/${pageIndex+1}" var="next">
 					</c:url>
-					<c:if test="${amount + 1 <= maxamount}">
+					<c:if test="${pageIndex + 1 <= maxPageIndex}">
 						<li><a class='next page-numbers' href="${ next}">→</a></li>
 					</c:if>
 				</ul>

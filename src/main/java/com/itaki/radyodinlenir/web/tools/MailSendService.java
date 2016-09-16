@@ -20,7 +20,6 @@ public class MailSendService {
 		String encodingOptions = "text/html; charset=UTF-8";
 		try {
 			MimeMessageHelper helper = new MimeMessageHelper(message, "UTF-8");
-
 			message.setHeader("Content-Type", encodingOptions);
 			helper.setFrom(from);
 			helper.setTo(to);
