@@ -507,10 +507,9 @@ Social
 .the-xv-Jplayer {
     background: #232323;
     color: #717171;
-    position: absolute;
-    right: -255px;
+    position: relative;
     top: 0;
-    width: 430px;
+    width: 100%;
     height: 75px;
     z-index: 999999;
     transition:All 0.3s ease;
