@@ -29,7 +29,6 @@ jQuery(function($) {
     var xv_ww = $(window).width(),
         xv_slideshow = true;
     
-    $('#ajaxArea').ajaxify({forms: false,requestDelay:500});
     
 	$(window).on('pronto.render', function(event, eventInfo){
         $('html, body').animate({scrollTop: 0});
