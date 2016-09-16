@@ -34,6 +34,10 @@
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
 		<property name="defaultLocale" value="tr_TR" />
 	</bean>
+	
+	<!-- Create Bean For Uplading -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
 	<!-- Create Validator Bean -->
 	<bean id="myBeansValidator"
@@ -46,9 +50,9 @@
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 
 	<!-- Mail Sender -->
-	<context:property-placeholder location="classpath:mail.properties"/>
+	<context:property-placeholder location="classpath:mail.properties" />
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="host"  value="${mail.smtp.host}" />
+		<property name="host" value="${mail.smtp.host}" />
 		<property name="port" value="${mail.smtp.port}" />
 		<property name="username" value="${mail.username}" />
 		<property name="password" value="${mail.password}" />
