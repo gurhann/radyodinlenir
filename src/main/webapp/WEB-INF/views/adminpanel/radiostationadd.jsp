@@ -8,7 +8,7 @@
 		<!--    Context Classes  -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Yeni Radyo İstasyonu Ekle <a href="/admin/radiostations/add"
+				Yeni Radyo İstasyonu Ekle <a href="/admin/radiostations/1"
 					class="btn btn-success btn-sm" style="float: right">Radyo
 					İstasyonları</a>
 			</div>
@@ -22,8 +22,12 @@
 						<strong>${msg}</strong>
 					</div>
 				</c:if>
-				<form:form method="POST" action="/admin/radiostations/add" enctype="multipart/form-data" 
-					modelAttribute="radiostation">
+				<form:form method="POST" action="/admin/radiostations/add"
+					enctype="multipart/form-data" modelAttribute="radiostation">
+					<form:hidden path="id" />
+					<form:hidden path="logo" />
+					<form:hidden path="cleanUrl" />
+					<form:hidden path="hitCount" />
 					<spring:bind path="name">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<label class="control-label"> Radyo Adı</label>
@@ -41,12 +45,21 @@
 					</spring:bind>
 
 					<spring:bind path="logoFile">
-						<div class="form-group ${status.error ? 'has-error' : ''}">
-							<label class="control-label">Radyo Logo</label> 
-							<input	name="logoFile" type="file" class="form-control" />
+						<div
+							class="form-group ${status.error ? 'has-error' : ''} ${not empty radiostation.logo ? 'col-md-10' : ''}">
+							<label class="control-label">Radyo Logo</label> <input
+								name="logoFile" type="file" class="form-control " />
+
 							<form:errors path="logoFile" class="control-label" />
 						</div>
+						<c:if test="${not empty radiostation.logo}">
+							<div class="form-group  col-md-2">
+								<img alt="" height="150" width="150"
+									src="/resources/radiologos/${radiostation.logo}">
+							</div>
+						</c:if>
 					</spring:bind>
+
 
 					<spring:bind path="musicType.id">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
@@ -100,6 +113,13 @@
 							<form:errors path="seoDescription" class="control-label" />
 						</div>
 					</spring:bind>
+					<c:if test="${radiostation.id !=0 }">
+						<div class="checkbox">
+							<label> <form:checkbox path="enabled"  />
+								Yayın Dışına Al
+							</label>
+						</div>
+					</c:if>
 					<div class="form-group" style="float: right">
 						<button type="submit" class="btn btn-success">Kaydet</button>
 					</div>

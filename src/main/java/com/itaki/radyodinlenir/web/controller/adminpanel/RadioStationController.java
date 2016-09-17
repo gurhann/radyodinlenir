@@ -82,6 +82,7 @@ public class RadioStationController {
 			return "error403";
 		}
 	}
+
 	@RequestMapping(value = "/admin/radiostations/{deleteid}/delete", method = RequestMethod.GET)
 	public String deleteContactRequestWithId(@PathVariable(value = "deleteid") Integer id, Model model, final RedirectAttributes redirectAttributes, Locale locale) {
 		try {
@@ -97,7 +98,6 @@ public class RadioStationController {
 		}
 	}
 
-
 	@RequestMapping(value = "/admin/radiostations/add", method = RequestMethod.POST)
 	public String postRadioStationAddForm(@ModelAttribute("radiostation") @Validated RadioStationDTO radiostation, BindingResult result, Model model, final RedirectAttributes redirectAttributes,
 			Locale locale) {
@@ -107,10 +107,16 @@ public class RadioStationController {
 			return "radiostationAddEdit";
 		}
 		try {
-			radiostation.setEnabled(true);
 			radiostation.setCleanUrl(CleanUrlCreater.convert(radiostation.getName()));
-			radiostation.setLogo(uploadService.uploadImage(radiostation.getLogoFile()));
-			radioStationService.addRadioStation(radiostation);
+			if (!radiostation.getLogoFile().isEmpty()) {
+				radiostation.setLogo(uploadService.uploadImage(radiostation.getLogoFile()));
+			}
+			if (radiostation.getId() == 0) {
+				radiostation.setEnabled(true);
+				radioStationService.addRadioStation(radiostation);
+			} else {
+				radioStationService.updateRadioStation(radiostation);
+			}
 		} catch (RadioStationIsExistException e) {
 			model.addAttribute("css", "danger");
 			model.addAttribute("msg", msgsrc.getMessage("RadioStation.IsExist.Exception", new String[] {}, locale));
@@ -125,5 +131,15 @@ public class RadioStationController {
 		redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Succesfull", new String[] {}, locale));
 		return "redirect:/admin/radiostations/add";
 
+	}
+
+	@RequestMapping(value = "/admin/radiostations/{radioStationID}/details", method = RequestMethod.GET)
+	public String getRadioStationDetails(@PathVariable(value = "radioStationID") Integer id, Model model) {
+		try {
+			model.addAttribute("radiostation", radioStationService.getRadioStationWithID(id));
+			return "radiostationAddEdit";
+		} catch (Exception e) {
+			return "error403";
+		}
 	}
 }
