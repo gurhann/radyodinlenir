@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <section class="events-finder">
 	<div class="container">
 		<header>
@@ -22,174 +23,20 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="store-grid text-uppercase text-bold">
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/alemfm.png">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Alem FM</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>156</span>
+						<c:forEach var="radio" items="${popularRadios}">
+							<div class="store-product">
+								<figure>
+									<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
+									<figcaption>
+										<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
+									</figcaption>
+								</figure>
+								<div class="product-info">
+									<h3>${radio.name}</h3>
+									<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>156</span>
+								</div>
 							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/babaradyo.png">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Baba Radyo</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/bestfm.jpg">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Best FM</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/joyturk.jpg">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Joy Turk</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/kralfm.jpg">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Kral FM</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/kralpop.png">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Kral Pop</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/ntvradyo.png">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>NTV Radyo</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/numberone.png">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Number One FM</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/powerturk.png">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>PowerTurk FM</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/radyoalaturka.gif">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Radyo Alaturka</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/showradyo.jpg">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Show Radyo</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-							</div>
-						</div>
-						<!--store-product-->
-						<div class="store-product">
-							<figure>
-								<img width="152" height="152"
-									src="${baseURL}/resources/userPanelAssets/demo-data/super_fm.png">
-								<figcaption>
-									<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-								</figcaption>
-							</figure>
-							<div class="product-info">
-								<h3>Super FM</h3>
-								<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>156</span>
-							</div>
-						</div>
-						<!--store-product-->
+						</c:forEach>
 					</div>
 					<!--album-grid-->
 					<a class="btn btn-wide btn-grey text-uppercase text-bold" href="store.html">Daha Fazlasını
@@ -201,12 +48,7 @@
 	</div>
 </section>
 
-<!--=================================================
-    gallery
-    ==================================================-->
 <section>
-
-
 	<header class="parallax parallax_two style3 text-center text-uppercase text-bold"
 		data-stellar-background-ratio="0.5">
 		<div class="container">
@@ -225,170 +67,22 @@
 	<div class="photography">
 		<div class="container color-white">
 			<div class="store-grid text-uppercase text-bold clearfix">
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152" src="${baseURL}/resources/userPanelAssets/demo-data/alemfm.png">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Alem FM</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>156</span>
+
+				<c:forEach var="radio" items="${newestRadios}">
+					<div class="store-product">
+						<figure>
+							<img width="152" height="152"
+								src="${baseURL}/resources/radiologos/${radio.logo}">
+							<figcaption>
+								<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
+							</figcaption>
+						</figure>
+						<div class="product-info">
+							<h3>${radio.name}</h3>
+							<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>156</span>
+						</div>
 					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152"
-							src="${baseURL}/resources/userPanelAssets/demo-data/babaradyo.png">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Baba Radyo</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152" src="${baseURL}/resources/userPanelAssets/demo-data/bestfm.jpg">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Best FM</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152" src="${baseURL}/resources/userPanelAssets/demo-data/joyturk.jpg">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Joy Turk</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152" src="${baseURL}/resources/userPanelAssets/demo-data/kralfm.jpg">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Kral FM</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152" src="${baseURL}/resources/userPanelAssets/demo-data/kralpop.png">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Kral Pop</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152"
-							src="${baseURL}/resources/userPanelAssets/demo-data/ntvradyo.png">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>NTV Radyo</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152"
-							src="${baseURL}/resources/userPanelAssets/demo-data/numberone.png">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Number One FM</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152"
-							src="${baseURL}/resources/userPanelAssets/demo-data/powerturk.png">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>PowerTurk FM</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152"
-							src="${baseURL}/resources/userPanelAssets/demo-data/radyoalaturka.gif">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Radyo Alaturka</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152"
-							src="${baseURL}/resources/userPanelAssets/demo-data/showradyo.jpg">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Show Radyo</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>345</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class="store-product">
-					<figure>
-						<img width="152" height="152"
-							src="${baseURL}/resources/userPanelAssets/demo-data/super_fm.png">
-						<figcaption>
-							<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-						</figcaption>
-					</figure>
-					<div class="product-info">
-						<h3>Super FM</h3>
-						<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>156</span>
-					</div>
-				</div>
-				<!--store-product-->
-				<div class=""></div>
+				</c:forEach>
 			</div>
 			<!--album-grid-->
 			<a class="btn btn-wide btn-grey text-uppercase text-bold" href="store.html">Daha Fazlasını
