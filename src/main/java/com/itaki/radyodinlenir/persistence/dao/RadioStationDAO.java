@@ -12,6 +12,8 @@ public interface RadioStationDAO extends GenericDAO<RadioStation> {
 
 	public RadioStation getRadioStationWithCleanUrl(String cleanUrl) throws NoResultException;
 	
+	public RadioStation getRadioStationWithID(Integer id) throws NoResultException;
+	
 	public List<RadioStation> getRadioStationForPager(int page, int itemSize) ;
 
 	public List<RadioStation> getRadioStationForPagerWithMusicType(int page, int itemSize, int musicTypeId);

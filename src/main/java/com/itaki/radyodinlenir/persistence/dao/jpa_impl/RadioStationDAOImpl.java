@@ -57,4 +57,10 @@ public class RadioStationDAOImpl extends GenericDAOImpl<RadioStation> implements
 		Query query = em.createNamedQuery(RadioStation.SEARCH_RADIO_STATION_BY_NAME_AND_DESCRIPTION).setParameter("name", searchText).setParameter("description", searchText);
 		return (List<RadioStation>) query.getResultList();
 	}
+
+	@Override
+	public RadioStation getRadioStationWithID(Integer id) throws NoResultException {
+		Query query = em.createNamedQuery(RadioStation.RADIO_STATION_BY_ID).setParameter("id", id);
+		return (RadioStation) query.getSingleResult();
+	}
 }

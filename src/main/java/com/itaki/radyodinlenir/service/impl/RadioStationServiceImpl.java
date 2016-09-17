@@ -87,4 +87,14 @@ public class RadioStationServiceImpl implements RadioStationService {
 		return RadioStationMapper.modelToDtoList(searchRadioStationWithSearchText);
 	}
 
+	@Override
+	public RadioStationDTO getRadioStationWithID(Integer id) throws RadioStationNotFoundException {
+		try {
+			RadioStation radioStationWithCleanUrl = radioStationDAO.getRadioStationWithID(id);
+			return RadioStationMapper.modelToDto(radioStationWithCleanUrl);
+		} catch (NoResultException e) {
+			throw new RadioStationNotFoundException(id);
+		}
+	}
+
 }

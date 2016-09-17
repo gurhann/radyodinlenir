@@ -16,6 +16,8 @@ public interface RadioStationService {
 	
 	public RadioStationDTO getRadioStationWithCleanUrl(String cleanUrl) throws RadioStationNotFoundException;
 	
+	public RadioStationDTO getRadioStationWithID(Integer id) throws RadioStationNotFoundException;
+	
 	public List<RadioStationDTO> getRadioStationForPager(int page, int itemSize);
 	
 	public List<RadioStationDTO> getRadioStationForPagerWithMusicType(int page, int itemSize,int musicTypeId);

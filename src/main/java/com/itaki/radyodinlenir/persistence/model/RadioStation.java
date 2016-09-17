@@ -18,6 +18,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 @Table(name = "radio_station")
 @NamedQueries({ @NamedQuery(name = RadioStation.RADIO_STATION_FIND_BY_NAME, query = "select r from RadioStation r where r.name=:name"),
 		@NamedQuery(name = RadioStation.RADIO_STATION_BY_CLEAN_URL, query = "select r from RadioStation r where r.cleanUrl=:cleanUrl"),
+		@NamedQuery(name = RadioStation.RADIO_STATION_BY_ID, query = "select r from RadioStation r where r.id=:id"),
 		@NamedQuery(name = RadioStation.GET_ALL_RADIO_STATIONS, query = "select r from RadioStation r order by r.hitCount desc"),
 		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE, query = "select r from RadioStation r where r.musicType.id=:musicType order by r.hitCount desc"),
 		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE_COUNT, query = "select count(r.id) from RadioStation r where r.musicType.id=:musicType"),
@@ -26,6 +27,7 @@ public class RadioStation {
 
 	public static final String RADIO_STATION_FIND_BY_NAME = "RadioStation.findByName";
 	public static final String RADIO_STATION_BY_CLEAN_URL = "RadioStation.findByCleanUrl";
+	public static final String RADIO_STATION_BY_ID = "RadioStation.findByID";
 	public static final String GET_ALL_RADIO_STATIONS = "RadioStation.getAllStations";
 	public static final String GET_RADIO_STATIONS_BY_MUSIC_TYPE = "RadioStation.getStationsByMusicType";
 	public static final String GET_RADIO_STATIONS_BY_MUSIC_TYPE_COUNT = "RadioStation.getStationByMusicTypeCount";
