@@ -22,7 +22,8 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 		@NamedQuery(name = RadioStation.GET_ALL_RADIO_STATIONS, query = "select r from RadioStation r order by r.hitCount desc"),
 		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE, query = "select r from RadioStation r where r.musicType.id=:musicType order by r.hitCount desc"),
 		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE_COUNT, query = "select count(r.id) from RadioStation r where r.musicType.id=:musicType"),
-		@NamedQuery(name = RadioStation.SEARCH_RADIO_STATION_BY_NAME_AND_DESCRIPTION, query = "select r from RadioStation r where r.name like :name or r.description like :description order by r.hitCount desc")})
+		@NamedQuery(name = RadioStation.SEARCH_RADIO_STATION_BY_NAME_AND_DESCRIPTION, query = "select r from RadioStation r where r.name like :name or r.description like :description order by r.hitCount desc") })
+@NamedQuery(name = RadioStation.GET_NEWEST_RADIO_STATIONS, query = "select r from RadioStation r order by r.id desc")
 public class RadioStation {
 
 	public static final String RADIO_STATION_FIND_BY_NAME = "RadioStation.findByName";
@@ -32,6 +33,7 @@ public class RadioStation {
 	public static final String GET_RADIO_STATIONS_BY_MUSIC_TYPE = "RadioStation.getStationsByMusicType";
 	public static final String GET_RADIO_STATIONS_BY_MUSIC_TYPE_COUNT = "RadioStation.getStationByMusicTypeCount";
 	public static final String SEARCH_RADIO_STATION_BY_NAME_AND_DESCRIPTION = "RadioStation.searchStationByNameAndDescription";
+	public static final String GET_NEWEST_RADIO_STATIONS = "RadioStation.getNewestRadioStation";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,7 +43,7 @@ public class RadioStation {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "description",length=5000)
+	@Column(name = "description", length = 5000)
 	private String description;
 
 	@Column(name = "logo")

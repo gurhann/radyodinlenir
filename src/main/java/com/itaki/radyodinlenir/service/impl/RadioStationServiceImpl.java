@@ -97,4 +97,9 @@ public class RadioStationServiceImpl implements RadioStationService {
 		}
 	}
 
+	@Override
+	public List<RadioStationDTO> getNewestRadioStation(int page, int itemSize) {
+		return RadioStationMapper.modelToDtoList(radioStationDAO.getNewestRadioStationForPage(page, itemSize));
+	}
+
 }

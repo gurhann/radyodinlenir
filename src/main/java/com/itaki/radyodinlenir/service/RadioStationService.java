@@ -28,4 +28,6 @@ public interface RadioStationService {
 	
 	public List<RadioStationDTO> searchRadioStationWithSearchText(String searchText);
 	
+	public List<RadioStationDTO> getNewestRadioStation(int page, int itemSize);
+	
 }

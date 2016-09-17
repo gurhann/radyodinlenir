@@ -21,5 +21,7 @@ public interface RadioStationDAO extends GenericDAO<RadioStation> {
 	public int getRadioStationsCountWithMusicTypeId(int musicTypeId) ;
 	
 	public List<RadioStation> searchRadioStationWithSearchText(String searchText);
+	
+	public List<RadioStation> getNewestRadioStationForPage(int page, int itemSize);
 
 }
