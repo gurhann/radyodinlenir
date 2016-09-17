@@ -34,7 +34,7 @@ public class RadioStationFormValidator implements Validator {
 		if (object.getSeoKeywords().length() > 255) {
 			errors.rejectValue("seoKeywords", "MaxLength.255");
 		}
-		if(object.getLogoFile().isEmpty()){
+		if(object.getLogo().isEmpty() && object.getLogoFile().isEmpty()){
 			errors.rejectValue("logoFile", "NotEmpty");
 			
 		}
