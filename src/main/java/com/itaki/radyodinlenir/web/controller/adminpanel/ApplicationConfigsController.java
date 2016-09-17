@@ -50,8 +50,14 @@ public class ApplicationConfigsController {
 	@RequestMapping(value = "/admin/generalconfigs", method = RequestMethod.POST)
 	public String generalConfigSubmit(@ModelAttribute("generalConfigsForm") @Validated GeneralConfigsFormDTO generalConfigsForm, BindingResult result, Model model,
 			final RedirectAttributes redirectAttributes, Locale locale) {
-
 		return setData(generalConfigsForm, result, model, redirectAttributes, locale, "generalconfigs");
+
+	}
+
+	@RequestMapping(value = "/admin/adwordsconfigs", method = RequestMethod.POST)
+	public String adwordsConfigSubmit(@ModelAttribute("generalConfigsForm") @Validated GeneralConfigsFormDTO generalConfigsForm, BindingResult result, Model model,
+			final RedirectAttributes redirectAttributes, Locale locale) {
+		return setData(generalConfigsForm, result, model, redirectAttributes, locale, "adwordsconfigs");
 
 	}
 
@@ -82,9 +88,18 @@ public class ApplicationConfigsController {
 		} catch (Exception e) {
 			return "error403";
 		}
-
 	}
-
+	
+	@RequestMapping(value = "/admin/adwordsconfigs", method = RequestMethod.GET)
+	public String getAdwordsConfigs(Model model, Locale locale) {
+		try {
+			return getData(model, 21, 6, "adwordsconfigs");
+		} catch (Exception e) {
+			return "error403";
+		}
+	}
+	
+	
 	@RequestMapping(value = "/admin/aboutconfigs", method = RequestMethod.POST)
 	public String aboutConfigSubmit(@ModelAttribute("generalConfigsForm") @Validated GeneralConfigsFormDTO generalConfigsForm, BindingResult result, Model model,
 			final RedirectAttributes redirectAttributes, Locale locale) {
