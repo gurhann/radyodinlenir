@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.itaki.radyodinlenir.exception.RadioStationIsExistException;
 import com.itaki.radyodinlenir.service.impl.MusicTypeServiceImpl;
 import com.itaki.radyodinlenir.service.impl.RadioStationServiceImpl;
-import com.itaki.radyodinlenir.util.CleanUrlCreater;
+import com.itaki.radyodinlenir.util.PageUtils;
 import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
 import com.itaki.radyodinlenir.web.dto.RadioStationDTO;
 import com.itaki.radyodinlenir.web.tools.UploadingService;
@@ -107,7 +107,7 @@ public class RadioStationController {
 			return "radiostationAddEdit";
 		}
 		try {
-			radiostation.setCleanUrl(CleanUrlCreater.convert(radiostation.getName()));
+			radiostation.setCleanUrl(PageUtils.convertCleanUrl(radiostation.getName()));
 			if (!radiostation.getLogoFile().isEmpty()) {
 				radiostation.setLogo(uploadService.uploadImage(radiostation.getLogoFile()));
 			}

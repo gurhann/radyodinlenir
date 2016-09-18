@@ -19,7 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.itaki.radyodinlenir.exception.MusicTypeIsExistException;
 import com.itaki.radyodinlenir.service.impl.MusicTypeServiceImpl;
-import com.itaki.radyodinlenir.util.CleanUrlCreater;
+import com.itaki.radyodinlenir.util.PageUtils;
 import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
 import com.itaki.radyodinlenir.web.validation.MusicTypeFormValidation;
 
@@ -59,7 +59,7 @@ public class MusicTypeController {
 			return "musictypelist";
 		}
 		try {
-			musicType.setCleanUrl(CleanUrlCreater.convert(musicType.getName()));
+			musicType.setCleanUrl(PageUtils.convertCleanUrl(musicType.getName()));
 			musicTypeService.addMusicType(musicType);
 		} catch (MusicTypeIsExistException e) {
 			model.addAttribute("css", "danger");

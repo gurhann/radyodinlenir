@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.itaki.radyodinlenir.util.CleanUrlCreater;
+import com.itaki.radyodinlenir.util.PageUtils;
 
 @Service
 public class UploadingService {
@@ -24,7 +24,7 @@ public class UploadingService {
 				if (!new File(realPathtoUploads).exists()) {
 					new File(realPathtoUploads).mkdir();
 				}
-				String filePath = realPathtoUploads + CleanUrlCreater.convert(file.getOriginalFilename());
+				String filePath = realPathtoUploads + PageUtils.convertCleanUrl(file.getOriginalFilename());
 				;
 				File dest = new File(filePath);
 				file.transferTo(dest);
