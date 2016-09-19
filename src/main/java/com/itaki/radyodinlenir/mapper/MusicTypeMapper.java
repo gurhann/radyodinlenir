@@ -19,6 +19,7 @@ public class MusicTypeMapper {
 		MusicTypeDTO dto = new MusicTypeDTO();
 		dto.setId(model.getId());
 		dto.setName(model.getName());
+		dto.setCleanUrl(model.getCleanUrl());
 		dto.setPriority(model.getPriority());
 		return dto;
 	}
@@ -30,6 +31,7 @@ public class MusicTypeMapper {
 		MusicType model = new MusicType();
 		model.setId(dto.getId());
 		model.setName(dto.getName());
+		model.setCleanUrl(dto.getCleanUrl());
 		model.setPriority(dto.getPriority());
 		return model;
 	}
