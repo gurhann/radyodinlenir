@@ -4,7 +4,7 @@
 		<nav class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html"> <img
+				<a class="navbar-brand" href="/"> <img
 					src="${baseURL}/resources/userPanelAssets/img/basic/logo.png" alt="" />
 				</a>
 			</div>
