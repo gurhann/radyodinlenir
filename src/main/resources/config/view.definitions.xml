@@ -105,6 +105,13 @@
 		<put-attribute name="curl" value="contact" cascade="true"></put-attribute>
 	</definition>
 	
+	<!-- RadioStation List -->
+	<definition name="radioList" extends="userTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/userpanel/radioList.jsp"></put-attribute>
+		<put-attribute name="title" value="Radyo Listesi"></put-attribute>
+		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
+		<put-attribute name="curl" value="contact" cascade="true"></put-attribute>
+	</definition>
 	 <!-- RadioStatios List -->
 	<definition name="radiostations" extends="adminPaneLTemplate">
 		<put-attribute name="body" value="/WEB-INF/views/adminpanel/radiostationlist.jsp" />

@@ -39,8 +39,8 @@
 						</c:forEach>
 					</div>
 					<!--album-grid-->
-					<a class="btn btn-wide btn-grey text-uppercase text-bold" href="store.html">Daha Fazlasını
-						Gör</a>
+					<a class="btn btn-wide btn-grey text-uppercase text-bold" href="/popularStations">Daha
+						Fazlasını Gör</a>
 				</div>
 				<!--column-->
 			</div>
@@ -71,8 +71,7 @@
 				<c:forEach var="radio" items="${newestRadios}">
 					<div class="store-product">
 						<figure>
-							<img width="152" height="152"
-								src="${baseURL}/resources/radiologos/${radio.logo}">
+							<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
 							<figcaption>
 								<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 							</figcaption>
@@ -85,8 +84,8 @@
 				</c:forEach>
 			</div>
 			<!--album-grid-->
-			<a class="btn btn-wide btn-grey text-uppercase text-bold" href="store.html">Daha Fazlasını
-				Gör</a>
+			<a class="btn btn-wide btn-grey text-uppercase text-bold" href="/newestStations">Daha
+				Fazlasını Gör</a>
 
 		</div>
 		<!--container-->
