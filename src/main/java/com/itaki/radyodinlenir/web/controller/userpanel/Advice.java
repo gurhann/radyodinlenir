@@ -1,7 +1,8 @@
 package com.itaki.radyodinlenir.web.controller.userpanel;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -14,7 +15,9 @@ public class Advice {
 	private MusicTypeService musicTypeService;
 
 	@ModelAttribute
-	public void setMusicTypes(Model model) {
-		model.addAttribute("musicTypeList", musicTypeService.getAllMusicTypes());
+	public void setMusicTypes(HttpServletRequest req) {
+		if (req.getSession().getAttribute("musicTypeList") == null) {
+			req.getSession().setAttribute("musicTypeList", musicTypeService.getAllMusicTypes());
+		}
 	}
 }
