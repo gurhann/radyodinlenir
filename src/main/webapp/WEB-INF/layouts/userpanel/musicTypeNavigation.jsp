@@ -7,7 +7,7 @@
 				<li class="current"><a href="#"><i class="fa fa-music" aria-hidden="true"></i> Hepsi</a></li>
 				<c:forEach var="musicType" items="${musicTypeList}">
 					<li><a href="/stations/${musicType.cleanUrl}"> <i class="fa fa-music"
-							aria-hidden="true"></i>${musicType.name}
+							aria-hidden="true"></i> ${musicType.name}
 					</a></li>
 				</c:forEach>
 			</ul>
