@@ -28,6 +28,7 @@ public class RadioStationMapper {
 		dto.setSeoKeywords(model.getSeoKeywords());
 		dto.setSeoDescription(model.getSeoDescription());
 		dto.setMusicType(MusicTypeMapper.modelToDto(model.getMusicType()));
+		dto.setRadioCity(RadioStationCityMapper.modelToDto(model.getRadioCity()));
 		dto.setEnabled(model.isEnabled());
 		return dto;
 	}
@@ -47,6 +48,7 @@ public class RadioStationMapper {
 		model.setHitCount(dto.getHitCount());
 		model.setPriority(dto.getPriority());
 		model.setMusicType(MusicTypeMapper.dtoToModel(dto.getMusicType()));
+		model.setRadioCity(RadioStationCityMapper.dtoToModel(dto.getRadioCity()));
 		model.setSeoKeywords(dto.getSeoKeywords());
 		model.setSeoDescription(dto.getSeoDescription());
 		model.setEnabled(dto.isEnabled());
