@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 @Entity
 @Table(name = "application_config")
 @NamedQueries({ @NamedQuery(name = ApplicationConfig.GET_APPLICATION_CONFIG_BY_NAME, query = "select c from ApplicationConfig c where c.name=:name"),
-		@NamedQuery(name = ApplicationConfig.GET_ALL_APPLICATON_CONFIGS, query = "select c from ApplicationConfig c") })
+		@NamedQuery(name = ApplicationConfig.GET_ALL_APPLICATON_CONFIGS, query = "select c from ApplicationConfig c order by c.id") })
 public class ApplicationConfig {
 
 	public final static String GET_APPLICATION_CONFIG_BY_NAME = "ApplicationConfig.getApplicationConfigByName";
