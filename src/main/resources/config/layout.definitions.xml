@@ -18,6 +18,7 @@
 		<put-attribute name="radioPlayer" value=""></put-attribute>	
 		<put-attribute name="title" value="" />
 		<put-attribute name="body" value="" />
+		<put-attribute name="leftBar" value="" />
 		<put-attribute name="footer" value="/WEB-INF/layouts/userpanel/footer.jsp" />
 	</definition>
 
