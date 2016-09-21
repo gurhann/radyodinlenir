@@ -19,9 +19,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.itaki.radyodinlenir.exception.RadioStationIsExistException;
 import com.itaki.radyodinlenir.service.impl.MusicTypeServiceImpl;
+import com.itaki.radyodinlenir.service.impl.RadioStationCityServiceImpl;
 import com.itaki.radyodinlenir.service.impl.RadioStationServiceImpl;
 import com.itaki.radyodinlenir.util.PageUtils;
 import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
+import com.itaki.radyodinlenir.web.dto.RadioStationCityDTO;
 import com.itaki.radyodinlenir.web.dto.RadioStationDTO;
 import com.itaki.radyodinlenir.web.tools.UploadingService;
 import com.itaki.radyodinlenir.web.validation.RadioStationFormValidator;
@@ -37,6 +39,9 @@ public class RadioStationController {
 
 	@Autowired
 	RadioStationFormValidator radioStationFormvalidator;
+
+	@Autowired
+	RadioStationCityServiceImpl cityService;
 
 	@Autowired
 	UploadingService uploadService;
@@ -71,6 +76,11 @@ public class RadioStationController {
 	@ModelAttribute("musicTypes")
 	public List<MusicTypeDTO> getMusicListDTO() {
 		return musicTypeService.getAllMusicTypes();
+	}
+
+	@ModelAttribute("cities")
+	public List<RadioStationCityDTO> getCitiesDTO() {
+		return cityService.getAllRadioStationCity();
 	}
 
 	@RequestMapping(value = "/admin/radiostations/add", method = RequestMethod.GET)

@@ -72,6 +72,20 @@
 							<form:errors path="musicType.id" class="control-label" />
 						</div>
 					</spring:bind>
+					
+					
+					<spring:bind path="radioCity.id">
+						<div class="form-group ${status.error ? 'has-error' : ''}">
+							<label class="control-label"> Radyo Yayın Merkezi</label>
+							<form:select multiple="false" path="radioCity.id"
+								class="form-control">
+								<form:options   items="${cities}" itemValue="id"
+									itemLabel="name" />
+							</form:select>
+							<form:errors path="radioCity.id" class="control-label" />
+						</div>
+					</spring:bind>
+					
 					<spring:bind path="streamUrl">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<label class="control-label"> Radyo Stream Url</label>
