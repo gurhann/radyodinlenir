@@ -1,10 +1,16 @@
 package com.itaki.radyodinlenir.web.dto;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-public class ApplicationConfigDTO {
+public class ApplicationConfigDTO implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
 	private String description;

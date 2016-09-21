@@ -1,7 +1,13 @@
 package com.itaki.radyodinlenir.web.dto;
 
-public class ContactAnswerDTO {
+import java.io.Serializable;
 
+public class ContactAnswerDTO implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String body;
 
 	public String getBody() {

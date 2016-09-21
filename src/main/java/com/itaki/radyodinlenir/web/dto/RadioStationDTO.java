@@ -1,11 +1,17 @@
 package com.itaki.radyodinlenir.web.dto;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.springframework.web.multipart.MultipartFile;
 
-public class RadioStationDTO {
+public class RadioStationDTO implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
 	private String description;
