@@ -14,12 +14,34 @@ public class RadioStationCity extends BaseCategory {
 	@Column(name = "clean_url")
 	private String cleanUrl;
 
+	@Column(name = "seo_keywords")
+	private String seoKeywords;
+
+	@Column(name = "seo_description", length = 500)
+	private String seoDescription;
+
 	public String getCleanUrl() {
 		return cleanUrl;
 	}
 
 	public void setCleanUrl(String cleanUrl) {
 		this.cleanUrl = cleanUrl;
+	}
+
+	public String getSeoDescription() {
+		return seoDescription;
+	}
+
+	public String getSeoKeywords() {
+		return seoKeywords;
+	}
+
+	public void setSeoDescription(String seoDescription) {
+		this.seoDescription = seoDescription;
+	}
+
+	public void setSeoKeywords(String seoKeywords) {
+		this.seoKeywords = seoKeywords;
 	}
 
 	@Override

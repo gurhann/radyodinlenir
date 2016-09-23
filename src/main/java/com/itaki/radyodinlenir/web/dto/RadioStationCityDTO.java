@@ -14,6 +14,8 @@ public class RadioStationCityDTO implements Serializable {
 	private int id;
 	private String name;
 	private String cleanUrl;
+	private String seoKeywords;
+	private String seoDescription;
 	private short priority;
 
 	public int getId() {
@@ -46,6 +48,20 @@ public class RadioStationCityDTO implements Serializable {
 
 	public void setCleanUrl(String cleanUrl) {
 		this.cleanUrl = cleanUrl;
+	}
+	
+	public String getSeoDescription() {
+		return seoDescription;
+	}
+	public void setSeoDescription(String seoDescription) {
+		this.seoDescription = seoDescription;
+	}
+	
+	public void setSeoKeywords(String seoKeywords) {
+		this.seoKeywords = seoKeywords;
+	}
+	public String getSeoKeywords() {
+		return seoKeywords;
 	}
 
 	@Override
