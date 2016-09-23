@@ -19,6 +19,7 @@ public class RadioStationCityMapper {
 		RadioStationCityDTO dto = new RadioStationCityDTO();
 		dto.setId(model.getId());
 		dto.setName(model.getName());
+		dto.setCleanUrl(model.getCleanUrl());
 		dto.setPriority(model.getPriority());
 		return dto;
 	}
@@ -30,6 +31,7 @@ public class RadioStationCityMapper {
 		RadioStationCity model = new RadioStationCity();
 		model.setId(dto.getId());
 		model.setName(dto.getName());
+		model.setCleanUrl(dto.getCleanUrl());
 		model.setPriority(dto.getPriority());
 		return model;
 	}

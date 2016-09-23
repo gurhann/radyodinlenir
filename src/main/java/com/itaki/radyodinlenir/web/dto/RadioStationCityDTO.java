@@ -13,6 +13,7 @@ public class RadioStationCityDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
+	private String cleanUrl;
 	private short priority;
 
 	public int getId() {
@@ -37,6 +38,14 @@ public class RadioStationCityDTO implements Serializable {
 
 	public void setPriority(short priority) {
 		this.priority = priority;
+	}
+
+	public String getCleanUrl() {
+		return cleanUrl;
+	}
+
+	public void setCleanUrl(String cleanUrl) {
+		this.cleanUrl = cleanUrl;
 	}
 
 	@Override

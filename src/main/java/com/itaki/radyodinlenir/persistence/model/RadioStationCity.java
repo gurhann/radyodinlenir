@@ -1,5 +1,6 @@
 package com.itaki.radyodinlenir.persistence.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -9,6 +10,17 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 @Entity
 @Table(name = "radio_station_city")
 public class RadioStationCity extends BaseCategory {
+
+	@Column(name = "clean_url")
+	private String cleanUrl;
+
+	public String getCleanUrl() {
+		return cleanUrl;
+	}
+
+	public void setCleanUrl(String cleanUrl) {
+		this.cleanUrl = cleanUrl;
+	}
 
 	@Override
 	public int hashCode() {
