@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.itaki.radyodinlenir.exception.MusicTypeNotFoundException;
+import com.itaki.radyodinlenir.exception.RadioStationNotFoundException;
 import com.itaki.radyodinlenir.service.MusicTypeService;
 import com.itaki.radyodinlenir.service.RadioStationService;
 import com.itaki.radyodinlenir.util.PageUtils;
@@ -86,6 +87,21 @@ public class IndexController {
 		model.addAttribute("pageIndex", pageIndex);
 		model.addAttribute("pagerBaseUrl", "/newestStations");
 		return "radioList";
+	}
+	
+	@RequestMapping(value = "/station/{cleanIUrl}")
+	public String getRadioStationWithCleanUrl(@PathVariable("cleanIUrl") String cleanUrl, Model model) {
+		try {
+			RadioStationDTO radio = radioStationService.getRadioStationWithCleanUrl(cleanUrl);
+			model.addAttribute("radio", radio);
+			radio.setHitCount(radio.getHitCount()+1);
+			radioStationService.updateRadioStation(radio);
+		} catch (RadioStationNotFoundException e) {
+			
+			return "error404";
+		}
+
+		return "radioView";
 	}
 
 	@RequestMapping(value = "/stations/{musicTypeName}")
