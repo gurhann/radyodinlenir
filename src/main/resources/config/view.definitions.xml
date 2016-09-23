@@ -85,6 +85,20 @@
 		<put-attribute name="curl" value="contactdetails"
 			cascade="true"></put-attribute>
 	</definition>
+	
+	 <!-- RadioStatios List -->
+	<definition name="radiostations" extends="adminPaneLTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/radiostationlist.jsp" />
+		<put-attribute name="title" expression="Radyo İstasyonları"  ></put-attribute>
+		<put-attribute name="curl" value="radiostations" cascade="true"></put-attribute>
+	</definition>
+	
+	 <!-- RadioStatios Add/Edit -->
+	<definition name="radiostationAddEdit" extends="adminPaneLTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/adminpanel/radiostationadd.jsp" />
+		<put-attribute name="title" expression="Radyo İstasyonları"  ></put-attribute>
+		<put-attribute name="curl" value="radiostations" cascade="true"></put-attribute>
+	</definition>
 
 	<!-- User Panel Views -->
 	<!-- Index -->
@@ -102,7 +116,6 @@
 			value="/WEB-INF/views/userpanel/contact.jsp"></put-attribute>
 		<put-attribute name="title" value="İletişim"></put-attribute>
 		<put-attribute name="musicTypeNavigation" value=""></put-attribute>
-		<put-attribute name="curl" value="contact" cascade="true"></put-attribute>
 	</definition>
 	
 	<!-- RadioStation List -->
@@ -110,19 +123,15 @@
 		<put-attribute name="body" value="/WEB-INF/views/userpanel/radioList.jsp"></put-attribute>
 		<put-attribute name="title" value="Radyo Listesi"></put-attribute>
 		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
-		<put-attribute name="curl" value="contact" cascade="true"></put-attribute>
-	</definition>
-	 <!-- RadioStatios List -->
-	<definition name="radiostations" extends="adminPaneLTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/adminpanel/radiostationlist.jsp" />
-		<put-attribute name="title" expression="Radyo İstasyonları"  ></put-attribute>
-		<put-attribute name="curl" value="radiostations" cascade="true"></put-attribute>
 	</definition>
 	
-	 <!-- RadioStatios Add/Edit -->
-	<definition name="radiostationAddEdit" extends="adminPaneLTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/adminpanel/radiostationadd.jsp" />
-		<put-attribute name="title" expression="Radyo İstasyonları"  ></put-attribute>
-		<put-attribute name="curl" value="radiostations" cascade="true"></put-attribute>
+	<!-- RadioStation View  -->
+	<definition name="radioView" extends="userTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/userpanel/radioView.jsp"></put-attribute>
+		<put-attribute name="leftBar" cascade="true" value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
+		<put-attribute name="title" value="${radio.name}"></put-attribute>
+		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
 	</definition>
+	
+	
 </tiles-definitions>
