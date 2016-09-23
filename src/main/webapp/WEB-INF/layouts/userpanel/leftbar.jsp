@@ -7,7 +7,7 @@
 		<div class="box-category">
 			<ul>				
 				<c:forEach var="city" items="${cities}">
-					<li><a href="/radiosofcity/${city.id}"><span>${city.id < 10 ? '0'.concat(city.id) : city.id}</span> ${city.name} </a></li>
+					<li><a href="/radiosofcity/${city.cleanUrl}"><span>${city.id < 10 ? '0'.concat(city.id) : city.id}</span> ${city.name} </a></li>
 				</c:forEach>
 			</ul>
 		</div>

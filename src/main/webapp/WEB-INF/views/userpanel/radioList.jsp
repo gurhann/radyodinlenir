@@ -33,7 +33,6 @@
 								</figure>
 								<div class="product-info">
 									<h3>${radio.name}</h3>
-									<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>156</span>
 								</div>
 							</div>
 						</c:forEach>

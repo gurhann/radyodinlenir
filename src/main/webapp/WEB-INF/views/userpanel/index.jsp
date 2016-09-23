@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="com.itaki.radyodinlenir.util.PageUtils"%>
+<c:set var="baseURL"	value="${PageUtils.getHost(pageContext.request)}" />
 <section class="events-finder">
 	<div class="container">
 		<header>
@@ -28,18 +30,17 @@
 								<figure>
 									<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
 									<figcaption>
-										<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
+										<a href="${baseURL}/station/${radio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 									</figcaption>
 								</figure>
 								<div class="product-info">
 									<h3>${radio.name}</h3>
-									<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>156</span>
+									
 								</div>
 							</div>
 						</c:forEach>
 					</div>
-					<!--album-grid-->
-					<a class="btn btn-wide btn-grey text-uppercase text-bold" href="/popularStations">Daha
+					<a class="btn btn-wide btn-grey text-uppercase text-bold" href="${baseURL}/popularStations">Daha
 						Fazlasını Gör</a>
 				</div>
 				<!--column-->
@@ -47,7 +48,6 @@
 		</div>
 	</div>
 </section>
-
 <section>
 	<header class="parallax parallax_two style3 text-center text-uppercase text-bold"
 		data-stellar-background-ratio="0.5">
@@ -63,7 +63,6 @@
 		</div>
 	</header>
 	<!--section header-->
-
 	<div class="photography">
 		<div class="container color-white">
 			<div class="store-grid text-uppercase text-bold clearfix">
@@ -73,24 +72,19 @@
 						<figure>
 							<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
 							<figcaption>
-								<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
+								<a href="${baseURL}/station/${radio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 							</figcaption>
 						</figure>
 						<div class="product-info">
 							<h3>${radio.name}</h3>
-							<span class="price-tag"><i class="fa fa-eye" aria-hidden="true"></i>156</span>
 						</div>
 					</div>
 				</c:forEach>
 			</div>
-			<!--album-grid-->
-			<a class="btn btn-wide btn-grey text-uppercase text-bold" href="/newestStations">Daha
+			<a class="btn btn-wide btn-grey text-uppercase text-bold" href="${baseURL}/newestStations">Daha
 				Fazlasını Gör</a>
 
 		</div>
 		<!--container-->
 	</div>
-	<!--movies-->
-
-
 </section>
