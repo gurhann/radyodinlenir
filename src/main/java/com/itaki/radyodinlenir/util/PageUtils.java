@@ -44,4 +44,14 @@ public class PageUtils {
 	    URI uri = new URI(scheme,userInfo,host,(port == 80 ? -1 : port),path,query,null);
 	    return uri.toString();
 	}
+	
+	public static String getHost(HttpServletRequest request) throws URISyntaxException, MalformedURLException {
+		URL url = new URL(request.getRequestURL().toString());
+	    String host  = url.getHost();
+	    String userInfo = url.getUserInfo();
+	    String scheme = url.getProtocol();
+	    int port = url.getPort();    
+	    URI uri = new URI(scheme,userInfo,host,(port == 80 ? -1 : port),null,null,null);
+	    return uri.toString();
+	}
 }
