@@ -88,16 +88,17 @@ public class IndexController {
 		model.addAttribute("pagerBaseUrl", "/newestStations");
 		return "radioList";
 	}
-	
+
 	@RequestMapping(value = "/station/{cleanIUrl}")
 	public String getRadioStationWithCleanUrl(@PathVariable("cleanIUrl") String cleanUrl, Model model) {
 		try {
 			RadioStationDTO radio = radioStationService.getRadioStationWithCleanUrl(cleanUrl);
 			model.addAttribute("radio", radio);
-			radio.setHitCount(radio.getHitCount()+1);
+			radio.setHitCount(radio.getHitCount() + 1);
+			model.addAttribute("similarRadios", radioStationService.getRadioStationForPagerWithMusicType(1, 8, radio.getMusicType().getId()));
 			radioStationService.updateRadioStation(radio);
 		} catch (RadioStationNotFoundException e) {
-			
+
 			return "error404";
 		}
 

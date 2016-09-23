@@ -68,7 +68,8 @@
 					</div>
 					<div class="native_button">
 						<div>
-							<a href="https://twitter.com/home?status=${radio.name } ${currentURL }">Paylaş</a>
+							<a
+								href="https://twitter.com/home?status=${radio.name } ${currentURL }">Paylaş</a>
 						</div>
 					</div>
 				</div>
@@ -102,8 +103,7 @@
 	<div class="tabs">
 		<div class="tab-heading">
 			<i class="fa fa-comments-o" aria-hidden="true"></i> Bizi desteklemek
-			için lüften yorum yaparak katkıda
-			bulunun.
+			için lüften yorum yaparak katkıda bulunun.
 		</div>
 		<div class="tab-content">
 			<div id="fb-root"></div>
@@ -126,7 +126,26 @@
 		<div class="tab-heading">
 			<i class="fa fa-bullhorn" aria-hidden="true"></i> Benzer Radyolar
 		</div>
-		<div class="tab-content"></div>
+		<div class="tab-content">
+			<div class="store-grid text-uppercase text-bold">
+				<c:forEach var="similaradio" items="${similarRadios}">
+					<div class="similar-product">
+						<figure>
+							<img width="152" height="152"
+								src="/resources/radiologos/${similaradio.logo}">
+							<figcaption>
+								<a href="/station/${similaradio.cleanUrl}" class="btn btn-grey"><i
+									class="fa fa-ticket "></i> Dinle</a>
+							</figcaption>
+						</figure>
+						<div class="product-info">
+							<h3>${similaradio.name}</h3>
+
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
 	</div>
 </div>
 <aside class="col-sm-4">
