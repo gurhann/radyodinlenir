@@ -22,21 +22,26 @@
 		<div class="featured-events">
 			<div class="row">
 				<div class="col-xs-12">
-					<div class="store-grid text-uppercase text-bold">
-						<c:forEach var="radio" items="${radioList}">
-							<div class="store-product">
-								<figure>
-									<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
-									<figcaption>
-										<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
-									</figcaption>
-								</figure>
-								<div class="product-info">
-									<h3>${radio.name}</h3>
+					<c:if test="${empty radioList}">
+						<div class="alert-danger"><h3>Herhangi bir radyo bulunamadı !!</h3></div>
+					</c:if>
+					<c:if test="${not empty radioList}">
+						<div class="store-grid text-uppercase text-bold">
+							<c:forEach var="radio" items="${radioList}">
+								<div class="store-product">
+									<figure>
+										<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
+										<figcaption>
+											<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
+										</figcaption>
+									</figure>
+									<div class="product-info">
+										<h3>${radio.name}</h3>
+									</div>
 								</div>
-							</div>
-						</c:forEach>
-					</div>
+							</c:forEach>
+						</div>
+					</c:if>
 
 				</div>
 				<!--column-->
@@ -44,7 +49,7 @@
 			<c:if test="${pageIndex != null && maxPageIndex != 1}">
 				<div class="row">
 					<div class="col-xs-12">
-						<ul class="pagination" style="float:left">
+						<ul class="pagination" style="float: left">
 							<c:url value="${pagerBaseUrl}/${pageIndex-1}" var="prev">
 							</c:url>
 							<c:if test="${pageIndex > 1}">
