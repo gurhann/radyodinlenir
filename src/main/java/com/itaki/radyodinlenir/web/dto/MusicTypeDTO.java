@@ -12,7 +12,6 @@ public class MusicTypeDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
-	private short priority;
 	private String cleanUrl;
 	private String seoKeywords;
 	private String seoDescription;
@@ -31,14 +30,6 @@ public class MusicTypeDTO implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public short getPriority() {
-		return priority;
-	}
-
-	public void setPriority(short priority) {
-		this.priority = priority;
 	}
 
 	public String getCleanUrl() {
@@ -67,7 +58,7 @@ public class MusicTypeDTO implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder(7, 9).append(id).append(name).append(priority).toHashCode();
+		return new HashCodeBuilder(7, 9).append(id).append(name).toHashCode();
 	}
 
 	@Override
@@ -82,7 +73,7 @@ public class MusicTypeDTO implements Serializable {
 			return false;
 		}
 		MusicTypeDTO other = (MusicTypeDTO) obj;
-		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(priority, other.getPriority()).isEquals();
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).isEquals();
 	}
 
 }

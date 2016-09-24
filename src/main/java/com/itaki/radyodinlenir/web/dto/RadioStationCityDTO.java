@@ -16,7 +16,6 @@ public class RadioStationCityDTO implements Serializable {
 	private String cleanUrl;
 	private String seoKeywords;
 	private String seoDescription;
-	private short priority;
 
 	public int getId() {
 		return id;
@@ -32,14 +31,6 @@ public class RadioStationCityDTO implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public short getPriority() {
-		return priority;
-	}
-
-	public void setPriority(short priority) {
-		this.priority = priority;
 	}
 
 	public String getCleanUrl() {
@@ -66,7 +57,7 @@ public class RadioStationCityDTO implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder(9, 11).append(id).append(name).append(priority).toHashCode();
+		return new HashCodeBuilder(9, 11).append(id).append(name).toHashCode();
 	}
 
 	@Override
@@ -81,6 +72,6 @@ public class RadioStationCityDTO implements Serializable {
 			return false;
 		}
 		RadioStationCityDTO other = (RadioStationCityDTO) obj;
-		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(priority, other.getPriority()).isEquals();
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).isEquals();
 	}
 }

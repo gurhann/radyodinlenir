@@ -20,7 +20,6 @@ public class RadioStationCityMapper {
 		dto.setId(model.getId());
 		dto.setName(model.getName());
 		dto.setCleanUrl(model.getCleanUrl());
-		dto.setPriority(model.getPriority());
 		dto.setSeoDescription(model.getSeoDescription());
 		dto.setSeoKeywords(model.getSeoKeywords());
 		return dto;
@@ -34,7 +33,6 @@ public class RadioStationCityMapper {
 		model.setId(dto.getId());
 		model.setName(dto.getName());
 		model.setCleanUrl(dto.getCleanUrl());
-		model.setPriority(dto.getPriority());
 		model.setSeoDescription(dto.getSeoDescription());
 		model.setSeoKeywords(dto.getSeoKeywords());
 		return model;
