@@ -32,6 +32,9 @@ public class ApplicationConfig {
 	@Column(name = "description")
 	private String description;
 
+	@Column(name = "short_code")
+	private String shortCode;
+
 	public int getId() {
 		return id;
 	}
@@ -55,7 +58,15 @@ public class ApplicationConfig {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
+	public String getShortCode() {
+		return shortCode;
+	}
+
+	public void setShortCode(String shortCode) {
+		this.shortCode = shortCode;
+	}
+
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder(21, 23).append(id).append(name).append(description).toHashCode();

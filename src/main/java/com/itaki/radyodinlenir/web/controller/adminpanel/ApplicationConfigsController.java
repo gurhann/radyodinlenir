@@ -40,7 +40,7 @@ public class ApplicationConfigsController {
 	@RequestMapping(value = "/admin/generalconfigs", method = RequestMethod.GET)
 	public String getGeneralConfigs(Model model, Locale locale) {
 		try {
-			return getData(model, 0, 4, "generalconfigs");
+			return getData(model, 0, 5, "generalconfigs");
 		} catch (Exception e) {
 			return "error403";
 		}
@@ -64,7 +64,7 @@ public class ApplicationConfigsController {
 	@RequestMapping(value = "/admin/seoconfigs", method = RequestMethod.GET)
 	public String getSeoConfigs(Model model, Locale locale) {
 		try {
-			return getData(model, 4, 6, "seoconfigs");
+			return getData(model, 5, 6, "seoconfigs");
 		} catch (Exception e) {
 			return "error403";
 		}
@@ -74,7 +74,7 @@ public class ApplicationConfigsController {
 	@RequestMapping(value = "/admin/socialconfigs", method = RequestMethod.GET)
 	public String getSocialConfigs(Model model, Locale locale) {
 		try {
-			return getData(model, 10, 10, "socialconfigs");
+			return getData(model, 11, 10, "socialconfigs");
 		} catch (Exception e) {
 			return "error403";
 		}
@@ -84,7 +84,7 @@ public class ApplicationConfigsController {
 	@RequestMapping(value = "/admin/aboutconfigs", method = RequestMethod.GET)
 	public String getAboutConfigs(Model model, Locale locale) {
 		try {
-			return getData(model, 20, 1, "aboutconfigs");
+			return getData(model, 21, 1, "aboutconfigs");
 		} catch (Exception e) {
 			return "error403";
 		}
@@ -93,7 +93,7 @@ public class ApplicationConfigsController {
 	@RequestMapping(value = "/admin/adwordsconfigs", method = RequestMethod.GET)
 	public String getAdwordsConfigs(Model model, Locale locale) {
 		try {
-			return getData(model, 21, 6, "adwordsconfigs");
+			return getData(model, 22, 6, "adwordsconfigs");
 		} catch (Exception e) {
 			return "error403";
 		}

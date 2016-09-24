@@ -20,6 +20,7 @@ public class ApplicationConfigMapper {
 		dto.setId(model.getId());
 		dto.setName(model.getName());
 		dto.setDescription(model.getDescription());
+		dto.setShortCode(model.getShortCode());
 		return dto;
 	}
 
@@ -31,6 +32,7 @@ public class ApplicationConfigMapper {
 		model.setId(dto.getId());
 		model.setName(dto.getName());
 		model.setDescription(dto.getDescription());
+		model.setShortCode(dto.getShortCode());
 		return model;
 	}
 
