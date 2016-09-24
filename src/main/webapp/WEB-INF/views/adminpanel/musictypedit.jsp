@@ -26,6 +26,22 @@
 					<form:errors path="name" class="control-label" />
 				</div>
 			</spring:bind>
+			<spring:bind path="seoDescription">
+				<div class="form-group">
+					<label>Seo Description:</label>
+					<form:input path="seoDescription" type="text" class="form-control"	 placeholder="Description" />
+					<form:errors path="seoDescription" class="control-label" />
+				</div>
+			</spring:bind>
+			<spring:bind path="seoKeywords">
+				<div class="form-group">
+					<label>Seo Keywords:</label>
+					<form:input path="seoKeywords" type="text" class="form-control"
+						placeholder="Keywords" />
+					<form:errors path="seoKeywords" class="control-label" />
+				</div>
+			</spring:bind>
+
 			<div class="form-group ${status.error ? 'has-error' : ''}">
 				<label class="control-label" for="queue">Sırası:</label>
 				<form:select path="priority" class="form-control" id="queue">
@@ -36,7 +52,8 @@
 				<form:errors path="priority" class="control-label" />
 			</div>
 			<div class="form-group" style="float: right">
-			<a href="/admin/musictypelist" class="btn btn-info ">Müzik tipleri</a>
+				<a href="/admin/musictypelist" class="btn btn-info ">Müzik
+					tipleri</a>
 				<button type="submit" class="btn btn-success">Kaydet</button>
 			</div>
 		</form:form>

@@ -33,6 +33,22 @@
 										<form:errors path="name" class="control-label" />
 									</div>
 								</spring:bind>
+								<spring:bind path="seoDescription">
+									<div class="form-group">
+										<label>Seo Description:</label>
+										<form:input path="seoDescription" type="text" class="form-control"
+											 placeholder="Description" />
+										<form:errors path="seoDescription" class="control-label" />
+									</div>
+								</spring:bind>
+								<spring:bind path="seoKeywords">
+									<div class="form-group">
+										<label>Seo Keywords:</label>
+										<form:input path="seoKeywords" type="text" class="form-control"
+											 placeholder="Keywords" />
+										<form:errors path="seoKeywords" class="control-label" />
+									</div>
+								</spring:bind>
 								<spring:bind path="priority">
 									<div class="form-group">
 										<label>Öncelik:</label>
@@ -54,60 +70,60 @@
 					</div>
 				</div>
 			</div>
-		<div class="panel-body">
+			<div class="panel-body">
 
-			<div class="table-responsive">
-				<c:if test="${not empty msg}">
-					<div class="alert alert-${css} alert-dismissible" role="alert">
-						<button type="button" class="close" data-dismiss="alert"
-							aria-label="Close">
-							<span aria-hidden="true">×</span>
-						</button>
-						<strong>${msg}</strong>
-					</div>
-				</c:if>
-				<c:if test="${ empty musicTypes}">
-					<div class="alert alert-danger alert-dismissible" role="alert">
-						<button type="button" class="close" data-dismiss="alert"
-							aria-label="Close">
-							<span aria-hidden="true">×</span>
-						</button>
-						<strong><spring:message code="MusicTypes.NotFound" /></strong>
-					</div>
-				</c:if>
-				<table class="table table-hover table-bordered">
-					<thead>
-						<tr>
-							<th width="50">#ID</th>
-							<th>Adı</th>
-							<th width="200">Temiz Url</th>
-							<th width="50">Öncelik</th>
-							<td width="100">Düzenle</td>
-						</tr>
-					</thead>
-					<tbody>
-						<c:if test="${not empty musicTypes}">
-							<c:forEach var="musicType" items="${musicTypes}">
-								<tr class="success">
-									<td>${musicType.id}</td>
-									<td>${musicType.name}</td>
-									<td>${musicType.cleanUrl}</td>
-									<td>${musicType.priority}</td>
-									<td><a href="/admin/musictypelist/${musicType.id}/edit"
-										class="btn btn-info btn-xs">Düzenle</a> <a
-										href="/admin/musictypelist/${musicType.id}/delete"
-										class="btn btn-danger btn-xs">Sil</a></td>
-								</tr>
-							</c:forEach>
-						</c:if>
+				<div class="table-responsive">
+					<c:if test="${not empty msg}">
+						<div class="alert alert-${css} alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<strong>${msg}</strong>
+						</div>
+					</c:if>
+					<c:if test="${ empty musicTypes}">
+						<div class="alert alert-danger alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<strong><spring:message code="MusicTypes.NotFound" /></strong>
+						</div>
+					</c:if>
+					<table class="table table-hover table-bordered">
+						<thead>
+							<tr>
+								<th width="50">#ID</th>
+								<th>Adı</th>
+								<th width="200">Temiz Url</th>
+								<th width="50">Öncelik</th>
+								<td width="100">Düzenle</td>
+							</tr>
+						</thead>
+						<tbody>
+							<c:if test="${not empty musicTypes}">
+								<c:forEach var="musicType" items="${musicTypes}">
+									<tr class="success">
+										<td>${musicType.id}</td>
+										<td>${musicType.name}</td>
+										<td>${musicType.cleanUrl}</td>
+										<td>${musicType.priority}</td>
+										<td><a href="/admin/musictypelist/${musicType.id}/edit"
+											class="btn btn-info btn-xs">Düzenle</a> <a
+											href="/admin/musictypelist/${musicType.id}/delete"
+											class="btn btn-danger btn-xs">Sil</a></td>
+									</tr>
+								</c:forEach>
+							</c:if>
 
-					</tbody>
+						</tbody>
 
 
-				</table>
+					</table>
 
+				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 </div>
