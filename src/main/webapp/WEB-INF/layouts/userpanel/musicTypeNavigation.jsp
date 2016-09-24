@@ -4,9 +4,9 @@
 	<div class="container">
 		<nav>
 			<ul class="sf-menu">
-				<li class="current"><a href="/popularStations"><i class="fa fa-music" aria-hidden="true"></i> Hepsi</a></li>
+				<li class="${musicTypeName eq null ? 'current' : ''}"><a href="/popularStations"><i class="fa fa-music" aria-hidden="true"></i> Hepsi</a></li>
 				<c:forEach var="musicType" items="${musicTypeList}">
-					<li><a href="/stations/${musicType.cleanUrl}"> <i class="fa fa-music"
+					<li class="${musicTypeName eq musicType.cleanUrl  ? 'current' : '' }" ><a href="/stations/${musicType.cleanUrl}" > <i class="fa fa-music"
 							aria-hidden="true"></i> ${musicType.name}
 					</a></li>
 				</c:forEach>
