@@ -11,9 +11,9 @@
 				</div>
 				<div class="col-xs-12 col-md-4">
 					<div class="event-form text-right">
-						<form>
+						<form action="/search" method="get">
 							<div class="form-input search-keyword">
-								<input type="text" placeholder="Radyo Ara"> <i class="icon fa fa-search"></i>
+								<input id="searchText" name="searchText" type="text" placeholder="Radyo Ara" value="${searchedText}"> <i class="icon fa fa-search"></i>
 							</div>
 							<button class="btn btn-default" type="submit">Radyo Ara</button>
 						</form>

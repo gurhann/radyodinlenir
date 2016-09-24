@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.itaki.radyodinlenir.exception.MusicTypeNotFoundException;
 import com.itaki.radyodinlenir.exception.RadioStationNotFoundException;
@@ -118,6 +119,14 @@ public class IndexController {
 	@RequestMapping(value = "/newestStations")
 	public String getNewestRadioStations() {
 		return "forward:/newestStations/1";
+	}
+	
+	@RequestMapping(value = "/search")
+	public String searchStation (@RequestParam String searchText, Model model) {
+		List<RadioStationDTO> radioList = radioStationService.searchRadioStationWithSearchText(searchText);
+		model.addAttribute("radioList", radioList);
+		model.addAttribute("searchedText", searchText);
+		return "radioList";
 	}
 
 }
