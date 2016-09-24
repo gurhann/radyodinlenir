@@ -1,60 +1,140 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<section id="audio-player" class="the-xv-Jplayer">
-	<div id="player-instance" class="jp-jplayer"></div>
-	<div class="controls jp-controls-holder">
-		<button class="playList-trigger pc-playlist2"></button>
-		<div class="jp-prev pc-back"></div>
-		<div class="play-pause jp-play pc-play"></div>
-		<div class="play-pause jp-pause fa pc-pause" style="display: none"></div>
-		<div class="jp-next pc-next"></div>
-	</div>
-	<div class="jp-volume-controls">
-		<button class="sound-trigger pc-volume"></button>
-		<div class="jp-volume-bar" style="display: none;">
-			<div class="jp-volume-bar-value" style="width: 1.4737%;"></div>
-		</div>
-	</div>
-	<h5 class="audio-title">&ensp;</h5>
-	<div class="player-status">
-		<div class="audio-progress">
-			<div class="jp-seek-bar">
-				<div class="audio-play-bar jp-play-bar" style="width: 20%;"></div>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<div id="jwplayer">
+	<div class="container">
+		<div class="radio-wrap clearfix">
+			<div class="radio-logo">
+				<img src="/resources/radiologos/${radio.logo}" />
 			</div>
-			<!--jp-seek-bar-->
+			<div class="radio-controllers">
+				<a href="/j" class="prev"
+					title="Önceki Radyo"></a>
+				<button type="button" id="play-button"
+					class="play-controller loading">Yükleniyor</button>
+				<a href="/" class="next"
+					title="Sonraki Radyo"></a>
+				<h1 class="radio-title">${radio.name}</h1>
+				<div id="volume-container">
+					<span class="tooltip"></span>
+					<div id="slider"></div>
+					<span class="volume"></span>
+				</div>
+			</div>		
+
 		</div>
-		<!--audio-progress-->
 	</div>
-	<!--player-status-->
+</div>
+<script type='text/javascript'>
+	$(document).ready(function() {
+	});
+</script>
+<script>
+	$(document)
+			.ready(
+					function() {
+						var userAgent = navigator.userAgent || navigator.vendor
+								|| window.opera;
+						if (userAgent.match(/iPad/i)
+								|| userAgent.match(/iPhone/i)
+								|| userAgent.match(/iPod/i)) {
+							$('#ismobile').css('display', 'block');
+							$('.install-apps .android').css('display', 'none');
+						} else if (userAgent.match(/Android/i)) {
+							$('#ismobile').css('display', 'block');
+							$('.install-apps .ios').css('display', 'none');
+						} else {
+							$('#ismobile').css('display', 'none');
+							$('#play-button-mobile').css('display', 'none');
+							$('.install-apps').css('display', 'none');
+						}
+						jwplayer.key = "BwbTXv40X+11YCOAXa285ZIQ3NQyALnr+h7KJ8wBiec=";
+						if (!$('#ismobile').is(':visible')) {
+							var Player = jwplayer('hidden-radyo-player')
+									.setup(
+											{
+												file : '${radio.streamUrl}',
+												image : '/resources/radiologos/${radio.logo}',
+												title : '${radio.name}',
+												primary : 'html5',
+												width : '100%',
+												height : '20',
+												autostart : true,
+											});
+							Player
+									.onPlay(function() {
+										$('.play-controller').removeClass(
+												'loading').text('');
+										var RadioTitle = $('.radio-title')
+												.text().replace("Canlı Dinle",
+														"Dinliyorsunuz");
+										$('.radio-title').text(RadioTitle);
+									});
+							Player.onPause(function() {
+								var RadioTitle = $('.radio-title').text()
+										.replace("Dinliyorsunuz", "Dinle");
+								$('.radio-title').text(RadioTitle);
+							});
+							$('.play-controller').click(
+									function() {
+										if ($(this).hasClass('play')) {
+											Player.pause(false);
+											var RadioTitle = $('.radio-title')
+													.text().replace("Dinle",
+															"Dinliyorsunuz");
+											$('.radio-title').text(RadioTitle);
+											$(this).removeClass('play');
+										} else {
+											Player.pause(true);
+											var RadioTitle = $('.radio-title')
+													.text().replace(
+															"Dinliyorsunuz",
+															"Dinle");
+											$('.radio-title').text(RadioTitle);
+											$(this).addClass('play');
+										}
+									});
 
-	<!--Add Songs In mp3 formate here-->
-	<ul class="hidden playlist-files">
-		<li data-title="Ukulele Story" data-artist="Audio Jungle"
-			data-mp3="https://0.s3.envato.com/files/152256065/preview.mp3"></li>
-		<li data-title="Bright and Inspiring" data-artist="Audio Jungle"
-			data-mp3="https://0.s3.envato.com/files/152351972/preview.mp3"></li>
-		<li data-title="Indie Rock" data-artist="Audio Jungle"
-			data-mp3="https://0.s3.envato.com/files/162668841/preview.mp3"></li>
-		<li data-title="Up in the Sky" data-artist="Audio Jungle"
-			data-mp3="https://0.s3.envato.com/files/69092344/preview.mp3"></li>
-		<li data-title="Inspiring" data-artist="Audio Jungle"
-			data-mp3="https://0.s3.envato.com/files/167149310/preview.mp3"></li>
-		<li data-title="Inspiring Thoughts" data-artist="Audio Jungle"
-			data-mp3="https://0.s3.envato.com/files/156059055/preview.mp3"></li>
-
-		<li data-title="Gypsy Jazz From France" data-artist="Audio Jungle"
-			data-mp3="https://0.s3.envato.com/files/152733871/preview.mp3"></li>
-		<li data-title="Happy" data-artist="Audio Jungle"
-			data-mp3="https://0.s3.envato.com/files/166500700/preview.mp3"></li>
-		<li data-title="The Water Clock" data-artist="Audio Jungle"
-			data-mp3="https://0.s3.envato.com/files/151397943/preview.mp3"></li>
-
-	</ul>
-	<!--Playlist ends-->
-
-	<div class="jp-playlist">
-		<ul>
-			<li></li>
-		</ul>
-	</div>
-
-</section>
+							function JWsetVolume(v) {
+								Player.setVolume(v);
+							}
+							var slider = $('#slider'), tooltip = $('.tooltip');
+							tooltip.hide();
+							slider
+									.slider({
+										range : "min",
+										min : 0,
+										value : 50,
+										start : function(event, ui) {
+											tooltip.fadeIn('fast');
+										},
+										slide : function(event, ui) {
+											var value = slider.slider('value'), volume = $('.volume');
+											tooltip.css('left', value).text(
+													ui.value);
+											if (value <= 5) {
+												volume.css(
+														'background-position',
+														'0 0');
+											} else if (value <= 25) {
+												volume.css(
+														'background-position',
+														'0 -25px');
+											} else if (value <= 75) {
+												volume.css(
+														'background-position',
+														'0 -50px');
+											} else {
+												volume.css(
+														'background-position',
+														'0 -75px');
+											}
+											;
+											JWsetVolume(value);
+										},
+										stop : function(event, ui) {
+											tooltip.fadeOut('fast');
+										},
+									});
+						}
+					});
+</script>

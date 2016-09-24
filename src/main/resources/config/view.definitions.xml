@@ -130,6 +130,7 @@
 		<put-attribute name="body" value="/WEB-INF/views/userpanel/radioView.jsp"></put-attribute>
 		<put-attribute name="leftBar" cascade="true" value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
 		<put-attribute name="title" value="${radio.name}"></put-attribute>
+		<put-attribute name="radioPlayer" value="/WEB-INF/layouts/userpanel/radioPlayer.jsp"></put-attribute>	
 		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
 	</definition>
 	
