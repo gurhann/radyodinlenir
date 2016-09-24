@@ -274,6 +274,176 @@ header h2 {
 .link:hover {
 	color: #7cbf1d;
 }
+
+/*===============================================
+Jw Player
+=================================================*/
+#jwplayer {
+	width: 100%;
+	height: 100px;
+	background: #262626;
+	    bottom: 0px;
+    position: fixed;
+    z-index:1000;
+}
+
+.radio-wrap {
+    margin: 0 auto;
+    padding: 5px;
+    position: relative;
+}
+
+
+.radio-wrap .radio-logo {
+    width: 90px;
+    height: 90px;
+    float: left;
+}
+.radio-wrap .radio-logo img {
+    width: 90px;
+    height: 90px;
+    padding: 1px;
+    background: #8dbf41;
+    border: 1px solid #8dbf41;
+}
+
+.radio-controllers {
+    float: left;
+    margin-left: 15px;
+}
+
+.radio-controllers .prev {
+    width: 50px;
+    height: 50px;
+    margin-top: 21px;
+    border: 0;
+    cursor: pointer;
+    background: url(/resources/userPanelAssets/img/prev.png) center no-repeat;
+    float: left;
+    outline: 0;
+}
+#play-button.play {
+    background: url(/resources/userPanelAssets/img/play.png) center no-repeat;
+}
+#play-button {
+    width: 80px;
+    height: 80px;
+    margin-top: 5px;
+    border: 0;
+    cursor: pointer;
+    background: url(/resources/userPanelAssets/img/pause.png) center no-repeat;
+    float: left;
+    outline: 0;
+}
+
+.radio-controllers .next {
+    width: 50px;
+    height: 50px;
+    margin-top: 21px;
+    border: 0;
+    cursor: pointer;
+    background: url(/resources/userPanelAssets/img/next.png) center no-repeat;
+    float: left;
+    outline: 0;
+}
+#jwplayer h1.radio-title {
+    font-size: 28px;
+    letter-spacing: -1px;
+    color: #DDD;
+    margin: 0 0 0 15px;
+    padding: 0;
+    float: left;
+    line-height: 90px;
+    height: 90px;
+}
+
+#play-button.loading {
+    background: url(/resources/userPanelAssets/img/loader.gif) center no-repeat;
+    color: #fff;
+    font-weight: 700;
+}
+
+#volume-container {
+    width: 250px;
+    height: auto;
+    margin-top: 40px;
+    position: relative;
+    float: left;
+}
+#slider {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #333 #333 #777;
+    border-radius: 25px;
+    width: 250px;
+    position: absolute;
+    height: 13px;
+    background: url(/resources/userPanelAssets/img/bg.png) top left;
+    box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, .5), 0 1px 0 0 rgba(250, 250, 250, .5);
+    left: 20px;
+}
+.tooltip {
+    position: absolute;
+    display: block;
+    top: -25px;
+    width: 35px;
+    height: 20px;
+    color: #fff;
+    text-align: center;
+    font: 10pt Tahoma, Arial, sans-serif;
+    border-radius: 3px;
+    border: 1px solid #333;
+    -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .3);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: -moz-linear-gradient(top, rgba(69, 72, 77, .5) 0, rgba(0, 0, 0, .5) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(69, 72, 77, .5)), color-stop(100%, rgba(0, 0, 0, .5)));
+    background: -webkit-linear-gradient(top, rgba(69, 72, 77, .5) 0, rgba(0, 0, 0, .5) 100%);
+    background: -o-linear-gradient(top, rgba(69, 72, 77, .5) 0, rgba(0, 0, 0, .5) 100%);
+    background: -ms-linear-gradient(top, rgba(69, 72, 77, .5) 0, rgba(0, 0, 0, .5) 100%);
+    background: linear-gradient(top, rgba(69, 72, 77, .5) 0, rgba(0, 0, 0, .5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8045484d',  endColorstr='#80000000',  GradientType=0);
+}
+.volume {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    right: -55px;
+    background: url(/resources/userPanelAssets/img/volume.png) 0 -50px no-repeat;
+    position: absolute;
+    margin-top: -5px;
+}
+.ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background: url(/resources/userPanelAssets/img/volumeHandle.png) 50% 50% no-repeat;
+    font-weight: 700;
+    color: #1C94C4;
+    outline: 0;
+    top: -6px;
+    margin-left: -12px;
+}
+.ui-slider-range {
+    background: #fff;
+    background: -moz-linear-gradient(top, #fff 0, #eaeaea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(100%, #eaeaea));
+    background: -webkit-linear-gradient(top, #fff 0, #eaeaea 100%);
+    background: -o-linear-gradient(top, #fff 0, #eaeaea 100%);
+    background: -ms-linear-gradient(top, #fff 0, #eaeaea 100%);
+    background: linear-gradient(top, #fff 0, #eaeaea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',  endColorstr='#eaeaea',  GradientType=0);
+    position: absolute;
+    border: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 25px;
+}
 /*===============================================
 Form Styling
 =================================================*/
@@ -1278,8 +1448,6 @@ Radio Player
 	width: 3px;
 	animation: sound 0ms -800ms linear infinite alternate;
 }
-
-
 
 }
 .music_pseudo_bar:nth-child(1) {
@@ -3406,6 +3574,7 @@ event single
 Footer
 ==================================*/
 footer.doc-footer {
+	margin-bottom:50px;
 	margin-top: 40px;
 	color: #90989c;
 	font-size: 11px;
@@ -3435,6 +3604,15 @@ store product
 .store-product {
 	position: relative;
 	width: 14%;
+	margin-right: 3px;
+	padding: 6px;
+	float: left;
+	margin-bottom: 5px;
+}
+
+.similar-product {
+	position: relative;
+	width: 25%;
 	margin-right: 3px;
 	padding: 6px;
 	float: left;
@@ -3516,7 +3694,6 @@ store product
 }
 
 .store-product .product-info {
-	padding-right: 55px;
 	position: relative;
 }
 
@@ -4380,6 +4557,7 @@ nav>.sf-menu {
 }
 
 .sf-menu>li+li {
+	
 }
 
 .sf-menu>li+li:after {
@@ -4560,6 +4738,7 @@ aside .info li a span {
 	color: rgb(124, 124, 124);
 	display: block;
 }
+
 .mb_share .button .native_button div a:hover {
 	color: #121212;
 }
@@ -4594,7 +4773,7 @@ aside .info li a span {
 }
 
 .mb_share .button .native_button {
-    width: 76%;
+	width: 76%;
 	height: 40px;
 	float: left;
 	background: #DCE0E0 !important;

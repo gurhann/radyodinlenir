@@ -55,9 +55,17 @@
 <script
 	src="${baseURL}/resources/userPanelAssets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
+<script src="${baseURL}/resources/userPanelAssets/js/jquery.js"></script>
+<script src="/resources/userPanelAssets/js/jquery-ui.min.js"></script>
+<script src="/resources/userPanelAssets/js/jwplayer.js"></script>
+<script src="/resources/userPanelAssets/js/jwplayer.html5.js"></script>
+<script src="/resources/userPanelAssets/js/jwpsrv.js"></script>
+</head>
 </head>
 <body>
-	<div class="pageLoader"></div>
+	<div style="position: absolute; top: -300px; z-index: -1;">
+		<div id="hidden-radyo-player"></div>
+	</div>
 	<div class="majorWrap">
 		<tiles:insertAttribute name="header"></tiles:insertAttribute>
 
@@ -76,7 +84,6 @@
 	<tiles:insertAttribute name="radioPlayer"></tiles:insertAttribute>
 	<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 
-	<script src="${baseURL}/resources/userPanelAssets/js/jquery.js"></script>
 	<script
 		src="${baseURL}/resources/userPanelAssets/js/jquery.downCount.js"></script>
 	<script
