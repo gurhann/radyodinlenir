@@ -1,86 +1,12 @@
 jQuery(function($) {
-    "use strict";
-
-   
-    /*====================
-    Main
-    =====================*/
-    function contactemaps(selector_map, address, type, zoom_lvl, map_theme) {
-        var map = new google.maps.Map(document.getElementById(selector_map), {
-            mapTypeId: google.maps.MapTypeId.type,
-            scrollwheel: false,
-            draggable: false,
-            zoom: zoom_lvl,
-            styles: map_theme,
-        });
-        var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({
-                'address': address
-            },
-            function(results, status) {
-                if (status === google.maps.GeocoderStatus.OK) {
-                    new google.maps.Marker({
-                        position: results[0].geometry.location,
-                        map: map,
-                        /* icon: map_pin*/
-                    });
-                    map.setCenter(results[0].geometry.location);
-                }
-            });
-    }
-
-    function suonoApp() {
-
-        /*custome Placeholder*/
-        $('.field-wrap input,.field-wrap textarea').each(function(index, element) {
-            if ($(this).val() !== "") {
-                $('label[for=' + $(this).attr("id") + ']').hide();
-            }
-        });
-
-        $('.field-wrap input,.field-wrap textarea').focus(function() {
-            $('label[for=' + $(this).attr("id") + ']').hide();
-        });
-        $('.field-wrap input,.field-wrap textarea').blur(function() {
-            if ($(this).val() === "") {
-                $('label[for=' + $(this).attr("id") + ']').show();
-            }
-        });
     
-     
-        /*======================================
-        custome selectbox
-        =======================================*/
-        $('.custome-select select').on('change', function() {
-            var p = $(this).parent(".custome-select");
-            p.find('span').html($(this).find('option:selected').text());
-        });
 
    
-
  
-        
-
-        /*=======================================
-        packery
-        =======================================*/
-        if ($('.xvPackeryItems').length) {
-            var packery = $('.xvPackeryItems');
-            packery.packery({
-                itemSelector: '.xvPackeryItem',
-                gutter: 0
-            });
-        }
-        
-    
-   
-
-    } /*suonoApp*/
-    suonoApp();
-
-    /*======================================
-    Menu
-    ======================================*/
+    /*
+	 * ====================================== Menu
+	 * ======================================
+	 */
     
     $("#sticktop").sticky({
         topSpacing: 0
@@ -135,7 +61,4 @@ jQuery(function($) {
     });
 
 });
-
-
-
 
