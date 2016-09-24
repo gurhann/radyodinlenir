@@ -28,7 +28,7 @@ public class UploadingService {
 				;
 				File dest = new File(filePath);
 				file.transferTo(dest);
-				return file.getOriginalFilename();
+				return  PageUtils.convertCleanUrl(file.getOriginalFilename());
 			} catch (Exception ex) {
 				
 				return null;
