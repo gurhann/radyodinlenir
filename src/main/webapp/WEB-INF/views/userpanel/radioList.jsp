@@ -1,12 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ page import="com.itaki.radyodinlenir.util.PageUtils"%>
+<c:set var="currentURL" value="${PageUtils.getCurentFullPath(pageContext.request)}" />
 <section class="events-finder">
 	<div class="container">
 		<header>
 			<div class="row">
-				<div class="col-xs-12 col-md-8">
-					<h2 class="text-uppercase">Popüler Radyolar</h2>
-				</div>
+				<c:choose>
+					<c:when test="${fn:contains(currentURL, 'popularStations')}">
+						<div class="col-xs-12 col-md-8">
+							<h2 class="text-uppercase">Popüler Radyolar</h2>
+						</div>
+					</c:when>
+					<c:when test="${fn:contains(currentURL, 'newestStations')}">
+						<div class="col-xs-12 col-md-8">
+							<h2 class="text-uppercase">Son Eklenen Radyolar</h2>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="col-xs-12 col-md-8"></div>
+					</c:otherwise>
+				</c:choose>
 				<div class="col-xs-12 col-md-4">
 					<div class="event-form text-right">
 						<form action="/search" method="get">
@@ -23,7 +38,9 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<c:if test="${empty radioList}">
-						<div class="alert-danger"><h3>Herhangi bir radyo bulunamadı !!</h3></div>
+						<div class="alert-danger">
+							<h3>Herhangi bir radyo bulunamadı !!</h3>
+						</div>
 					</c:if>
 					<c:if test="${not empty radioList}">
 						<div class="store-grid text-uppercase text-bold">
