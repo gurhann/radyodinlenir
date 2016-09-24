@@ -5,7 +5,7 @@ import java.io.Serializable;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-public class ApplicationConfigDTO implements Serializable{
+public class ApplicationConfigDTO implements Serializable {
 
 	/**
 	 * 
@@ -14,6 +14,7 @@ public class ApplicationConfigDTO implements Serializable{
 	private int id;
 	private String name;
 	private String description;
+	private String shortCode;
 
 	public int getId() {
 		return id;
@@ -37,6 +38,14 @@ public class ApplicationConfigDTO implements Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getShortCode() {
+		return shortCode;
+	}
+
+	public void setShortCode(String shortCode) {
+		this.shortCode = shortCode;
 	}
 
 	@Override
