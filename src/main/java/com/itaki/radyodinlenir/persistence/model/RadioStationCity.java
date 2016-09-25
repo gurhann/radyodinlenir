@@ -2,6 +2,8 @@ package com.itaki.radyodinlenir.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -9,7 +11,10 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "radio_station_city")
+@NamedQueries({ @NamedQuery(name = RadioStationCity.FIND_RADIO_STATION_CITY_BY_CLEANURL, query = "select m from RadioStationCity m where m.cleanUrl=:cleanUrl") })
 public class RadioStationCity extends BaseCategory {
+
+	public static final String FIND_RADIO_STATION_CITY_BY_CLEANURL = "RadioStationCity.findByCleanUrl";
 
 	@Column(name = "clean_url")
 	private String cleanUrl;

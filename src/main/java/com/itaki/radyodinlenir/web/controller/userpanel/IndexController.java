@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.itaki.radyodinlenir.exception.MusicTypeNotFoundException;
+import com.itaki.radyodinlenir.exception.RadioStationCityNotFoundException;
 import com.itaki.radyodinlenir.exception.RadioStationNotFoundException;
 import com.itaki.radyodinlenir.service.MusicTypeService;
+import com.itaki.radyodinlenir.service.RadioStationCityService;
 import com.itaki.radyodinlenir.service.RadioStationService;
 import com.itaki.radyodinlenir.util.PageUtils;
 import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
+import com.itaki.radyodinlenir.web.dto.RadioStationCityDTO;
 import com.itaki.radyodinlenir.web.dto.RadioStationDTO;
 
 @Controller
@@ -27,6 +30,9 @@ public class IndexController {
 
 	@Autowired
 	private MusicTypeService musicTypeService;
+
+	@Autowired
+	private RadioStationCityService radioSTationCityService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(Model model) {
@@ -53,6 +59,29 @@ public class IndexController {
 			model.addAttribute("musicTypeName", musicTypeName);
 			model.addAttribute("pagerBaseUrl", "/stations/" + musicTypeName);
 		} catch (MusicTypeNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "radioList";
+	}
+
+	@RequestMapping(value = "/radiosofcity/{cityName}/{pageIndex}", method = RequestMethod.GET)
+	public String getRadioListByCity(@PathVariable("cityName") String cityName, @PathVariable("pageIndex") Integer pageIndex, Model model) {
+		try {
+			RadioStationCityDTO radioStationCity = radioSTationCityService.getRadioStationCityByCleanUrl(cityName);
+			int totalCount = radioStationService.getRadioStationsCountWithCityId(radioStationCity.getId());
+			int maxPageIndex = PageUtils.getPageCount(totalCount, 35);
+			if (pageIndex == null || pageIndex < 1 || pageIndex > maxPageIndex) {
+				pageIndex = 1;
+			}
+			List<RadioStationDTO> radioStationList = radioStationService.getRadioStationForPagerWithCity(pageIndex, 35, radioStationCity.getId());
+			model.addAttribute("radioList", radioStationList);
+			model.addAttribute("maxPageIndex", maxPageIndex);
+			model.addAttribute("pageIndex", pageIndex);
+			model.addAttribute("musicTypeName", cityName);
+			model.addAttribute("pagerBaseUrl", "/radiosofcity/" + cityName);
+
+		} catch (RadioStationCityNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -111,6 +140,11 @@ public class IndexController {
 		return "forward:/stations/" + musicTypeName + "/1";
 	}
 
+	@RequestMapping(value = "/radiosofcity/{cityName}")
+	public String getRadioListByCity(@PathVariable("cityName") String cityName) {
+		return "forward:/radiosofcity/" + cityName + "/1";
+	}
+
 	@RequestMapping(value = "/popularStations")
 	public String getPopularRadioStations() {
 		return "forward:/popularStations/1";
@@ -120,9 +154,9 @@ public class IndexController {
 	public String getNewestRadioStations() {
 		return "forward:/newestStations/1";
 	}
-	
+
 	@RequestMapping(value = "/search")
-	public String searchStation (@RequestParam String searchText, Model model) {
+	public String searchStation(@RequestParam String searchText, Model model) {
 		List<RadioStationDTO> radioList = radioStationService.searchRadioStationWithSearchText(searchText);
 		model.addAttribute("radioList", radioList);
 		model.addAttribute("searchedText", searchText);

@@ -63,11 +63,25 @@ public class RadioStationDAOImpl extends GenericDAOImpl<RadioStation> implements
 		Query query = em.createNamedQuery(RadioStation.RADIO_STATION_BY_ID).setParameter("id", id);
 		return (RadioStation) query.getSingleResult();
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<RadioStation> getNewestRadioStationForPage(int page, int itemSize) {
 		Query query = QueryUtil.getPageFromQuery(em.createNamedQuery(RadioStation.GET_NEWEST_RADIO_STATIONS), page, itemSize);
 		return (List<RadioStation>) query.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<RadioStation> getRadioStationForPagerWithCity(int page, int itemSize, int cityId) {
+		Query query = QueryUtil.getPageFromQuery(em.createNamedQuery(RadioStation.GET_RADIO_STATIONS_BY_CITY).setParameter("city", cityId), page, itemSize);
+		return (List<RadioStation>) query.getResultList();
+
+	}
+
+	@Override
+	public int getRadioStationsCountWithCityId(int cityId) {
+		Query query = em.createNamedQuery(RadioStation.GET_RADIO_STATIONS_BY_CITY_COUNT).setParameter("city", cityId);
+		return ((Long) query.getSingleResult()).intValue();
 	}
 }
