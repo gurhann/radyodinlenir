@@ -49,7 +49,7 @@
 									<figure>
 										<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
 										<figcaption>
-											<a href="event-single.html" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
+											<a href="/station/${radio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 										</figcaption>
 									</figure>
 									<div class="product-info">
