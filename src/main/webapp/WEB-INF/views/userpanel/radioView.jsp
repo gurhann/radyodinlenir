@@ -55,7 +55,7 @@
 					</div>
 					<div class="native_button">
 						<div>
-							<<a class="fb-share"
+							<a class="fb-share"
 								href="https://www.facebook.com/sharer/sharer.php?u=${currentURL }"
 								target="_blank"> Paylaş </a>
 						</div>
