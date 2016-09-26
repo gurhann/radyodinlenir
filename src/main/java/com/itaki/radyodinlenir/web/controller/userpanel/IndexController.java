@@ -86,7 +86,7 @@ public class IndexController {
 			model.addAttribute("pageIndex", pageIndex);
 			model.addAttribute("musicTypeName", cityName);
 			model.addAttribute("pagerBaseUrl", "/radiosofcity/" + cityName);
-
+			model.addAttribute("listTitle", radioStationCity.getName()+" Radyoları");
 		} catch (RadioStationCityNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -106,7 +106,7 @@ public class IndexController {
 		model.addAttribute("maxPageIndex", maxPageIndex);
 		model.addAttribute("pageIndex", pageIndex);
 		model.addAttribute("pagerBaseUrl", "/popularStations");
-
+		model.addAttribute("listTitle", "Popüler Radyolar");
 		return "radioList";
 	}
 
@@ -122,6 +122,7 @@ public class IndexController {
 		model.addAttribute("maxPageIndex", maxPageIndex);
 		model.addAttribute("pageIndex", pageIndex);
 		model.addAttribute("pagerBaseUrl", "/newestStations");
+		model.addAttribute("listTitle", "Son Eklenen Radyolar");
 		return "radioList";
 	}
 

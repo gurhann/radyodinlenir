@@ -9,21 +9,10 @@
 	<div class="container">
 		<header>
 			<div class="row">
-				<c:choose>
-					<c:when test="${fn:contains(currentURL, 'popularStations')}">
-						<div class="col-xs-12 col-md-8">
-							<h2 class="text-uppercase">Popüler Radyolar</h2>
-						</div>
-					</c:when>
-					<c:when test="${fn:contains(currentURL, 'newestStations')}">
-						<div class="col-xs-12 col-md-8">
-							<h2 class="text-uppercase">Son Eklenen Radyolar</h2>
-						</div>
-					</c:when>
-					<c:otherwise>
-						<div class="col-xs-12 col-md-8"></div>
-					</c:otherwise>
-				</c:choose>
+				<div class="col-xs-12 col-md-8">
+					<h2 class="text-uppercase"><c:out value="${listTitle}"></c:out> </h2>
+				</div>
+
 				<div class="col-xs-12 col-md-4">
 					<div class="event-form text-right">
 						<form action="/search" method="get">
@@ -43,7 +32,7 @@
 				<div class="col-xs-12">
 					<c:if test="${empty radioList}">
 						<div class="alert alert-danger">
-							<h3> Herhangi bir radyo bulunamadı !!</h3>
+							<h3>Herhangi bir radyo bulunamadı !!</h3>
 						</div>
 					</c:if>
 					<c:if test="${not empty radioList}">
