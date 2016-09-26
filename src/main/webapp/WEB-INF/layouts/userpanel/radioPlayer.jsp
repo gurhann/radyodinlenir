@@ -47,7 +47,7 @@
 							$('#play-button-mobile').css('display', 'none');
 							$('.install-apps').css('display', 'none');
 						}
-						jwplayer.key = "BwbTXv40X+11YCOAXa285ZIQ3NQyALnr+h7KJ8wBiec=";
+						jwplayer.key = "93JczkWcEKV7L6QFMXN5NdmIXyDKnMPHw3P76g==";
 						if (!$('#ismobile').is(':visible')) {
 							var Player = jwplayer('hidden-radyo-player')
 									.setup(

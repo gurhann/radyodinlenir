@@ -34,7 +34,7 @@ public class Advice {
 			req.getSession().setAttribute("cities", cityService.getAllRadioStationCity());
 		}
 		if (req.getSession().getAttribute("configs") == null) {
-			List<ApplicationConfigDTO> appConfDTO =appConfigService.getAllApplicationConfigs();
+			List<ApplicationConfigDTO> appConfDTO = appConfigService.getAllApplicationConfigs();
 			req.getSession().setAttribute("configs", appConfDTO);
 			for (ApplicationConfigDTO applicationConfigDTO : appConfDTO) {
 				req.getSession().setAttribute(applicationConfigDTO.getShortCode(), applicationConfigDTO);

@@ -39,7 +39,7 @@
 						<spring:bind path="configs[${stat.index}].description">
 							<form:hidden path="configs[${stat.index}].id" />
 							<form:hidden path="configs[${stat.index}].name" />
-							<form:hidden path="configs[${stat.index}].shortcode" />
+							<form:hidden path="configs[${stat.index}].shortCode" />
 							<div class="form-group  ${status.error ? 'has-error' : ''}">
 								<form:textarea path="configs[${stat.index}].description"
 									class="form-control" />

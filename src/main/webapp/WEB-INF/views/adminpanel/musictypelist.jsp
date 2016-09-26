@@ -49,17 +49,7 @@
 										<form:errors path="seoKeywords" class="control-label" />
 									</div>
 								</spring:bind>
-								<spring:bind path="priority">
-									<div class="form-group">
-										<label>Öncelik:</label>
-										<form:select path="priority" class="form-control" id="queue">
-											<c:forEach var="i" begin="1" end="15">
-												<option>${i}</option>
-											</c:forEach>
-										</form:select>
-										<form:errors path="priority" class="control-label" />
-									</div>
-								</spring:bind>
+								
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
@@ -97,7 +87,6 @@
 								<th width="50">#ID</th>
 								<th>Adı</th>
 								<th width="200">Temiz Url</th>
-								<th width="50">Öncelik</th>
 								<td width="100">Düzenle</td>
 							</tr>
 						</thead>
@@ -108,7 +97,6 @@
 										<td>${musicType.id}</td>
 										<td>${musicType.name}</td>
 										<td>${musicType.cleanUrl}</td>
-										<td>${musicType.priority}</td>
 										<td><a href="/admin/musictypelist/${musicType.id}/edit"
 											class="btn btn-info btn-xs">Düzenle</a> <a
 											href="/admin/musictypelist/${musicType.id}/delete"

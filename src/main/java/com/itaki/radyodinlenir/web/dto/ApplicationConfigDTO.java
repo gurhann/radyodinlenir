@@ -47,6 +47,8 @@ public class ApplicationConfigDTO implements Serializable {
 	public void setShortCode(String shortCode) {
 		this.shortCode = shortCode;
 	}
+	
+
 
 	@Override
 	public int hashCode() {
