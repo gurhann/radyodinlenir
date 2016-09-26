@@ -1,8 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page import="com.itaki.radyodinlenir.util.PageUtils"%>
-<c:set var="currentURL" value="${PageUtils.getCurentFullPath(pageContext.request)}" />
+<c:set var="currentURL"
+	value="${PageUtils.getCurentFullPath(pageContext.request)}" />
 <section class="events-finder">
 	<div class="container">
 		<header>
@@ -26,7 +28,9 @@
 					<div class="event-form text-right">
 						<form action="/search" method="get">
 							<div class="form-input search-keyword">
-								<input id="searchText" name="searchText" type="text" placeholder="Radyo Ara" value="${searchedText}"> <i class="icon fa fa-search"></i>
+								<input id="searchText" name="searchText" type="text"
+									placeholder="Radyo Ara" value="${searchedText}"> <i
+									class="icon fa fa-search"></i>
 							</div>
 							<button class="btn btn-default" type="submit">Radyo Ara</button>
 						</form>
@@ -38,8 +42,8 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<c:if test="${empty radioList}">
-						<div class="alert-danger">
-							<h3>Herhangi bir radyo bulunamadı !!</h3>
+						<div class="alert alert-danger">
+							<h3> Herhangi bir radyo bulunamadı !!</h3>
 						</div>
 					</c:if>
 					<c:if test="${not empty radioList}">
@@ -47,9 +51,11 @@
 							<c:forEach var="radio" items="${radioList}">
 								<div class="store-product">
 									<figure>
-										<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
+										<img width="152" height="152"
+											src="${baseURL}/resources/radiologos/${radio.logo}">
 										<figcaption>
-											<a href="/station/${radio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
+											<a href="/station/${radio.cleanUrl}" class="btn btn-grey"><i
+												class="fa fa-ticket "></i> Dinle</a>
 										</figcaption>
 									</figure>
 									<div class="product-info">
@@ -70,10 +76,13 @@
 							<c:url value="${pagerBaseUrl}/${pageIndex-1}" var="prev">
 							</c:url>
 							<c:if test="${pageIndex > 1}">
-								<li><a class="prev page-numbers" href="<c:out value="${prev}" />">←</a></li>
+								<li><a class="prev page-numbers"
+									href="<c:out value="${prev}" />">←</a></li>
 							</c:if>
 							<c:if test="${pageIndex <= 4}">
-								<c:forEach begin="1" end="${((pageIndex+4) <= maxPageIndex ? 7 : maxPageIndex)}" step="1" varStatus="i">
+								<c:forEach begin="1"
+									end="${((pageIndex+4) <= maxPageIndex ? 7 : maxPageIndex)}"
+									step="1" varStatus="i">
 									<c:choose>
 										<c:when test="${pageIndex == i.index}">
 											<li class='active'><span>${i.index}</span></li>
@@ -88,7 +97,9 @@
 								</c:forEach>
 							</c:if>
 							<c:if test="${pageIndex > 4}">
-								<c:forEach begin="${pageIndex-4}" end="${((pageIndex+4) <= maxPageIndex ? (pageIndex+3) : maxPageIndex)}" step="1" varStatus="i">
+								<c:forEach begin="${pageIndex-4}"
+									end="${((pageIndex+4) <= maxPageIndex ? (pageIndex+3) : maxPageIndex)}"
+									step="1" varStatus="i">
 									<c:choose>
 										<c:when test="${pageIndex == i.index}">
 											<li class='active'><span>${i.index}</span></li>
