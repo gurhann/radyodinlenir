@@ -2,6 +2,8 @@ package com.itaki.radyodinlenir.web.controller.userpanel;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,7 @@ import com.itaki.radyodinlenir.service.MusicTypeService;
 import com.itaki.radyodinlenir.service.RadioStationCityService;
 import com.itaki.radyodinlenir.service.RadioStationService;
 import com.itaki.radyodinlenir.util.PageUtils;
+import com.itaki.radyodinlenir.web.dto.ApplicationConfigDTO;
 import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
 import com.itaki.radyodinlenir.web.dto.RadioStationCityDTO;
 import com.itaki.radyodinlenir.web.dto.RadioStationDTO;
@@ -35,9 +38,12 @@ public class IndexController {
 	private RadioStationCityService radioSTationCityService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String index(Model model) {
+	public String index(Model model, HttpServletRequest req) throws RadioStationNotFoundException {
 		List<RadioStationDTO> popularRadios = radioStationService.getRadioStationForPager(1, 14);
 		List<RadioStationDTO> newestRadios = radioStationService.getNewestRadioStation(1, 14);
+
+		int radioId = Integer.parseInt(((ApplicationConfigDTO) req.getSession().getAttribute("mainpageradio")).getDescription());
+		model.addAttribute("radio", radioStationService.getRadioStationWithID(radioId));	
 		model.addAttribute("popularRadios", popularRadios);
 		model.addAttribute("newestRadios", newestRadios);
 		return "index";

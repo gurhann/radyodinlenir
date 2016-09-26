@@ -25,16 +25,16 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="store-grid text-uppercase text-bold">
-						<c:forEach var="radio" items="${popularRadios}">
+						<c:forEach var="popRadio" items="${popularRadios}">
 							<div class="store-product">
 								<figure>
-									<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
+									<img width="152" height="152" src="${baseURL}/resources/radiologos/${popRadio.logo}">
 									<figcaption>
-										<a href="${baseURL}/station/${radio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
+										<a href="${baseURL}/station/${popRadio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 									</figcaption>
 								</figure>
 								<div class="product-info">
-									<h3>${radio.name}</h3>
+									<h3>${popRadio.name}</h3>
 									
 								</div>
 							</div>
@@ -67,16 +67,16 @@
 		<div class="container color-white">
 			<div class="store-grid text-uppercase text-bold clearfix">
 
-				<c:forEach var="radio" items="${newestRadios}">
+				<c:forEach var="lastRadio" items="${newestRadios}">
 					<div class="store-product">
 						<figure>
-							<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}">
+							<img width="152" height="152" src="${baseURL}/resources/radiologos/${lastRadio.logo}">
 							<figcaption>
-								<a href="${baseURL}/station/${radio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
+								<a href="${baseURL}/station/${lastRadio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 							</figcaption>
 						</figure>
 						<div class="product-info">
-							<h3>${radio.name}</h3>
+							<h3>${lastRadio.name}</h3>
 						</div>
 					</div>
 				</c:forEach>
