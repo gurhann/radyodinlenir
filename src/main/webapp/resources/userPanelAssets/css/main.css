@@ -1188,6 +1188,7 @@ a.navbar-brand img {
 	line-height: 20px;
 	text-decoration: none;
 	display: block;
+	margin-left:-9px;
 }
 
 .navbar-header a span.slogan {
@@ -3649,7 +3650,7 @@ store product
 	float: none;
 }
 
-.store-product h3 {
+.store-product h3,.similar-product h3 {
 	font-size: 100%;
 	margin: 0;
 	overflow: hidden;
@@ -3657,7 +3658,7 @@ store product
 	height: 20px;
 }
 
-.store-product figure, .similar-product h3 {
+.store-product figure,  {
 	position: relative;
 	text-align: center;
 	margin-bottom: 10px;

@@ -41,9 +41,8 @@ public class IndexController {
 	public String index(Model model, HttpServletRequest req) throws RadioStationNotFoundException {
 		List<RadioStationDTO> popularRadios = radioStationService.getRadioStationForPager(1, 14);
 		List<RadioStationDTO> newestRadios = radioStationService.getNewestRadioStation(1, 14);
-
 		int radioId = Integer.parseInt(((ApplicationConfigDTO) req.getSession().getAttribute("mainpageradio")).getDescription());
-		model.addAttribute("radio", radioStationService.getRadioStationWithID(radioId));	
+		model.addAttribute("item", radioStationService.getRadioStationWithID(radioId));	
 		model.addAttribute("popularRadios", popularRadios);
 		model.addAttribute("newestRadios", newestRadios);
 		return "index";
@@ -61,8 +60,9 @@ public class IndexController {
 			List<RadioStationDTO> radioStationList = radioStationService.getRadioStationForPagerWithMusicType(pageIndex, 35, musicType.getId());
 			model.addAttribute("radioList", radioStationList);
 			model.addAttribute("maxPageIndex", maxPageIndex);
+			model.addAttribute("item", musicType);
 			model.addAttribute("pageIndex", pageIndex);
-			model.addAttribute("musicTypeName", musicTypeName);
+			model.addAttribute("iTitle", musicType.getName()+" Radyolar |");
 			model.addAttribute("pagerBaseUrl", "/stations/" + musicTypeName);
 		} catch (MusicTypeNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -83,10 +83,10 @@ public class IndexController {
 			List<RadioStationDTO> radioStationList = radioStationService.getRadioStationForPagerWithCity(pageIndex, 35, radioStationCity.getId());
 			model.addAttribute("radioList", radioStationList);
 			model.addAttribute("maxPageIndex", maxPageIndex);
+			model.addAttribute("item", radioStationCity);
 			model.addAttribute("pageIndex", pageIndex);
-			model.addAttribute("musicTypeName", cityName);
 			model.addAttribute("pagerBaseUrl", "/radiosofcity/" + cityName);
-			model.addAttribute("listTitle", radioStationCity.getName()+" Radyoları");
+			model.addAttribute("iTitle", radioStationCity.getName()+" Radyoları |");
 		} catch (RadioStationCityNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -106,7 +106,7 @@ public class IndexController {
 		model.addAttribute("maxPageIndex", maxPageIndex);
 		model.addAttribute("pageIndex", pageIndex);
 		model.addAttribute("pagerBaseUrl", "/popularStations");
-		model.addAttribute("listTitle", "Popüler Radyolar");
+		model.addAttribute("iTitle", "Popüler Radyolar |");
 		return "radioList";
 	}
 
@@ -122,7 +122,7 @@ public class IndexController {
 		model.addAttribute("maxPageIndex", maxPageIndex);
 		model.addAttribute("pageIndex", pageIndex);
 		model.addAttribute("pagerBaseUrl", "/newestStations");
-		model.addAttribute("listTitle", "Son Eklenen Radyolar");
+		model.addAttribute("listTitle", "Son Eklenen Radyolar |");
 		return "radioList";
 	}
 
@@ -130,12 +130,12 @@ public class IndexController {
 	public String getRadioStationWithCleanUrl(@PathVariable("cleanIUrl") String cleanUrl, Model model) {
 		try {
 			RadioStationDTO radio = radioStationService.getRadioStationWithCleanUrl(cleanUrl);
-			model.addAttribute("radio", radio);
+			model.addAttribute("item", radio);
 			radio.setHitCount(radio.getHitCount() + 1);
+			model.addAttribute("iTitle", radio.getName()+" Dinle |");
 			model.addAttribute("similarRadios", radioStationService.getRadioStationForPagerWithMusicType(1, 8, radio.getMusicType().getId()));
 			radioStationService.updateRadioStation(radio);
 		} catch (RadioStationNotFoundException e) {
-
 			return "error404";
 		}
 

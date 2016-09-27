@@ -12,22 +12,21 @@
 <head>
 <meta charset="utf-8">
 <title><c:out
-		value="${not empty radio ? radio.name.concat(' Dinle -') : ''}"></c:out>
-	<c:out value="${configs[0].description }"></c:out></title>
+		value="${iTitle eq null ? title.description : iTitle.concat(' ').concat(title.description)}"></c:out></title>
 
 <!--=== Meta tags ===-->
 <meta name="description"
-	content="${not empty radio ? radio.seoDescription : configs[1].description  }">
+	content="${empty popularRadios ? item.seoDescription : decription.description  }">
 <meta name="keywords"
-	content="${not empty radio ? radio.seoKeywords : configs[2].description  }" />
+	content="${empty popularRadios ? item.seoKeywords : keywords.description  }" />
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <meta name="viewport"
 	content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
-<c:out value="${configs[5].description }"></c:out>
-<c:out value="${configs[6].description }"></c:out>
-<c:out value="${configs[7].description }"></c:out>
-<c:out value="${configs[8].description }"></c:out>
-<c:out value="${configs[9].description }"></c:out>
+<c:out value="${meta1.description }"></c:out>
+<c:out value="${meta2.description }"></c:out>
+<c:out value="${headerscript1.description }"></c:out>
+<c:out value="${headerscript2.description }"></c:out>
+<c:out value="${headerscript3.description }"></c:out>
 
 
 <!--=== Style Sheets ===-->
@@ -91,7 +90,7 @@
 	<script src="${baseURL}/resources/userPanelAssets/js/jquery.sticky.js"></script>
 	<script
 		src="${baseURL}/resources/userPanelAssets/js/owl.carousel.min.js"></script>
-
+	<c:out value="${footerscript.description }"></c:out>
 	<script src="${baseURL}/resources/userPanelAssets/js/main.js"></script>
 	<script src="${baseURL}/resources/userPanelAssets/js/customizer.js"></script>
 

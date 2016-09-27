@@ -10,8 +10,8 @@
 <div class="col-sm-8 ">
 	<div class="breadcrumb">
 		<a href="/" class="first">Anasayfa </a> » <a
-			href="/station/${radio.cleanUrl }" class="last"> <c:out
-				value="${radio.name }"></c:out> Dinle
+			href="/station/${item.cleanUrl }" class="last"> <c:out
+				value="${item.name }"></c:out> Dinle
 		</a>
 	</div>
 	<div class="radio-info">
@@ -19,18 +19,18 @@
 			<div class="col-sm-4">
 				<div class="left spacing">
 					<img width="270" height="270"
-						src="/resources/radiologos/${radio.logo}" title=""
-						alt="${radio.name}" />
+						src="/resources/radiologos/${item.logo}" title=""
+						alt="${item.name}" />
 				</div>
 			</div>
 			<div class="col-sm-8">
 				<div class="tabs">
-					<div class="tab-heading">${radio.name}
+					<div class="tab-heading">${item.name}
 						<span class="right"><i class="fa fa-eye" aria-hidden="true"></i>
-							${radio.hitCount}</span>
+							${item.hitCount}</span>
 					</div>
 					<div class="tab-content">
-						<c:out escapeXml="false" value="${radio.description}"></c:out>
+						<c:out escapeXml="false" value="${item.description}"></c:out>
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -69,7 +69,7 @@
 					<div class="native_button">
 						<div>
 							<a
-								href="https://twitter.com/home?status=${radio.name } ${currentURL }">Paylaş</a>
+								href="https://twitter.com/home?status=${item.name } ${currentURL }">Paylaş</a>
 						</div>
 					</div>
 				</div>
@@ -92,7 +92,7 @@
 					<div class="native_button">
 						<div>
 							<a
-								href="https://www.linkedin.com/shareArticle?mini=true&url=${currentURL }&title=${radio.name }&summary=&source=">Paylaş</a>
+								href="https://www.linkedin.com/shareArticle?mini=true&url=${currentURL }&title=${item.name }&summary=&source=">Paylaş</a>
 						</div>
 					</div>
 				</div>
