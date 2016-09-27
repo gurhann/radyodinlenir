@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="radio-wrap clearfix">
 			<div class="radio-logo">
-				<img src="/resources/radiologos/${radio.logo}" />
+				<img src="/resources/radiologos/${item.logo}" />
 			</div>
 			<div class="radio-controllers">
 				<a href="/j" class="prev"
@@ -13,7 +13,7 @@
 					class="play-controller loading">Yükleniyor</button>
 				<a href="/" class="next"
 					title="Sonraki Radyo"></a>
-				<h1 class="radio-title">${radio.name}</h1>
+				<h1 class="radio-title">${item.name}</h1>
 				<div id="volume-container">
 					<span class="tooltip"></span>
 					<div id="slider"></div>
@@ -34,26 +34,14 @@
 					function() {
 						var userAgent = navigator.userAgent || navigator.vendor
 								|| window.opera;
-						if (userAgent.match(/iPad/i)
-								|| userAgent.match(/iPhone/i)
-								|| userAgent.match(/iPod/i)) {
-							$('#ismobile').css('display', 'block');
-							$('.install-apps .android').css('display', 'none');
-						} else if (userAgent.match(/Android/i)) {
-							$('#ismobile').css('display', 'block');
-							$('.install-apps .ios').css('display', 'none');
-						} else {
-							$('#ismobile').css('display', 'none');
-							$('#play-button-mobile').css('display', 'none');
-							$('.install-apps').css('display', 'none');
-						}
+					
 						jwplayer.key = "93JczkWcEKV7L6QFMXN5NdmIXyDKnMPHw3P76g==";
 						if (!$('#ismobile').is(':visible')) {
 							var Player = jwplayer('hidden-radyo-player')
 									.setup(
 											{
-												file : '${radio.streamUrl}',
-												image : '/resources/radiologos/${radio.logo}',
+												file : '${item.streamUrl}',
+												image : '/resources/radiologos/${item.logo}',
 												title : '${radio.name}',
 												primary : 'html5',
 												width : '100%',

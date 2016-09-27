@@ -117,7 +117,7 @@ public class RadioStationController {
 			return "radiostationAddEdit";
 		}
 		try {
-			radiostation.setCleanUrl(PageUtils.convertCleanUrl(radiostation.getName()));
+			radiostation.setCleanUrl(PageUtils.convertCleanUrl(radiostation.getName()).concat("_dinle"));
 			if (!radiostation.getLogoFile().isEmpty()) {
 				radiostation.setLogo(uploadService.uploadImage(radiostation.getLogoFile()));
 			}
