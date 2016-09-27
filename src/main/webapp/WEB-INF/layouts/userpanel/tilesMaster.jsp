@@ -27,7 +27,10 @@
 <c:out value="${headerscript1.description }"></c:out>
 <c:out value="${headerscript2.description }"></c:out>
 <c:out value="${headerscript3.description }"></c:out>
-
+<meta property="og:title" content="${iTitle eq null ? title.description : iTitle.concat(' ').concat(title.description)}"/>
+<meta property="og:site_name" content="${title.description}"/>
+<meta property="og:description" content="${empty popularRadios ? item.seoDescription : decription.description  }"/>
+	
 
 <!--=== Style Sheets ===-->
 <link
