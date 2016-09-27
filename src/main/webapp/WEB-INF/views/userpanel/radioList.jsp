@@ -10,7 +10,7 @@
 		<header>
 			<div class="row">
 				<div class="col-xs-12 col-md-8">
-					<h2 class="text-uppercase"><c:out value="${listTitle}"></c:out> </h2>
+					<h2 class="text-uppercase"><c:out value="${iTitle}"></c:out> </h2>
 				</div>
 
 				<div class="col-xs-12 col-md-4">
@@ -61,12 +61,12 @@
 			<c:if test="${pageIndex != null && maxPageIndex != 1}">
 				<div class="row">
 					<div class="col-xs-12">
-						<ul class="pagination" style="float: left">
+						<ul class="pagination" >
 							<c:url value="${pagerBaseUrl}/${pageIndex-1}" var="prev">
 							</c:url>
 							<c:if test="${pageIndex > 1}">
 								<li><a class="prev page-numbers"
-									href="<c:out value="${prev}" />">←</a></li>
+									href="<c:out value="${prev}" />">«</a></li>
 							</c:if>
 							<c:if test="${pageIndex <= 4}">
 								<c:forEach begin="1"
@@ -106,7 +106,7 @@
 							<c:url value="${pagerBaseUrl}/${pageIndex+1}" var="next">
 							</c:url>
 							<c:if test="${pageIndex + 1 <= maxPageIndex}">
-								<li><a class='next page-numbers' href="${ next}">→</a></li>
+								<li><a class='next page-numbers' href="${ next}">»</a></li>
 							</c:if>
 						</ul>
 					</div>
