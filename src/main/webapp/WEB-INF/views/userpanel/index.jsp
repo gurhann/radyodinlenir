@@ -28,7 +28,7 @@
 						<c:forEach var="popRadio" items="${popularRadios}">
 							<div class="store-product">
 								<figure>
-									<img width="152" height="152" src="${baseURL}/resources/radiologos/${popRadio.logo}">
+									<img width="152" height="152" src="${baseURL}/resources/radiologos/${popRadio.logo}"  alt="${radio.name}">
 									<figcaption>
 										<a href="${baseURL}/station/${popRadio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 									</figcaption>
@@ -70,7 +70,7 @@
 				<c:forEach var="lastRadio" items="${newestRadios}">
 					<div class="store-product">
 						<figure>
-							<img width="152" height="152" src="${baseURL}/resources/radiologos/${lastRadio.logo}">
+							<img width="152" height="152" src="${baseURL}/resources/radiologos/${lastRadio.logo}"  alt="${radio.name}">
 							<figcaption>
 								<a href="${baseURL}/station/${lastRadio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 							</figcaption>

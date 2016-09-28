@@ -18,9 +18,7 @@
 		<div class="row ">
 			<div class="col-sm-4">
 				<div class="left spacing">
-					<img width="270" height="270"
-						src="/resources/radiologos/${item.logo}" title=""
-						alt="${item.name}" />
+					<img width="270" height="270" src="/resources/radiologos/${item.logo}" 	alt="${item.name}" />
 				</div>
 			</div>
 			<div class="col-sm-8">

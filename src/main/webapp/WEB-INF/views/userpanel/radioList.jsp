@@ -40,8 +40,7 @@
 							<c:forEach var="radio" items="${radioList}">
 								<div class="store-product">
 									<figure>
-										<img width="152" height="152"
-											src="${baseURL}/resources/radiologos/${radio.logo}">
+										<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}" alt="${radio.name}">
 										<figcaption>
 											<a href="/station/${radio.cleanUrl}" class="btn btn-grey"><i
 												class="fa fa-ticket "></i> Dinle</a>
