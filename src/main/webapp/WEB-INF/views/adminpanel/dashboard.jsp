@@ -1,1 +1,0 @@
-<spring:message code="hello.world"></spring:message>
