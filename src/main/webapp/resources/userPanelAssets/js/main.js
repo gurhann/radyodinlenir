@@ -1,13 +1,25 @@
 jQuery(function($) {
     
 
-   
- 
     /*
 	 * ====================================== Menu
 	 * ======================================
 	 */
-    
+	  /* custome Placeholder */
+    $('.field-wrap input,.field-wrap textarea').each(function(index, element) {
+        if ($(this).val() !== "") {
+            $('label[for=' + $(this).attr("id") + ']').hide();
+        }
+    });
+
+    $('.field-wrap input,.field-wrap textarea').focus(function() {
+        $('label[for=' + $(this).attr("id") + ']').hide();
+    });
+    $('.field-wrap input,.field-wrap textarea').blur(function() {
+        if ($(this).val() === "") {
+            $('label[for=' + $(this).attr("id") + ']').show();
+        }
+    });
     $("#sticktop").sticky({
         topSpacing: 0
     });
@@ -59,6 +71,47 @@ jQuery(function($) {
         window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
         return false;
     });
+    
+
+    function suonoApp() {
+
+        /*custome Placeholder*/
+        $('.field-wrap input,.field-wrap textarea').each(function(index, element) {
+            if ($(this).val() !== "") {
+                $('label[for=' + $(this).attr("id") + ']').hide();
+            }
+        });
+
+        $('.field-wrap input,.field-wrap textarea').focus(function() {
+            $('label[for=' + $(this).attr("id") + ']').hide();
+        });
+        $('.field-wrap input,.field-wrap textarea').blur(function() {
+            if ($(this).val() === "") {
+                $('label[for=' + $(this).attr("id") + ']').show();
+            }
+        });
+ 
+
+     
+        /*===========================
+        Contact
+        ============================*/
+        function IsEmail(email) {
+			var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			return regex.test(email);
+		}
+		
+	
+           
+    
+
+    } 
+
+    suonoApp();
+    
 
 });
+
+
+
 
