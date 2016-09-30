@@ -28,20 +28,20 @@ public class ContactRequest {
 	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "name")
+	@Column(name = "name",length = 100)
 	private String name;
 
-	@Column(name = "message")
+	@Column(name = "message",length = 500)
 	private String message;
 
-	@Column(name = "email")
+	@Column(name = "email",length = 100)
 	private String email;
 
 	@Column(name = "was_answered")
 	private boolean wasAnswered;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "send_date")
+	@Column(name = "send_date", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date sendDate;
 
 	public Long getId() {

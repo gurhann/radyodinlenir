@@ -475,7 +475,6 @@ Form Styling
 .validationError {
 	margin: 20px auto;
 	color: #e83b3b;
-	display: none;
 }
 
 .messageSentSuccess {
@@ -484,6 +483,10 @@ Form Styling
 	text-align: center;
 	margin: 30px auto;
 	display: none;
+}
+
+.error {
+	color: #a94442;
 }
 
 form {
@@ -496,7 +499,7 @@ form .btn {
 }
 
 input[type="text"], input[type="tel"], input[type="email"], input[type="password"],
-	textarea {
+	input[type="number"], textarea {
 	width: 100%;
 	border: none;
 	color: #9ea4a7;
@@ -505,7 +508,6 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
 	border-radius: 3px;
 	height: 45px;
 	padding: 10px 35px;
-	text-transform: inherit;
 }
 
 .field-wrap {
@@ -514,7 +516,8 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
 }
 
 input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus,
-	input[type="password"]:focus, textarea:focus {
+	input[type="password"]:focus, input[type="number"]:focus, textarea:focus
+	{
 	background: #fff;
 	border: 1px solid #7cbf1d;
 	color: #7cbf1d;
@@ -1188,7 +1191,7 @@ a.navbar-brand img {
 	line-height: 20px;
 	text-decoration: none;
 	display: block;
-	margin-left:-9px;
+	margin-left: -9px;
 }
 
 .navbar-header a span.slogan {
@@ -3650,7 +3653,7 @@ store product
 	float: none;
 }
 
-.store-product h3,.similar-product h3 {
+.store-product h3, .similar-product h3 {
 	font-size: 100%;
 	margin: 0;
 	overflow: hidden;
@@ -3658,21 +3661,58 @@ store product
 	height: 20px;
 }
 
-.store-product figure,  {
-	position: relative;
-	text-align: center;
-	margin-bottom: 10px;
-	max-height: 220px;
-	overflow: hidden;
-}
+.store-product
+ 
+figure
+,
+{
+position
+:
+ 
+relative
+;
 
+	
+text-align
+:
+ 
+center
+;
+
+	
+margin-bottom
+:
+ 
+10
+px
+;
+
+	
+max-height
+:
+ 
+220
+px
+;
+
+	
+overflow
+:
+ 
+hidden
+;
+
+
+}
 .store-product figure  img {
 	height: 152px;
 }
-.similar-product  figure  img{
+
+.similar-product  figure  img {
 	height: 152px;
-    width: 181px;
+	width: 181px;
 }
+
 .store-product figure>figcaption>.btn, .similar-product figure>figcaption>.btn
 	{
 	padding: 10px 25px;

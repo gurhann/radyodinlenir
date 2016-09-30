@@ -5,13 +5,7 @@
 <tiles-definitions>
 
 	<!-- Admin Panel Views -->
-	<!-- DashBoard -->
-	<definition name="dashboard" extends="adminPaneLTemplate">
-		<put-attribute name="body"
-			value="/WEB-INF/views/adminpanel/dashboard.jsp" />
-		<put-attribute name="title" value="Genel Görünüm"></put-attribute>
-		<put-attribute name="curl" value="dashboard" cascade="true"></put-attribute>
-	</definition>
+
 
 	<!-- General Config -->
 	<definition name="generalconfigs" extends="adminPaneLTemplate">
@@ -115,7 +109,16 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/userpanel/contact.jsp"></put-attribute>
 		<put-attribute name="title" value="İletişim"></put-attribute>
-		<put-attribute name="musicTypeNavigation" value=""></put-attribute>
+		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>		
+		<put-attribute name="leftBar" cascade="true"  value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
+	</definition>
+	
+	<!-- About -->
+	<definition name="about" extends="userTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/userpanel/about.jsp"></put-attribute>
+		<put-attribute name="title" value="Hakkımızda"></put-attribute>
+		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>		
+		<put-attribute name="leftBar" cascade="true"  value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
 	</definition>
 	
 	<!-- RadioStation List -->

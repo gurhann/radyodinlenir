@@ -56,7 +56,7 @@
 				<div class="col-xs-12 section-block">
 					<h2>Son Eklenen Radyolar</h2>
 					<p>
-						Radyo İstasyonunuzu Bizle <a href="#">Paylaşın</a>
+						Radyo İstasyonunuzu Bizle <a href="/contact">Paylaşın</a>
 					</p>
 				</div>
 			</div>

@@ -6,8 +6,8 @@ import java.util.Date;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-public class ContactRequestDTO implements Serializable{
-	
+public class ContactRequestDTO implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -18,6 +18,7 @@ public class ContactRequestDTO implements Serializable{
 	private String email;
 	private boolean wasAnswered;
 	private Date sendDate;
+	private Integer security;
 
 	public Long getId() {
 		return id;
@@ -30,6 +31,7 @@ public class ContactRequestDTO implements Serializable{
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -66,6 +68,14 @@ public class ContactRequestDTO implements Serializable{
 		this.sendDate = sendDate;
 	}
 
+	public Integer getSecurity() {
+		return security;
+	}
+
+	public void setSecurity(Integer security) {
+		this.security = security;
+	}
+
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
@@ -84,8 +94,8 @@ public class ContactRequestDTO implements Serializable{
 			return false;
 		}
 		ContactRequestDTO other = (ContactRequestDTO) obj;
-		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(message, other.getMessage())
-				.append(wasAnswered, other.isWasAnswered()).append(sendDate, other.getSendDate()).isEquals();
+		return new EqualsBuilder().append(id, other.getId()).append(name, other.getName()).append(message, other.getMessage()).append(wasAnswered, other.isWasAnswered())
+				.append(sendDate, other.getSendDate()).isEquals();
 	}
 
 }
