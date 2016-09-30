@@ -32,7 +32,15 @@
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
-	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error404</location>
+	</error-page>
+
+	<error-page>
+		<error-code>403</error-code>
+		<location>/error403</location>
+	</error-page>
 	<filter>
 		<filter-name>EncodingFilter</filter-name>
 		<filter-class>com.itaki.radyodinlenir.filters.EncodingFilter</filter-class>

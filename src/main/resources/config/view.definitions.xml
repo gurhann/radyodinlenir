@@ -11,7 +11,8 @@
 	<definition name="generalconfigs" extends="adminPaneLTemplate">
 		<put-attribute name="body"
 			value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
-		<put-attribute name="title" value="Genel Ayarlar" cascade="true"></put-attribute>
+		<put-attribute name="title" value="Genel Ayarlar"
+			cascade="true"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
 
@@ -27,7 +28,8 @@
 	<definition name="socialconfigs" extends="adminPaneLTemplate">
 		<put-attribute name="body"
 			value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
-		<put-attribute name="title" value="Sosyal Ağ Ayarları" cascade="true"></put-attribute>
+		<put-attribute name="title" value="Sosyal Ağ Ayarları"
+			cascade="true"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
 
@@ -35,7 +37,8 @@
 	<definition name="aboutconfigs" extends="adminPaneLTemplate">
 		<put-attribute name="body"
 			value="/WEB-INF/views/adminpanel/aboutconfig.jsp" />
-		<put-attribute name="title" value="Hakkımızda Bilgisi" cascade="true"></put-attribute>
+		<put-attribute name="title" value="Hakkımızda Bilgisi"
+			cascade="true"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
 
@@ -43,7 +46,8 @@
 	<definition name="adwordsconfigs" extends="adminPaneLTemplate">
 		<put-attribute name="body"
 			value="/WEB-INF/views/adminpanel/generalconfig.jsp" />
-		<put-attribute name="title" value="Reklam Ayarları"  cascade="true"></put-attribute>
+		<put-attribute name="title" value="Reklam Ayarları"
+			cascade="true"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
 
@@ -51,7 +55,7 @@
 	<definition name="musictypelist" extends="adminPaneLTemplate">
 		<put-attribute name="body"
 			value="/WEB-INF/views/adminpanel/musictypelist.jsp" />
-		<put-attribute name="title" value="Müzik Tipleri" ></put-attribute>
+		<put-attribute name="title" value="Müzik Tipleri"></put-attribute>
 		<put-attribute name="curl" value="musictype" cascade="true"></put-attribute>
 	</definition>
 
@@ -79,19 +83,23 @@
 		<put-attribute name="curl" value="contactdetails"
 			cascade="true"></put-attribute>
 	</definition>
-	
-	 <!-- RadioStatios List -->
+
+	<!-- RadioStatios List -->
 	<definition name="radiostations" extends="adminPaneLTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/adminpanel/radiostationlist.jsp" />
-		<put-attribute name="title" expression="Radyo İstasyonları"  ></put-attribute>
-		<put-attribute name="curl" value="radiostations" cascade="true"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/adminpanel/radiostationlist.jsp" />
+		<put-attribute name="title" expression="Radyo İstasyonları"></put-attribute>
+		<put-attribute name="curl" value="radiostations"
+			cascade="true"></put-attribute>
 	</definition>
-	
-	 <!-- RadioStatios Add/Edit -->
+
+	<!-- RadioStatios Add/Edit -->
 	<definition name="radiostationAddEdit" extends="adminPaneLTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/adminpanel/radiostationadd.jsp" />
-		<put-attribute name="title" expression="Radyo İstasyonları"  ></put-attribute>
-		<put-attribute name="curl" value="radiostations" cascade="true"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/adminpanel/radiostationadd.jsp" />
+		<put-attribute name="title" expression="Radyo İstasyonları"></put-attribute>
+		<put-attribute name="curl" value="radiostations"
+			cascade="true"></put-attribute>
 	</definition>
 
 	<!-- User Panel Views -->
@@ -99,9 +107,11 @@
 	<definition name="index" extends="userTemplate">
 		<put-attribute name="body" value="/WEB-INF/views/userpanel/index.jsp"></put-attribute>
 		<put-attribute name="title" value="Anasayfa"></put-attribute>
-		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
+		<put-attribute name="musicTypeNavigation"
+			value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
 		<put-attribute name="curl" value="index" cascade="true"></put-attribute>
-		<put-attribute name="radioPlayer" value="/WEB-INF/layouts/userpanel/radioPlayer.jsp"></put-attribute>	
+		<put-attribute name="radioPlayer"
+			value="/WEB-INF/layouts/userpanel/radioPlayer.jsp"></put-attribute>
 	</definition>
 
 	<!-- Contact -->
@@ -109,33 +119,57 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/userpanel/contact.jsp"></put-attribute>
 		<put-attribute name="title" value="İletişim"></put-attribute>
-		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>		
-		<put-attribute name="leftBar" cascade="true"  value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
+		<put-attribute name="musicTypeNavigation"
+			value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
+		<put-attribute name="leftBar" cascade="true"
+			value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
 	</definition>
-	
+
 	<!-- About -->
 	<definition name="about" extends="userTemplate">
 		<put-attribute name="body" value="/WEB-INF/views/userpanel/about.jsp"></put-attribute>
 		<put-attribute name="title" value="Hakkımızda"></put-attribute>
-		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>		
-		<put-attribute name="leftBar" cascade="true"  value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
+		<put-attribute name="musicTypeNavigation"
+			value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
+		<put-attribute name="leftBar" cascade="true"
+			value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
 	</definition>
-	
+
 	<!-- RadioStation List -->
 	<definition name="radioList" extends="userTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/userpanel/radioList.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/userpanel/radioList.jsp"></put-attribute>
 		<put-attribute name="title" value="Radyo Listesi"></put-attribute>
-		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
+		<put-attribute name="musicTypeNavigation"
+			value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
 	</definition>
-	
-	<!-- RadioStation View  -->
+
+	<!-- RadioStation View -->
 	<definition name="radioView" extends="userTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/userpanel/radioView.jsp"></put-attribute>
-		<put-attribute name="leftBar" cascade="true" value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/userpanel/radioView.jsp"></put-attribute>
+		<put-attribute name="leftBar" cascade="true"
+			value="/WEB-INF/layouts/userpanel/leftbar.jsp"></put-attribute>
 		<put-attribute name="title" value="${radio.name}"></put-attribute>
-		<put-attribute name="radioPlayer" value="/WEB-INF/layouts/userpanel/radioPlayer.jsp"></put-attribute>	
-		<put-attribute name="musicTypeNavigation" value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
+		<put-attribute name="radioPlayer"
+			value="/WEB-INF/layouts/userpanel/radioPlayer.jsp"></put-attribute>
+		<put-attribute name="musicTypeNavigation"
+			value="/WEB-INF/layouts/userpanel/musicTypeNavigation.jsp"></put-attribute>
 	</definition>
-	
-	
+
+
+	<!-- Error 404 -->
+	<definition name="error404" extends="errorTemplate">
+		<put-attribute name="title" value="Yanlış yerdesiniz sanırım" />
+		<put-attribute name="errorCode" value="404" />
+		<put-attribute name="errorName" value="Sayfa Bulunamadı!!" />
+	</definition>
+
+	<!-- Error 403 -->
+	<definition name="error403" extends="errorTemplate">
+		<put-attribute name="title" value="Birşeyler Yanlış Gidiyor" />
+		<put-attribute name="errorCode" value="403" />
+		<put-attribute name="errorName" value="Sunucu hatası!!" />
+	</definition>
+
 </tiles-definitions>

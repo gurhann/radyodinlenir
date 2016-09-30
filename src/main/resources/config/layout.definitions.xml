@@ -4,22 +4,35 @@
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
-   
-	<definition name="adminPaneLTemplate"	template="/WEB-INF/layouts/adminpanel/tilesMaster.jsp">
-		<put-attribute name="header" value="/WEB-INF/layouts/adminpanel/header.jsp" />			
+	<!-- Admin Panel Layout -->
+	<definition name="adminPaneLTemplate"
+		template="/WEB-INF/layouts/adminpanel/tilesMaster.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/layouts/adminpanel/header.jsp" />
 		<put-attribute name="title" value="" />
 		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="/WEB-INF/layouts/adminpanel/footer.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/layouts/adminpanel/footer.jsp" />
 	</definition>
-
-	<definition name="userTemplate"	template="/WEB-INF/layouts/userpanel/tilesMaster.jsp">
-		<put-attribute name="header" value="/WEB-INF/layouts/userpanel/header.jsp" />
-		<put-attribute name="musicTypeNavigation" value=""></put-attribute>		
-		<put-attribute name="radioPlayer" value=""></put-attribute>	
+	<!-- User Panel Layout -->
+	<definition name="userTemplate"
+		template="/WEB-INF/layouts/userpanel/tilesMaster.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/layouts/userpanel/header.jsp" />
+		<put-attribute name="musicTypeNavigation" value=""></put-attribute>
+		<put-attribute name="radioPlayer" value=""></put-attribute>
 		<put-attribute name="title" value="" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="leftBar" value="" />
-		<put-attribute name="footer" value="/WEB-INF/layouts/userpanel/footer.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/layouts/userpanel/footer.jsp" />
+	</definition>
+	<!-- Error Panel Panel -->
+	<definition name="errorTemplate"
+		template="/WEB-INF/layouts/errorPanel/tilesMaster.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="errorCode" value="" />
+		<put-attribute name="errorName" value="" />
 	</definition>
 
 </tiles-definitions>
