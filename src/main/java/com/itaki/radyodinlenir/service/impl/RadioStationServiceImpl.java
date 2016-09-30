@@ -113,4 +113,15 @@ public class RadioStationServiceImpl implements RadioStationService {
 		return radioStationDAO.getRadioStationsCountWithCityId(cityId);
 	}
 
+	@Override
+	public List<RadioStationDTO> getRadioStationForUserPager(int page, int itemSize) {
+		List<RadioStation> stationList = radioStationDAO.getRadioStationForUserPager(page, itemSize);
+		return RadioStationMapper.modelToDtoList(stationList);
+	}
+
+	@Override
+	public int getRadioStationForUserPagerCount() {
+		return radioStationDAO.getRadioStationForUserPagerCount();
+	}
+
 }

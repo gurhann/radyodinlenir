@@ -20,6 +20,10 @@ public interface RadioStationService {
 
 	public List<RadioStationDTO> getRadioStationForPager(int page, int itemSize);
 
+	public List<RadioStationDTO> getRadioStationForUserPager(int page, int itemSize);
+
+	public int getRadioStationForUserPagerCount();
+
 	public List<RadioStationDTO> getRadioStationForPagerWithMusicType(int page, int itemSize, int musicTypeId);
 
 	public int getRadioStationsCount();

@@ -16,6 +16,10 @@ public interface RadioStationDAO extends GenericDAO<RadioStation> {
 
 	public List<RadioStation> getRadioStationForPager(int page, int itemSize);
 
+	public List<RadioStation> getRadioStationForUserPager(int page, int itemSize);
+
+	public int getRadioStationForUserPagerCount();
+
 	public List<RadioStation> getRadioStationForPagerWithMusicType(int page, int itemSize, int musicTypeId);
 
 	public int getRadioStationsCountWithMusicTypeId(int musicTypeId);

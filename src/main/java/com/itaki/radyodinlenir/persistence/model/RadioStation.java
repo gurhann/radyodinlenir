@@ -16,29 +16,32 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "radio_station")
-@NamedQueries({ @NamedQuery(name = RadioStation.RADIO_STATION_FIND_BY_NAME, query = "select r from RadioStation r where r.name=:name"),
-		@NamedQuery(name = RadioStation.RADIO_STATION_BY_CLEAN_URL, query = "select r from RadioStation r where r.cleanUrl=:cleanUrl"),
+@NamedQueries({ @NamedQuery(name = RadioStation.RADIO_STATION_FIND_BY_NAME, query = "select r from RadioStation r where r.name=:name and r.isEnabled=true"),
+		@NamedQuery(name = RadioStation.RADIO_STATION_BY_CLEAN_URL, query = "select r from RadioStation r where r.cleanUrl=:cleanUrl and r.isEnabled=true"),
 		@NamedQuery(name = RadioStation.RADIO_STATION_BY_ID, query = "select r from RadioStation r where r.id=:id"),
 		@NamedQuery(name = RadioStation.GET_ALL_RADIO_STATIONS, query = "select r from RadioStation r order by r.hitCount desc"),
-		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE, query = "select r from RadioStation r where r.musicType.id=:musicType order by r.hitCount desc"),
-		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE_COUNT, query = "select count(r.id) from RadioStation r where r.musicType.id=:musicType"),
-		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_CITY, query = "select r from RadioStation r where r.radioCity.id=:city order by r.hitCount desc"),
-		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_CITY_COUNT, query = "select count(r.id) from RadioStation r where r.radioCity.id=:city"),		
-		@NamedQuery(name = RadioStation.SEARCH_RADIO_STATION_BY_NAME_AND_DESCRIPTION, query = "select r from RadioStation r where r.name like :name or r.description like :description order by r.hitCount desc") })
-@NamedQuery(name = RadioStation.GET_NEWEST_RADIO_STATIONS, query = "select r from RadioStation r order by r.id desc")
+		@NamedQuery(name = RadioStation.GET_ALL_RADIO_STATIONSFORUSER, query = "select r from RadioStation r where r.isEnabled=true order by r.hitCount desc"),
+		@NamedQuery(name = RadioStation.GET_ALL_RADIO_STATIONSFORUSER_COUNT, query = "select count(r.id) from RadioStation r where r.isEnabled=true order by r.hitCount desc"),
+		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE, query = "select r from RadioStation r where r.musicType.id=:musicType and r.isEnabled=true order by r.hitCount desc"),
+		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_MUSIC_TYPE_COUNT, query = "select count(r.id) from RadioStation r where r.isEnabled=true and r.musicType.id=:musicType"),
+		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_CITY, query = "select r from RadioStation r where r.radioCity.id=:city and r.isEnabled=true order by r.hitCount desc"),
+		@NamedQuery(name = RadioStation.GET_RADIO_STATIONS_BY_CITY_COUNT, query = "select count(r.id) from RadioStation r where r.isEnabled=true and r.radioCity.id=:city"),
+		@NamedQuery(name = RadioStation.SEARCH_RADIO_STATION_BY_NAME_AND_DESCRIPTION, query = "select r from RadioStation r where r.isEnabled=true and r.name like :name or r.description like :description order by r.hitCount desc") })
+@NamedQuery(name = RadioStation.GET_NEWEST_RADIO_STATIONS, query = "select r from RadioStation r  where r.isEnabled=true order by r.id desc ")
 public class RadioStation {
 
 	public static final String RADIO_STATION_FIND_BY_NAME = "RadioStation.findByName";
 	public static final String RADIO_STATION_BY_CLEAN_URL = "RadioStation.findByCleanUrl";
 	public static final String RADIO_STATION_BY_ID = "RadioStation.findByID";
 	public static final String GET_ALL_RADIO_STATIONS = "RadioStation.getAllStations";
+	public static final String GET_ALL_RADIO_STATIONSFORUSER = "RadioStation.getAllStationsForUser";
+	public static final String GET_ALL_RADIO_STATIONSFORUSER_COUNT = "RadioStation.getAllStationsForUserCount";
 	public static final String GET_RADIO_STATIONS_BY_MUSIC_TYPE = "RadioStation.getStationsByMusicType";
 	public static final String GET_RADIO_STATIONS_BY_MUSIC_TYPE_COUNT = "RadioStation.getStationByMusicTypeCount";
 	public static final String SEARCH_RADIO_STATION_BY_NAME_AND_DESCRIPTION = "RadioStation.searchStationByNameAndDescription";
 	public static final String GET_NEWEST_RADIO_STATIONS = "RadioStation.getNewestRadioStation";
 	public static final String GET_RADIO_STATIONS_BY_CITY = "RadioStation.getStationsByCity";
 	public static final String GET_RADIO_STATIONS_BY_CITY_COUNT = "RadioStation.getStationByCityCount";
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

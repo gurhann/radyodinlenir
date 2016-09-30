@@ -39,7 +39,7 @@ public class IndexController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(Model model, HttpServletRequest req) throws RadioStationNotFoundException {
-		List<RadioStationDTO> popularRadios = radioStationService.getRadioStationForPager(1, 14);
+		List<RadioStationDTO> popularRadios = radioStationService.getRadioStationForUserPager(1, 14);
 		List<RadioStationDTO> newestRadios = radioStationService.getNewestRadioStation(1, 14);
 		int radioId = Integer.parseInt(((ApplicationConfigDTO) req.getSession().getAttribute("mainpageradio")).getDescription());
 		model.addAttribute("item", radioStationService.getRadioStationWithID(radioId));	
@@ -96,12 +96,12 @@ public class IndexController {
 
 	@RequestMapping(value = "/popularStations/{pageIndex}")
 	public String getPopularRadioStations(@PathVariable("pageIndex") Integer pageIndex, Model model) {
-		int totalCount = radioStationService.getRadioStationsCount();
+		int totalCount = radioStationService.getRadioStationForUserPagerCount();
 		int maxPageIndex = PageUtils.getPageCount(totalCount, 35);
 		if (pageIndex == null || pageIndex < 1 || pageIndex > maxPageIndex) {
 			pageIndex = 1;
 		}
-		List<RadioStationDTO> radioList = radioStationService.getRadioStationForPager(pageIndex, 35);
+		List<RadioStationDTO> radioList = radioStationService.getRadioStationForUserPager(pageIndex, 35);
 		model.addAttribute("radioList", radioList);
 		model.addAttribute("maxPageIndex", maxPageIndex);
 		model.addAttribute("pageIndex", pageIndex);

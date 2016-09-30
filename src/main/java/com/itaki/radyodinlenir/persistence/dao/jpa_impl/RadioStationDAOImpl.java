@@ -36,6 +36,14 @@ public class RadioStationDAOImpl extends GenericDAOImpl<RadioStation> implements
 		Query query = QueryUtil.getPageFromQuery(em.createNamedQuery(RadioStation.GET_ALL_RADIO_STATIONS), page, itemSize);
 		return (List<RadioStation>) query.getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<RadioStation> getRadioStationForUserPager(int page, int itemSize) {
+		Query query = QueryUtil.getPageFromQuery(em.createNamedQuery(RadioStation.GET_ALL_RADIO_STATIONSFORUSER), page, itemSize);
+		return (List<RadioStation>) query.getResultList();
+	}
+
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -82,6 +90,12 @@ public class RadioStationDAOImpl extends GenericDAOImpl<RadioStation> implements
 	@Override
 	public int getRadioStationsCountWithCityId(int cityId) {
 		Query query = em.createNamedQuery(RadioStation.GET_RADIO_STATIONS_BY_CITY_COUNT).setParameter("city", cityId);
+		return ((Long) query.getSingleResult()).intValue();
+	}
+
+	@Override
+	public int getRadioStationForUserPagerCount() {
+		Query query = em.createNamedQuery(RadioStation.GET_ALL_RADIO_STATIONSFORUSER_COUNT);
 		return ((Long) query.getSingleResult()).intValue();
 	}
 }
