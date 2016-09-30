@@ -53,6 +53,10 @@ public class RadioStationController {
 	protected void initBinder(WebDataBinder binder) {
 		binder.setValidator(radioStationFormvalidator);
 	}
+	@RequestMapping(value = "/admin")
+	public String getNewestRadioStations() {
+		return "forward:/admin/radiostations/1";
+	}
 
 	@RequestMapping(value = "/admin/radiostations/{pageIndex}", method = RequestMethod.GET)
 	public String getMusicTypeList(Model model, @PathVariable(value = "pageIndex") Integer pageIndex) {

@@ -87,12 +87,8 @@
 	<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 
 	<script
-		src="${baseURL}/resources/userPanelAssets/js/jquery.downCount.js"></script>
-	<script
 		src="${baseURL}/resources/userPanelAssets/js/jquery.stellar.min.js"></script>
 	<script src="${baseURL}/resources/userPanelAssets/js/jquery.sticky.js"></script>
-	<script
-		src="${baseURL}/resources/userPanelAssets/js/owl.carousel.min.js"></script>
 	<c:out value="${footerscript.description }"></c:out>
 	<script src="${baseURL}/resources/userPanelAssets/js/main.js"></script>
 	<script src="${baseURL}/resources/userPanelAssets/js/customizer.js"></script>
