@@ -101,7 +101,15 @@
 		<put-attribute name="curl" value="radiostations"
 			cascade="true"></put-attribute>
 	</definition>
-
+	<!-- Admin Login -->
+	<definition name="login" extends="adminPaneLTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/adminpanel/login.jsp" />
+		<put-attribute name="menu" value=""></put-attribute>
+		<put-attribute name="title" expression="Radyo Dinlenir Yönetim Girişi"></put-attribute>
+		<put-attribute name="curl" value=""
+			cascade="true"></put-attribute>
+	</definition>
 	<!-- User Panel Views -->
 	<!-- Index -->
 	<definition name="index" extends="userTemplate">
@@ -169,7 +177,7 @@
 	<definition name="error403" extends="errorTemplate">
 		<put-attribute name="title" value="Birşeyler Yanlış Gidiyor" />
 		<put-attribute name="errorCode" value="403" />
-		<put-attribute name="errorName" value="Sunucu hatası!!" />
+		<put-attribute name="errorName" value="Yetkisiz Giriş!!" />
 	</definition>
 
 </tiles-definitions>
