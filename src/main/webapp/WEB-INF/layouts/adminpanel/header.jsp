@@ -29,22 +29,3 @@
 	</div>
 </div>
 <!-- LOGO HEADER END-->
-<section class="menu-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="navbar-collapse collapse ">
-					<ul id="menu-top" class="nav navbar-nav navbar-right">
-           						<li><a class="${curl == 'radiostations' ? 'menu-top-active' : '' }" href="/admin/radiostations/1">Radyolar</a></li> 
-            					<li><a class="${curl == 'musictype' ? 'menu-top-active' : '' }" href="/admin/musictypelist">Müzik Tipleri</a></li> 
-            					<li><a class="${curl == 'contactlist' ? 'menu-top-active' : '' }" href="/admin/contactlist/1">İletişim</a></li> 
-            					<li><a class="${curl == 'configs' ? 'menu-top-active' : '' }" href="/admin/generalconfigs">Ayarlar</a></li> 
-            					<li><a href="/">Anasayfa</a></li> 
-            					<li><a class="${curl == 'cikis' ? 'menu-top-active' : '' }" href="/admin/cikis">Çıkış</a></li> 
-					</ul>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</section>

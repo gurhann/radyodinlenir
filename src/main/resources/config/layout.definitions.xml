@@ -9,7 +9,9 @@
 		template="/WEB-INF/layouts/adminpanel/tilesMaster.jsp">
 		<put-attribute name="header"
 			value="/WEB-INF/layouts/adminpanel/header.jsp" />
-		<put-attribute name="title" value="" />
+		<put-attribute name="title" value="" />		
+		<put-attribute name="menu"
+			value="/WEB-INF/layouts/adminpanel/menu.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer"
 			value="/WEB-INF/layouts/adminpanel/footer.jsp" />

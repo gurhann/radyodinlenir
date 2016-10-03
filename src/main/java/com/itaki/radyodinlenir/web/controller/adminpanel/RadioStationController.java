@@ -55,7 +55,7 @@ public class RadioStationController {
 	}
 	@RequestMapping(value = "/admin")
 	public String getNewestRadioStations() {
-		return "forward:/admin/radiostations/1";
+		return "redirect:/admin/radiostations/1";
 	}
 
 	@RequestMapping(value = "/admin/radiostations/{pageIndex}", method = RequestMethod.GET)
