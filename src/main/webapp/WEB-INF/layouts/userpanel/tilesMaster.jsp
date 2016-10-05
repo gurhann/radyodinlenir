@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="${title.description}"/>
 <meta property="og:description" content="${empty popularRadios ? item.seoDescription : decription.description  }"/>
 	
-
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico">
 <!--=== Style Sheets ===-->
 <link
 	href="http://fonts.googleapis.com/css?family=Lato:400,900,700,400italic,300,700italic"
