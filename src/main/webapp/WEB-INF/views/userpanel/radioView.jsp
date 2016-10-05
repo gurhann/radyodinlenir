@@ -3,6 +3,8 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="com.itaki.radyodinlenir.util.PageUtils"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <c:set var="currentURL"
 	value="${PageUtils.getCurentFullPath(pageContext.request)}" />
@@ -18,7 +20,8 @@
 		<div class="row ">
 			<div class="col-sm-4">
 				<div class="left spacing">
-					<img width="270" height="270" src="/resources/radiologos/${item.logo}" 	alt="${item.name}" />
+					<img width="270" height="270"
+						src="/resources/radiologos/${item.logo}" alt="${item.name}" />
 				</div>
 			</div>
 			<div class="col-sm-8">
@@ -42,6 +45,12 @@
 	<div class="tabs">
 		<div class="tab-heading">
 			<i class="fa fa-share-square" aria-hidden="true"></i> Paylaş
+
+			<sec:authorize access="hasRole('ROLE_USER')">
+
+				<a href="/admin/radiostations/${item.id}/details" class="right"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Düzenle</a>
+
+			</sec:authorize>
 		</div>
 		<div class="tab-content">
 
