@@ -3,17 +3,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
 
 <tilesx:useAttribute name="curl"/>
-	
-<header>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<strong>Gürhan KÜÇÜK - Dursun ÇİMEN </strong>
-			</div>
 
-		</div>
-	</div>
-</header>
 <!-- HEADER END-->
 <div class="navbar navbar-inverse set-radius-zero">
 	<div class="container">

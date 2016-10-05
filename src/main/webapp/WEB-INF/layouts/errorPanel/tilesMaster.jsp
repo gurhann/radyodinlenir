@@ -53,8 +53,9 @@
 			<!--Links Start-->
 			<div class="col-md-12">
 				<div class="links-wrapper col-md-4 col-md-offset-5">
-					<div class="links col-md-3 col-md-offset-2 wow fadeIn" style="padding-left: 0px" data-wow-delay="3300ms">
-						 <h3 style="margin-left:-15px">İtaki Yazılım</h3>
+					<div class="links col-md-3 col-md-offset-2 wow fadeIn"
+						style="padding-left: 0px" data-wow-delay="3300ms">
+						<h3 style="margin-left: -15px">İtaki Yazılım</h3>
 					</div>
 				</div>
 			</div>

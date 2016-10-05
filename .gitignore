@@ -6,7 +6,7 @@
 # Database Connect Properties
 *jdbc.properties
 *mail.properties
-
+*security-context.xml
 #h2 db
 *test.mv.db
 *test.trace.db

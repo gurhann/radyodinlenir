@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				&copy; 2016 ITAKI YAZILIM  | <a href="http://dursuncimen.com">Dursun ÇİMEN</a>
+				&copy; 2016 ITAKI YAZILIM  | <a href="#">Gürhan KÜÇÜK - Dursun ÇİMEN </a>
 			</div>
 
 		</div>
