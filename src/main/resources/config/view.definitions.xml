@@ -50,7 +50,15 @@
 			cascade="true"></put-attribute>
 		<put-attribute name="curl" value="configs" cascade="true"></put-attribute>
 	</definition>
-
+	
+	<!-- SearchTerms List -->
+	<definition name="searchtermslist" extends="adminPaneLTemplate">
+		<put-attribute name="body"
+			value="/WEB-INF/views/adminpanel/searchtermslist.jsp" />
+		<put-attribute name="title" value="Arama Sonuçları"></put-attribute>
+		<put-attribute name="curl" value="searchTerms" cascade="true"></put-attribute>
+	</definition>
+	
 	<!-- MusicType List -->
 	<definition name="musictypelist" extends="adminPaneLTemplate">
 		<put-attribute name="body"
@@ -107,8 +115,7 @@
 			value="/WEB-INF/views/adminpanel/login.jsp" />
 		<put-attribute name="menu" value=""></put-attribute>
 		<put-attribute name="title" expression="Radyo Dinlenir Yönetim Girişi"></put-attribute>
-		<put-attribute name="curl" value=""
-			cascade="true"></put-attribute>
+		<put-attribute name="curl" value="" cascade="true"></put-attribute>
 	</definition>
 	<!-- User Panel Views -->
 	<!-- Index -->

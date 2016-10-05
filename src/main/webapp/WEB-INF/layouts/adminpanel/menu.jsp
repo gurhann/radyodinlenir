@@ -15,6 +15,8 @@
 						<li><a
 							class="${curl == 'musictype' ? 'menu-top-active' : '' }"
 							href="/admin/musictypelist">Müzik Tipleri</a></li>
+						<li><a class="${curl == 'searchTerms' ? 'menu-top-active' : '' }"
+							href="/admin/searchterms/1">Arama Sonuçları</a></li>
 						<li><a
 							class="${curl == 'contactlist' ? 'menu-top-active' : '' }"
 							href="/admin/contactlist/1">İletişim</a></li>

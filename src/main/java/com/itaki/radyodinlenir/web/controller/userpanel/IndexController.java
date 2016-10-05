@@ -18,11 +18,13 @@ import com.itaki.radyodinlenir.exception.RadioStationNotFoundException;
 import com.itaki.radyodinlenir.service.MusicTypeService;
 import com.itaki.radyodinlenir.service.RadioStationCityService;
 import com.itaki.radyodinlenir.service.RadioStationService;
+import com.itaki.radyodinlenir.service.SearchTermsService;
 import com.itaki.radyodinlenir.util.PageUtils;
 import com.itaki.radyodinlenir.web.dto.ApplicationConfigDTO;
 import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
 import com.itaki.radyodinlenir.web.dto.RadioStationCityDTO;
 import com.itaki.radyodinlenir.web.dto.RadioStationDTO;
+import com.itaki.radyodinlenir.web.dto.SearchTermsDTO;
 
 @Controller
 @RequestMapping(value = "/")
@@ -33,6 +35,9 @@ public class IndexController {
 
 	@Autowired
 	private MusicTypeService musicTypeService;
+	
+	@Autowired
+	private SearchTermsService searchTermsService;
 
 	@Autowired
 	private RadioStationCityService radioSTationCityService;
@@ -165,6 +170,8 @@ public class IndexController {
 	@RequestMapping(value = "/search")
 	public String searchStation(@RequestParam String searchText, Model model) {
 		List<RadioStationDTO> radioList = radioStationService.searchRadioStationWithSearchText(searchText);
+		searchTermsService.addSearchTerm(new SearchTermsDTO(searchText));
+		
 		model.addAttribute("radioList", radioList);
 		model.addAttribute("searchedText", searchText);
 		return "radioList";
