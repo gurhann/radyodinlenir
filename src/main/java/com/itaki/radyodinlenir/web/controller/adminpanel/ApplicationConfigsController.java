@@ -42,7 +42,7 @@ public class ApplicationConfigsController {
 		try {
 			return getData(model, 0, 5, "generalconfigs");
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 
 	}
@@ -66,7 +66,7 @@ public class ApplicationConfigsController {
 		try {
 			return getData(model, 5, 6, "seoconfigs");
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 
 	}
@@ -76,7 +76,7 @@ public class ApplicationConfigsController {
 		try {
 			return getData(model, 11, 10, "socialconfigs");
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 
 	}
@@ -86,7 +86,7 @@ public class ApplicationConfigsController {
 		try {
 			return getData(model, 21, 1, "aboutconfigs");
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 	
@@ -95,7 +95,7 @@ public class ApplicationConfigsController {
 		try {
 			return getData(model, 22, 6, "adwordsconfigs");
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 	

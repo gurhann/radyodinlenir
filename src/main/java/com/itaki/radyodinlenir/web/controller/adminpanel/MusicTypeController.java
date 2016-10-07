@@ -47,7 +47,7 @@ public class MusicTypeController {
 			model.addAttribute("musicType", new MusicTypeDTO());
 			return "musictypelist";
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 
@@ -77,7 +77,7 @@ public class MusicTypeController {
 			model.addAttribute("musicType", musicTypeService.getMusicTypeById(id));
 			return "musictypedit";
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 	@RequestMapping(value = "admin/musictypelist/{editType}/edit", method = RequestMethod.POST)
@@ -94,7 +94,7 @@ public class MusicTypeController {
 			redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Succesfull", new String[] {}, locale));
 			return "redirect:/admin/musictypelist/" + id+"/edit";
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 	
@@ -109,7 +109,6 @@ public class MusicTypeController {
 			return "redirect:/admin/musictypelist";
 			
 		} catch (Exception e) {
-			System.out.println(e);
 			redirectAttributes.addFlashAttribute("css", "danger");
 			redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Alert", new String[] {}, locale));
 			return "redirect:/admin/musictypelist";

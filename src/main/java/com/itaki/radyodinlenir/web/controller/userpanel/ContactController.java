@@ -56,8 +56,7 @@ public class ContactController {
 			redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("ContactRequest.Succesfull", new String[] {}, locale));
 			return "redirect:/contact";
 		} catch (Exception e) {
-		System.out.println(e);
-			return "error403";
+			return "error500";
 		}
 	}
 }

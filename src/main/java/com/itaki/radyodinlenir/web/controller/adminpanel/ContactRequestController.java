@@ -53,7 +53,7 @@ public class ContactRequestController {
 			model.addAttribute("contactlist", contactlist);
 			return "contactlist";
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 
@@ -80,7 +80,7 @@ public class ContactRequestController {
 			return "contactdetails";
 
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 
@@ -101,7 +101,7 @@ public class ContactRequestController {
 			redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Succesfull", new String[] {}, locale));
 			return "redirect:/admin/contactlist/1";
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 

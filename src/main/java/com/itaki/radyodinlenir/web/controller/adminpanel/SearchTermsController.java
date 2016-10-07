@@ -40,8 +40,7 @@ public class SearchTermsController {
 			model.addAttribute("searchTermsList", searchTermsList);
 			return "searchtermslist";
 		} catch (Exception e) {
-			System.out.println(e);
-			return "error403";
+			return "error500";
 		}
 	}
 

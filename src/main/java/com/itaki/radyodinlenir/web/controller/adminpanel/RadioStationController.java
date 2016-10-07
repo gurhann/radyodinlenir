@@ -69,7 +69,7 @@ public class RadioStationController {
 			model.addAttribute("radioStationList", radioStationList);
 			return "radiostations";
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 
@@ -89,7 +89,7 @@ public class RadioStationController {
 			model.addAttribute("radiostation", new RadioStationDTO());
 			return "radiostationAddEdit";
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 
@@ -149,7 +149,7 @@ public class RadioStationController {
 			model.addAttribute("radiostation", radioStationService.getRadioStationWithID(id));
 			return "radiostationAddEdit";
 		} catch (Exception e) {
-			return "error403";
+			return "error500";
 		}
 	}
 }
