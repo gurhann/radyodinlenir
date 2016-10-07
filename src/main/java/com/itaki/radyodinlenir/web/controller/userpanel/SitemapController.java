@@ -11,8 +11,8 @@ import com.itaki.radyodinlenir.service.SiteMapEntryService;
 public class SitemapController {
 	@Autowired
 	SiteMapEntryService service;
-	@RequestMapping(path = "/sitemap.xml")
-	public @ResponseBody String  create() {		
+	@RequestMapping(path = "/sitemap.xml", produces = "application/xml; charset=utf-8")
+	public @ResponseBody String  create() {	
 		return service.createSiteMap();
 	}
 }

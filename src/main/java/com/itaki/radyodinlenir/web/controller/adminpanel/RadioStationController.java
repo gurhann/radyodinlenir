@@ -53,12 +53,8 @@ public class RadioStationController {
 	protected void initBinder(WebDataBinder binder) {
 		binder.setValidator(radioStationFormvalidator);
 	}
-	@RequestMapping(value = "/admin")
-	public String getNewestRadioStations() {
-		return "redirect:/admin/radiostations/1";
-	}
-
-	@RequestMapping(value = "/admin/radiostations/{pageIndex}", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/admin/radios/{pageIndex}", method = RequestMethod.GET)
 	public String getMusicTypeList(Model model, @PathVariable(value = "pageIndex") Integer pageIndex) {
 		try {
 			int radioStationCount = radioStationService.getRadioStationsCount();
@@ -87,7 +83,7 @@ public class RadioStationController {
 		return cityService.getAllRadioStationCity();
 	}
 
-	@RequestMapping(value = "/admin/radiostations/add", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/radios/add", method = RequestMethod.GET)
 	public String getRadioStationAddForm(Model model) {
 		try {
 			model.addAttribute("radiostation", new RadioStationDTO());
@@ -97,22 +93,22 @@ public class RadioStationController {
 		}
 	}
 
-	@RequestMapping(value = "/admin/radiostations/{deleteid}/delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/radios/{deleteid}/delete", method = RequestMethod.GET)
 	public String deleteContactRequestWithId(@PathVariable(value = "deleteid") Integer id, Model model, final RedirectAttributes redirectAttributes, Locale locale) {
 		try {
 			radioStationService.deleteRadioStation(id);
 			redirectAttributes.addFlashAttribute("css", "success");
 			redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Succesfull", new String[] {}, locale));
-			return "redirect:/admin/radiostations/1";
+			return "redirect:/admin/radios/1";
 
 		} catch (Exception e) {
 			redirectAttributes.addFlashAttribute("css", "danger");
 			redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Alert", new String[] {}, locale));
-			return "redirect:/admin/radiostations/1";
+			return "redirect:/admin/radios/1";
 		}
 	}
 
-	@RequestMapping(value = "/admin/radiostations/add", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin/radios/add", method = RequestMethod.POST)
 	public String postRadioStationAddForm(@ModelAttribute("radiostation") @Validated RadioStationDTO radiostation, BindingResult result, Model model, final RedirectAttributes redirectAttributes,
 			Locale locale) {
 		if (result.hasErrors()) {
@@ -143,11 +139,11 @@ public class RadioStationController {
 		}
 		redirectAttributes.addFlashAttribute("css", "success");
 		redirectAttributes.addFlashAttribute("msg", msgsrc.getMessage("Form.Succesfull", new String[] {}, locale));
-		return "redirect:/admin/radiostations/add";
+		return "redirect:/admin/radios/add";
 
 	}
 
-	@RequestMapping(value = "/admin/radiostations/{radioStationID}/details", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/radios/{radioStationID}/details", method = RequestMethod.GET)
 	public String getRadioStationDetails(@PathVariable(value = "radioStationID") Integer id, Model model) {
 		try {
 			model.addAttribute("radiostation", radioStationService.getRadioStationWithID(id));

@@ -8,7 +8,7 @@
 		<!--    Context Classes  -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Yeni Radyo İstasyonu Ekle <a href="/admin/radiostations/1"
+				Yeni Radyo İstasyonu Ekle <a href="/admin/radios/1"
 					class="btn btn-success btn-sm" style="float: right">Radyo
 					İstasyonları</a>
 			</div>
@@ -22,7 +22,7 @@
 						<strong>${msg}</strong>
 					</div>
 				</c:if>
-				<form:form method="POST" action="/admin/radiostations/add"
+				<form:form method="POST" action="/admin/radios/add?${_csrf.parameterName}=${_csrf.token}"
 					enctype="multipart/form-data" modelAttribute="radiostation">
 					<form:hidden path="id" />
 					<form:hidden path="logo" />

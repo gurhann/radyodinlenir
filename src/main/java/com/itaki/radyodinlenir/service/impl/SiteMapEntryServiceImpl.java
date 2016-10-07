@@ -44,6 +44,7 @@ public class SiteMapEntryServiceImpl implements SiteMapEntryService {
 				sitemapGenerator.addPage(new WebPageBuilder().name(MUSIC_TYPE_PATH + dto.getCleanUrl()).build());
 			}			
 			sitemapGenerator.addPage(new WebPageBuilder().name("").build());
+
 			return sitemapGenerator.constructSitemapString();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

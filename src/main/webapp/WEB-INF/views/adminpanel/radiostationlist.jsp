@@ -7,7 +7,7 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				&nbsp; <a href="/admin/radiostations/add" class="btn btn-success" style="float: right">Radyo
+				&nbsp; <a href="/admin/radios/add" class="btn btn-success" style="float: right">Radyo
 					İstasyonu Ekle</a>
 			</div>
 			<div class="panel-body">
@@ -51,9 +51,9 @@
 										<td>${radioStation.name}</td>
 										<td>${radioStation.hitCount}</td>
 										<td>${radioStation.enabled ? "Yayında" : "Yayında Değil"}</td>
-										<td><a href="/admin/radiostations/${radioStation.id}/details"
+										<td><a href="/admin/radios/${radioStation.id}/details"
 											class="btn btn-info btn-xs">Detay</a> <a
-											href="/admin/radiostations/${radioStation.id}/delete"
+											href="/admin/radios/${radioStation.id}/delete"
 											class="btn btn-danger btn-xs">Sil</a></td>
 									</tr>
 								</c:forEach>
@@ -62,7 +62,7 @@
 					</table>
 
 					<ul class="pagination">
-						<c:url value="/admin/radiostations/${pageIndex-1}" var="prev">
+						<c:url value="/admin/radios/${pageIndex-1}" var="prev">
 						</c:url>
 						<c:if test="${pageIndex > 1}">
 							<li><a class="prev page-numbers"
@@ -77,7 +77,7 @@
 										<li class='active'><span>${i.index}</span></li>
 									</c:when>
 									<c:otherwise>
-										<c:url value="/admin/radiostations/${i.index}" var="url">
+										<c:url value="/admin/radios/${i.index}" var="url">
 										</c:url>
 										<li><a href="${url}">${i.index}</a></li>
 
@@ -94,7 +94,7 @@
 										<li class='active'><span>${i.index}</span></li>
 									</c:when>
 									<c:otherwise>
-										<c:url value="/admin/radiostations/${i.index}" var="url">
+										<c:url value="/admin/radios/${i.index}" var="url">
 										</c:url>
 										<li><a href="${url}">${i.index}</a></li>
 
@@ -103,7 +103,7 @@
 							</c:forEach>
 						</c:if>
 
-						<c:url value="/admin/radiostations/${pageIndex+1}" var="next">
+						<c:url value="/admin/radios/${pageIndex+1}" var="next">
 						</c:url>
 						<c:if test="${pageIndex + 1 <= maxPageIndex}">
 							<li><a class='next page-numbers' href="${ next}">→</a></li>

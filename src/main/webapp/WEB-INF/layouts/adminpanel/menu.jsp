@@ -11,7 +11,7 @@
 					<ul id="menu-top" class="nav navbar-nav navbar-right">
 						<li><a
 							class="${curl == 'radiostations' ? 'menu-top-active' : '' }"
-							href="/admin/radiostations/1">Radyolar</a></li>
+							href="/admin/radios/1">Radyolar</a></li>
 						<li><a
 							class="${curl == 'musictype' ? 'menu-top-active' : '' }"
 							href="/admin/musictypelist">Müzik Tipleri</a></li>
