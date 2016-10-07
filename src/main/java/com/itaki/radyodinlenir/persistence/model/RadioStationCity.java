@@ -4,9 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -22,13 +19,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 public class RadioStationCity extends BaseCategory {
 
 	public static final String FIND_RADIO_STATION_CITY_BY_CLEANURL = "RadioStationCity.findByCleanUrl";
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
-	private int id;
 
-	@Column(name = "name")
-	private String name;
 	@Column(name = "clean_url")
 	private String cleanUrl;
 
