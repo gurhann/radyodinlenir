@@ -1,21 +1,34 @@
 package com.itaki.radyodinlenir.persistence.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "radio_station_city")
-@NamedQueries({ @NamedQuery(name = RadioStationCity.FIND_RADIO_STATION_CITY_BY_CLEANURL, query = "select m from RadioStationCity m where m.cleanUrl=:cleanUrl") })
+@NamedQueries({ @NamedQuery(name = RadioStationCity.FIND_RADIO_STATION_CITY_BY_CLEANURL, query = "select m from RadioStationCity m where m.cleanUrl=:cleanUrl")})
 public class RadioStationCity extends BaseCategory {
 
 	public static final String FIND_RADIO_STATION_CITY_BY_CLEANURL = "RadioStationCity.findByCleanUrl";
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	private int id;
 
+	@Column(name = "name")
+	private String name;
 	@Column(name = "clean_url")
 	private String cleanUrl;
 
@@ -24,6 +37,10 @@ public class RadioStationCity extends BaseCategory {
 
 	@Column(name = "seo_description", length = 500)
 	private String seoDescription;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "add_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	private Date addDate;
 
 	public String getCleanUrl() {
 		return cleanUrl;
@@ -47,6 +64,14 @@ public class RadioStationCity extends BaseCategory {
 
 	public void setSeoKeywords(String seoKeywords) {
 		this.seoKeywords = seoKeywords;
+	}
+
+	public Date getAddDate() {
+		return addDate;
+	}
+
+	public void setAddDate(Date addDate) {
+		this.addDate = addDate;
 	}
 
 	@Override

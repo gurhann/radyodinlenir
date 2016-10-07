@@ -35,7 +35,7 @@ public class IndexController {
 
 	@Autowired
 	private MusicTypeService musicTypeService;
-	
+
 	@Autowired
 	private SearchTermsService searchTermsService;
 
@@ -47,7 +47,7 @@ public class IndexController {
 		List<RadioStationDTO> popularRadios = radioStationService.getRadioStationForUserPager(1, 14);
 		List<RadioStationDTO> newestRadios = radioStationService.getNewestRadioStation(1, 14);
 		int radioId = Integer.parseInt(((ApplicationConfigDTO) req.getSession().getAttribute("mainpageradio")).getDescription());
-		model.addAttribute("item", radioStationService.getRadioStationWithID(radioId));	
+		model.addAttribute("item", radioStationService.getRadioStationWithID(radioId));
 		model.addAttribute("popularRadios", popularRadios);
 		model.addAttribute("newestRadios", newestRadios);
 		return "index";
@@ -67,7 +67,7 @@ public class IndexController {
 			model.addAttribute("maxPageIndex", maxPageIndex);
 			model.addAttribute("item", musicType);
 			model.addAttribute("pageIndex", pageIndex);
-			model.addAttribute("iTitle", musicType.getName()+" Radyolar |");
+			model.addAttribute("iTitle", musicType.getName() + " Radyolar |");
 			model.addAttribute("pagerBaseUrl", "/stations/" + musicTypeName);
 		} catch (MusicTypeNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -91,7 +91,7 @@ public class IndexController {
 			model.addAttribute("item", radioStationCity);
 			model.addAttribute("pageIndex", pageIndex);
 			model.addAttribute("pagerBaseUrl", "/radiosofcity/" + cityName);
-			model.addAttribute("iTitle", radioStationCity.getName()+" Radyoları |");
+			model.addAttribute("iTitle", radioStationCity.getName() + " Radyoları |");
 		} catch (RadioStationCityNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -137,7 +137,7 @@ public class IndexController {
 			RadioStationDTO radio = radioStationService.getRadioStationWithCleanUrl(cleanUrl);
 			model.addAttribute("item", radio);
 			radio.setHitCount(radio.getHitCount() + 1);
-			model.addAttribute("iTitle", radio.getName()+" Dinle |");
+			model.addAttribute("iTitle", radio.getName() + " Dinle |");
 			model.addAttribute("similarRadios", radioStationService.getRadioStationForPagerWithMusicType(1, 8, radio.getMusicType().getId()));
 			radioStationService.updateRadioStation(radio);
 		} catch (RadioStationNotFoundException e) {
@@ -171,7 +171,7 @@ public class IndexController {
 	public String searchStation(@RequestParam String searchText, Model model) {
 		List<RadioStationDTO> radioList = radioStationService.searchRadioStationWithSearchText(searchText);
 		searchTermsService.addSearchTerm(new SearchTermsDTO(searchText));
-		
+
 		model.addAttribute("radioList", radioList);
 		model.addAttribute("searchedText", searchText);
 		return "radioList";

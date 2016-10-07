@@ -1,11 +1,10 @@
 package com.itaki.radyodinlenir.service;
 
-import com.itaki.radyodinlenir.exception.MusicTypeNotFoundException;
-import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
-
 import java.util.List;
 
 import com.itaki.radyodinlenir.exception.MusicTypeIsExistException;
+import com.itaki.radyodinlenir.exception.MusicTypeNotFoundException;
+import com.itaki.radyodinlenir.web.dto.MusicTypeDTO;
 
 public interface MusicTypeService {
 

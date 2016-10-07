@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
+
 import com.itaki.radyodinlenir.persistence.dao.ContactRequestDAO;
 import com.itaki.radyodinlenir.persistence.model.ContactRequest;
 import com.itaki.radyodinlenir.util.QueryUtil;
