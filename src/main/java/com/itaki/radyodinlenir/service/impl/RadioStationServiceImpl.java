@@ -124,4 +124,11 @@ public class RadioStationServiceImpl implements RadioStationService {
 		return radioStationDAO.getRadioStationForUserPagerCount();
 	}
 
+	@Override
+	public List<RadioStationDTO> findAll() {
+		return RadioStationMapper.modelToDtoList(radioStationDAO.findAll());
+	}
+
+	
+
 }

@@ -37,5 +37,8 @@ public interface RadioStationService {
 	public List<RadioStationDTO> getRadioStationForPagerWithCity(int page, int itemSize, int cityId);
 
 	public int getRadioStationsCountWithCityId(int cityId);
+	
+	public List<RadioStationDTO> findAll();
+	
 
 }

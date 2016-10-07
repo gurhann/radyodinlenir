@@ -30,6 +30,7 @@ public class RadioStationMapper {
 		dto.setMusicType(MusicTypeMapper.modelToDto(model.getMusicType()));
 		dto.setRadioCity(RadioStationCityMapper.modelToDto(model.getRadioCity()));
 		dto.setEnabled(model.isEnabled());
+		dto.setAddDate(model.getAddDate());
 		return dto;
 	}
 
@@ -52,6 +53,7 @@ public class RadioStationMapper {
 		model.setSeoKeywords(dto.getSeoKeywords());
 		model.setSeoDescription(dto.getSeoDescription());
 		model.setEnabled(dto.isEnabled());
+		model.setAddDate(dto.getAddDate());
 		return model;
 	}
 

@@ -1,2 +1,3 @@
+Sitemap: http://radyodinlenir.com/sitemap.xml
 User-agent: *
 Disallow: /login

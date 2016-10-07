@@ -1,6 +1,7 @@
 package com.itaki.radyodinlenir.web.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -16,6 +17,15 @@ public class RadioStationCityDTO implements Serializable {
 	private String cleanUrl;
 	private String seoKeywords;
 	private String seoDescription;
+	private Date addDate;
+
+	public Date getAddDate() {
+		return addDate;
+	}
+
+	public void setAddDate(Date addDate) {
+		this.addDate = addDate;
+	}
 
 	public int getId() {
 		return id;
@@ -40,17 +50,19 @@ public class RadioStationCityDTO implements Serializable {
 	public void setCleanUrl(String cleanUrl) {
 		this.cleanUrl = cleanUrl;
 	}
-	
+
 	public String getSeoDescription() {
 		return seoDescription;
 	}
+
 	public void setSeoDescription(String seoDescription) {
 		this.seoDescription = seoDescription;
 	}
-	
+
 	public void setSeoKeywords(String seoKeywords) {
 		this.seoKeywords = seoKeywords;
 	}
+
 	public String getSeoKeywords() {
 		return seoKeywords;
 	}

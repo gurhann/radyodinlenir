@@ -22,6 +22,7 @@ public class RadioStationCityMapper {
 		dto.setCleanUrl(model.getCleanUrl());
 		dto.setSeoDescription(model.getSeoDescription());
 		dto.setSeoKeywords(model.getSeoKeywords());
+		dto.setAddDate(model.getAddDate());
 		return dto;
 	}
 
@@ -35,6 +36,7 @@ public class RadioStationCityMapper {
 		model.setCleanUrl(dto.getCleanUrl());
 		model.setSeoDescription(dto.getSeoDescription());
 		model.setSeoKeywords(dto.getSeoKeywords());
+		model.setAddDate(dto.getAddDate());
 		return model;
 	}
 

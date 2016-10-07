@@ -1,5 +1,7 @@
 package com.itaki.radyodinlenir.persistence.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -77,7 +81,9 @@ public class RadioStation {
 
 	@Column(name = "seo_description", length = 2000)
 	private String seoDescription;
-
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "add_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	private Date addDate;
 	@OneToOne
 	@JoinColumn(name = "music_type_id")
 	private MusicType musicType;
@@ -111,6 +117,14 @@ public class RadioStation {
 
 	public void setDescription(String desc) {
 		this.description = desc;
+	}
+
+	public Date getAddDate() {
+		return addDate;
+	}
+
+	public void setAddDate(Date addDate) {
+		this.addDate = addDate;
 	}
 
 	public String getLogo() {
