@@ -186,5 +186,11 @@
 		<put-attribute name="errorCode" value="403" />
 		<put-attribute name="errorName" value="Yetkisiz Giriş!!" />
 	</definition>
-
+	
+	<!-- Error 500 -->
+	<definition name="error500" extends="errorTemplate">
+		<put-attribute name="title" value="Birşeyler Yanlış Gidiyor" />
+		<put-attribute name="errorCode" value="500" />
+		<put-attribute name="errorName" value="İç Sunucu Hatası!!" />
+	</definition>
 </tiles-definitions>
