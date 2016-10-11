@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="box info category">
+<div class="ads"><c:out value="${adleftmenu.description}" escapeXml="false"></c:out></div>
 	<div class="box-heading">İllere Göre Radyolar</div>
 	<div class="box-content">
 		<div class="box-category">

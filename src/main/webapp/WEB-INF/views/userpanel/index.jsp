@@ -6,10 +6,10 @@
 	<div class="container">
 		<header>
 			<div class="row">
-				<div class="col-xs-12 col-md-8">
+				<div class="col-xs-12 col-md-7">
 					<h2 class="text-uppercase">Popüler Radyolar</h2>
 				</div>
-				<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12 col-md-5">
 					<div class="event-form text-right">
 						<form action="/search" method="get">
 							<div class="form-input search-keyword">
@@ -51,16 +51,14 @@
 <section>
 	<header class="parallax parallax_two style3 text-center text-uppercase text-bold"
 		data-stellar-background-ratio="0.5">
-		<div class="container">
-			<div class="row">
+	
 				<div class="col-xs-12 section-block">
 					<h2>Son Eklenen Radyolar</h2>
 					<p>
 						Radyo İstasyonunuzu Bizle <a href="/contact">Paylaşın</a>
 					</p>
 				</div>
-			</div>
-		</div>
+		
 	</header>
 	<!--section header-->
 	<div class="photography">

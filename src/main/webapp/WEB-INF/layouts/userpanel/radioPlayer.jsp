@@ -35,7 +35,7 @@
 						var userAgent = navigator.userAgent || navigator.vendor
 								|| window.opera;
 					
-						jwplayer.key = "93JczkWcEKV7L6QFMXN5NdmIXyDKnMPHw3P76g==";
+						jwplayer.key = "TVMbX4AGbVFowcjv/Q+724kn7qJa7LaSC4rD4A==";
 						if (!$('#ismobile').is(':visible')) {
 							var Player = jwplayer('hidden-radyo-player')
 									.setup(

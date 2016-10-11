@@ -22,11 +22,11 @@
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <meta name="viewport"
 	content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
-<c:out value="${meta1.description }"></c:out>
-<c:out value="${meta2.description }"></c:out>
-<c:out value="${headerscript1.description }"></c:out>
-<c:out value="${headerscript2.description }"></c:out>
-<c:out value="${headerscript3.description }"></c:out>
+<c:out value="${meta1.description }" escapeXml="false"></c:out>
+<c:out value="${meta2.description }" escapeXml="false"></c:out>
+<c:out value="${headerscript1.description }" escapeXml="false"></c:out>
+<c:out value="${headerscript2.description }" escapeXml="false"></c:out>
+<c:out value="${headerscript3.description }" escapeXml="false"></c:out>
 <meta property="og:title" content="${iTitle eq null ? title.description : iTitle.concat(' ').concat(title.description)}"/>
 <meta property="og:site_name" content="${title.description}"/>
 <meta property="og:description" content="${empty popularRadios ? item.seoDescription : decription.description  }"/>
@@ -44,15 +44,11 @@
 <link rel="stylesheet" type="text/css"
 	href="${baseURL}/resources/userPanelAssets/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
-	href="${baseURL}/resources/userPanelAssets/css/owl.carousel.css">
-<link rel="stylesheet" type="text/css"
 	href="${baseURL}/resources/userPanelAssets/css/animations.css">
 <link rel="stylesheet" type="text/css"
 	href="${baseURL}/resources/userPanelAssets/css/dl-menu.css">
 <link rel="stylesheet"
 	href="${baseURL}/resources/userPanelAssets/css/main.css">
-<link rel="stylesheet"
-	href="${baseURL}/resources/userPanelAssets/css/customizer.css">
 
 <script
 	src="${baseURL}/resources/userPanelAssets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -74,24 +70,19 @@
 		<tiles:insertAttribute name="musicTypeNavigation"></tiles:insertAttribute>
 
 		<div id="ajaxArea">
-			<div class="container">
-				<div class="row">
+				
+			
 					<tiles:insertAttribute name="body"></tiles:insertAttribute>
-					<tiles:insertAttribute name="leftBar"></tiles:insertAttribute>
-				</div>
-			</div>
+					
 		</div>
 	</div>
 
 	<tiles:insertAttribute name="radioPlayer"></tiles:insertAttribute>
 	<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 
-	<script
-		src="${baseURL}/resources/userPanelAssets/js/jquery.stellar.min.js"></script>
 	<script src="${baseURL}/resources/userPanelAssets/js/jquery.sticky.js"></script>
 	<c:out value="${footerscript.description }"></c:out>
 	<script src="${baseURL}/resources/userPanelAssets/js/main.js"></script>
-	<script src="${baseURL}/resources/userPanelAssets/js/customizer.js"></script>
 
 </body>
 </html>

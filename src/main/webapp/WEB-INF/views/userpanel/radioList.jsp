@@ -7,13 +7,14 @@
 	value="${PageUtils.getCurentFullPath(pageContext.request)}" />
 <section class="events-finder">
 	<div class="container">
+	
 		<header>
 			<div class="row">
-				<div class="col-xs-12 col-md-8">
+				<div class="col-xs-12 col-md-7">
 					<h2 class="text-uppercase"><c:out value="${iTitle}"></c:out> </h2>
 				</div>
 
-				<div class="col-xs-12 col-md-4">
+				<div class="col-xs-12 col-md-5">
 					<div class="event-form text-right">
 						<form action="/search" method="get">
 							<div class="form-input search-keyword">
@@ -27,6 +28,7 @@
 				</div>
 			</div>
 		</header>
+		<div align="center" id="paginationtop"><c:out value="${adpaginationtop.description}" escapeXml="false"></c:out></div>
 		<div class="featured-events">
 			<div class="row">
 				<div class="col-xs-12">

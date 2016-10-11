@@ -32,7 +32,7 @@ hr {
 
 .container {
 	width: 100%;
-	max-width: 1190px;
+	max-width: 1050px;
 }
 /*==================================
 1-Preloader
@@ -2259,7 +2259,7 @@ section header.style3 h2 {
 
 section header.style3 h2:before {
 	content: "";
-	width: 350px;
+	width: 325px;
 	right: 100%;
 	position: absolute;
 	top: 50%;
@@ -2270,7 +2270,7 @@ section header.style3 h2:before {
 
 section header.style3 h2:after {
 	content: "";
-	width: 350px;
+	width: 325px;
 	left: 100%;
 	position: absolute;
 	top: 50%;
@@ -3397,7 +3397,7 @@ events finder
 .event-form .form-input input {
 	background: #f4f5f5;
 	height: 40px;
-	width: 240px;
+	width: 290px;
 	border-radius: 0;
 }
 
@@ -3461,7 +3461,7 @@ events finder
 }
 
 .featured-events {
-	margin: 20px 0;
+	margin-bottom: 20px;
 }
 
 .featured-events .featured-event {
@@ -3659,6 +3659,7 @@ store product
 	overflow: hidden;
 	text-overflow: ellipsis;
 	height: 20px;
+	text-align: -webkit-center;
 }
 
 .store-product
@@ -3705,11 +3706,11 @@ hidden
 
 }
 .store-product figure  img {
-	height: 152px;
+	height: 135px;
 }
 
 .similar-product  figure  img {
-	height: 152px;
+	height: 135px;
 	width: 181px;
 }
 
@@ -4641,10 +4642,10 @@ nav>.sf-menu {
 	left: 0;
 	height: 50px;
 }
-
+.sf-menu>li:first-child>a{padding: 0px 13px;}
 .sf-menu>li>a {
 	display: block;
-	padding: 0 12px;
+	padding: 0 7px;
 	text-align: center;
 	position: relative;
 	background: #31353d;
@@ -4764,7 +4765,7 @@ aside .info li {
 
 aside .info li a {
 	line-height: 20px;
-	font-size: 13px;
+	font-size: 12px;
 	font-family: 'Open Sans', sans-serif;
 	color: #323232;
 }
@@ -4821,8 +4822,8 @@ aside .info li a span {
 	background: #DCE0E0;
 	position: relative;
 	float: left;
-	margin: 0 7px 14px 0px;
-	width: 24%;
+	margin: 0 18px 0px 0px;
+	width: 23%;
 	height: 40px;
 	overflow: hidden;
 	-webkit-border-radius: 3px;
@@ -4845,7 +4846,7 @@ aside .info li a span {
 }
 
 .mb_share .button .native_button {
-	width: 76%;
+	width: 65%;
 	height: 40px;
 	float: left;
 	background: #DCE0E0 !important;
@@ -4945,7 +4946,7 @@ aside .info li a span {
 .mb_share .button.linkedin .icon {
 	background-position: -40px -40px;
 }
-
+.mb_share .button.linkedin{margin:0px !important;}
 .mb_share .button.linkedin>div {
 	background-color: #007bb6;
 }
@@ -4977,11 +4978,13 @@ aside .info li a span {
 .right {
 	float: right;
 }
-
+.ads{margin-bottom: 5px;}
+#paginationtop{margin-top: 10px;}
 /*==============*/
 
 /*==================================RESPONSIVE LAYOUTS===============================================*/
 @media only screen and (max-width: 1199px) {
+	
 }
 
 @media only screen and (max-width: 995px) {

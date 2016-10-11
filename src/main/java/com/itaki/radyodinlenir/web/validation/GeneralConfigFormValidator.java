@@ -20,8 +20,8 @@ public class GeneralConfigFormValidator implements Validator {
 		GeneralConfigsFormDTO generalConfigs = (GeneralConfigsFormDTO) arg0;
 		   for (int i = 0; i < generalConfigs.getConfigs().size(); i++) {
 	            ApplicationConfigDTO conf = generalConfigs.getConfigs().get(i);
-	            if(conf.getDescription().length() > 255) {
-	                errors.rejectValue("configs[" + i + "].description", "MaxLength.255");
+	            if(conf.getDescription().length() > 500) {
+	                errors.rejectValue("configs[" + i + "].description", "MaxLength.5000");
 	            }
 	            if(conf.getDescription().length() == 0 || conf.getDescription() == null) {
 	                errors.rejectValue("configs[" + i + "].description", "NotEmpty");

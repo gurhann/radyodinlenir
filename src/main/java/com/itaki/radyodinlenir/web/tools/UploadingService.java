@@ -24,7 +24,7 @@ public class UploadingService {
 				if (!new File(realPathtoUploads).exists()) {
 					new File(realPathtoUploads).mkdir();
 				}
-				String filePath = realPathtoUploads + PageUtils.convertCleanUrl(file.getOriginalFilename());
+				String filePath = realPathtoUploads+"/" + PageUtils.convertCleanUrl(file.getOriginalFilename());
 				;
 				File dest = new File(filePath);
 				file.transferTo(dest);

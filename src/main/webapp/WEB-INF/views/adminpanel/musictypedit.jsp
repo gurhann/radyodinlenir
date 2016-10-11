@@ -42,15 +42,7 @@
 				</div>
 			</spring:bind>
 
-			<div class="form-group ${status.error ? 'has-error' : ''}">
-				<label class="control-label" for="queue">Sırası:</label>
-				<form:select path="priority" class="form-control" id="queue">
-					<c:forEach var="i" begin="1" end="15">
-						<option ${musicType.priority == i ? "selected": "" }>${i}</option>
-					</c:forEach>
-				</form:select>
-				<form:errors path="priority" class="control-label" />
-			</div>
+		
 			<div class="form-group" style="float: right">
 				<a href="/admin/musictypelist" class="btn btn-info ">Müzik
 					tipleri</a>

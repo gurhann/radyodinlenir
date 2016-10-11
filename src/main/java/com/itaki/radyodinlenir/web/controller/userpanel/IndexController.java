@@ -111,7 +111,7 @@ public class IndexController {
 		model.addAttribute("maxPageIndex", maxPageIndex);
 		model.addAttribute("pageIndex", pageIndex);
 		model.addAttribute("pagerBaseUrl", "/popularStations");
-		model.addAttribute("iTitle", "Popüler Radyolar |");
+		model.addAttribute("iTitle", "Popüler Radyolar ");
 		return "radioList";
 	}
 
@@ -127,7 +127,7 @@ public class IndexController {
 		model.addAttribute("maxPageIndex", maxPageIndex);
 		model.addAttribute("pageIndex", pageIndex);
 		model.addAttribute("pagerBaseUrl", "/newestStations");
-		model.addAttribute("listTitle", "Son Eklenen Radyolar |");
+		model.addAttribute("iTitle", "Son Eklenen Radyolar ");
 		return "radioList";
 	}
 
@@ -168,7 +168,7 @@ public class IndexController {
 	}
 
 	@RequestMapping(value = "/search")
-	public String searchStation(@RequestParam String searchText, Model model) {
+	public String searchStation(@RequestParam(value = "searchText") String searchText, Model model) {
 		List<RadioStationDTO> radioList = radioStationService.searchRadioStationWithSearchText(searchText);
 		searchTermsService.addSearchTerm(new SearchTermsDTO(searchText));
 
