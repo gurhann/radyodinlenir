@@ -40,9 +40,9 @@
 					<c:if test="${not empty radioList}">
 						<div class="store-grid text-uppercase text-bold">
 							<c:forEach var="radio" items="${radioList}">
-								<div class="store-product">
+								<div class="store-product col-md-2">
 									<figure>
-										<img width="152" height="152" src="${baseURL}/resources/radiologos/${radio.logo}" alt="${radio.name}">
+										<img src="${baseURL}/resources/radiologos/${radio.logo}" alt="${radio.name}">
 										<figcaption>
 											<a href="/station/${radio.cleanUrl}" class="btn btn-grey"><i
 												class="fa fa-ticket "></i> Dinle</a>

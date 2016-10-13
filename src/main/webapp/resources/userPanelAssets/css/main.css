@@ -3631,12 +3631,7 @@ store product
 }
 
 .store-product {
-	position: relative;
-	width: 14%;
-	margin-right: 3px;
-	padding: 6px;
-	float: left;
-	margin-bottom: 5px;
+
 }
 
 .similar-product {
@@ -3707,6 +3702,7 @@ hidden
 }
 .store-product figure  img {
 	height: 135px;
+	width: 100%;
 }
 
 .similar-product  figure  img {

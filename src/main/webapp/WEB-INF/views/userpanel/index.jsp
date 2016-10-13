@@ -26,9 +26,9 @@
 				<div class="col-xs-12">
 					<div class="store-grid text-uppercase text-bold">
 						<c:forEach var="popRadio" items="${popularRadios}">
-							<div class="store-product">
+							<div class="store-product col-md-2">
 								<figure>
-									<img width="152" height="152" src="${baseURL}/resources/radiologos/${popRadio.logo}"  alt="${radio.name}">
+									<img  src="${baseURL}/resources/radiologos/${popRadio.logo}"  alt="${radio.name}">
 									<figcaption>
 										<a href="${baseURL}/station/${popRadio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 									</figcaption>
@@ -66,9 +66,9 @@
 			<div class="store-grid text-uppercase text-bold clearfix">
 
 				<c:forEach var="lastRadio" items="${newestRadios}">
-					<div class="store-product">
+					<div class="store-product col-md-2">
 						<figure>
-							<img width="152" height="152" src="${baseURL}/resources/radiologos/${lastRadio.logo}"  alt="${radio.name}">
+							<img  src="${baseURL}/resources/radiologos/${lastRadio.logo}"  alt="${radio.name}">
 							<figcaption>
 								<a href="${baseURL}/station/${lastRadio.cleanUrl}" class="btn btn-grey"><i class="fa fa-ticket "></i> Dinle</a>
 							</figcaption>
