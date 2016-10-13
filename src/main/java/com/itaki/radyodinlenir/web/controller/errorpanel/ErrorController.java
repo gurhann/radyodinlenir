@@ -15,4 +15,8 @@ public class ErrorController {
 	 public String getError403(){
 		 return "error403";
 	 }
+	 @RequestMapping(value="/error500",method=RequestMethod.GET)
+	 public String getError500(){
+		 return "error500";
+	 }
 }
