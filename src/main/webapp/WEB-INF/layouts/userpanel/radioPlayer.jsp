@@ -7,12 +7,10 @@
 				<img src="/resources/radiologos/${item.logo}" />
 			</div>
 			<div class="radio-controllers">
-				<a href="/j" class="prev"
-					title="Önceki Radyo"></a>
+				
 				<button type="button" id="play-button"
 					class="play-controller loading">Yükleniyor</button>
-				<a href="/" class="next"
-					title="Sonraki Radyo"></a>
+				
 				<h1 class="radio-title">${item.name}</h1>
 				<div id="volume-container">
 					<span class="tooltip"></span>

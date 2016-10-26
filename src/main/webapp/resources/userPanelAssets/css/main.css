@@ -3391,13 +3391,13 @@ events finder
 
 .event-form .form-input {
 	position: relative;
-	float: left;
+	float: right;
 }
 
 .event-form .form-input input {
 	background: #f4f5f5;
 	height: 40px;
-	width: 290px;
+	width: 250px;
 	border-radius: 0;
 }
 
@@ -3454,6 +3454,7 @@ events finder
 	border: none;
 	padding: 0 20px;
 	text-transform: uppercase;
+	float:right;
 }
 
 .event-form button:hover {
@@ -3637,7 +3638,6 @@ store product
 .similar-product {
 	position: relative;
 	width: 25%;
-	margin-right: 3px;
 	padding: 6px;
 	float: left;
 	margin-bottom: 5px;
@@ -4156,6 +4156,7 @@ ul.pagination {
 }
 
 @media ( min-width : 600px) {
+	
 	.project .hover {
 		transition: All 0.4s ease-in-out;
 		-webkit-transition: All 0.4s ease-in-out;
@@ -4180,6 +4181,7 @@ ul.pagination {
 	.store-product {
 		width: 33.333333334%;
 	}
+	#sticktop-sticky-wrapper{display: none;}
 	.search-widget {
 		float: none;
 		max-width: none;
@@ -4442,8 +4444,13 @@ ul.pagination {
 
 @media ( max-width : 580px) {
 	.store-product {
-		width: 50%;
+		width: 100%;
 	}
+	header h2{    text-align: center;}
+.similar-product{
+		width: 100%;
+	}
+	.similar-product  figure  img{width: 100%;}
 	.song-list li {
 		width: 33.33334%;
 	}

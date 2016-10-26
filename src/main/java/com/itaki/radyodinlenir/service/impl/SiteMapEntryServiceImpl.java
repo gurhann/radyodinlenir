@@ -16,7 +16,7 @@ import cz.jiripinkas.jsitemapgenerator.generator.SitemapGenerator;
 
 @Service
 public class SiteMapEntryServiceImpl implements SiteMapEntryService {
-	private static final String BASE_URL = "https://radyodinlenir.com";
+	private static final String BASE_URL = "http://radyodinlenir.com";
 	private static final String CITY_PATH = "radiosofcity/";
 	private static final String RADIO_PATH = "station/";
 	private static final String MUSIC_TYPE_PATH = "stations/";
